@@ -166,11 +166,11 @@ class Main extends CI_Controller
                 'mailtype'  => 'html',
                 'charset'   => 'utf-8',
                 'protocol'  => 'smtp',
-                'smtp_host' => 'ssl://smtp.gmail.com',
+                'smtp_host' => 'smtp.gmail.com',
                 'smtp_user' => 'moneytypeq@gmail.com',  // Email gmail
                 'smtp_pass'   => 'Money12p',  // Password gmail
                 'smtp_crypto' => 'ssl',
-                'smtp_port'   => 587,
+                'smtp_port'   => 465,
                 'crlf'    => "\r\n",
                 'newline' => "\r\n"
             ];
