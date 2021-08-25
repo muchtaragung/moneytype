@@ -166,7 +166,7 @@ class Main extends CI_Controller
                 'mailtype'  => 'html',
                 'charset'   => 'iso-8859-1',
                 'protocol'  => 'smtp',
-                'smtp_host' => 'ssl://smtp.googlemail.com',
+                'smtp_host' => 'smtp.googlemail.com',
                 'smtp_user' => 'moneytypeq@gmail.com',  // Email gmail
                 'smtp_pass'   => 'Money12p',  // Password gmail
                 'smtp_crypto' => 'ssl',
