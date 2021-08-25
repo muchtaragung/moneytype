@@ -166,9 +166,9 @@ class Main extends CI_Controller
                 'mailtype'  => 'html',
                 'charset'   => 'utf-8',
                 'protocol'  => 'smtp',
-                'smtp_host' => 'tls://smtp.gmail.com',
-                'smtp_user' => 'moneytypeq@gmail.com',  // Email gmail
-                'smtp_pass'   => 'Money12p',  // Password gmail
+                'smtp_host' => 'mail.korporaconsulting.com',
+                'smtp_user' => 'demoaplikasi@korporaconsulting.com',  // Email gmail
+                'smtp_pass'   => 'Demoaplikasi',  // Password gmail
                 'smtp_port'   => 465,
                 'crlf'    => "\r\n",
                 'newline' => "\r\n"
