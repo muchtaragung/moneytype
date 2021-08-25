@@ -294,7 +294,7 @@ class Main extends CI_Controller
             $this->email->subject('Money Coach Quiz Results'); //subjek email
             $this->email->message($message);
             if (!$this->email->send()) {
-                $this->email->print_debugger()
+                $this->email->print_debugger();
             } else {
                 redirect('finish');
             }
