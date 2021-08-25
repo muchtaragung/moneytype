@@ -159,7 +159,7 @@ class Main extends CI_Controller
                 'magician' => $magician,
             );
             //send email
-
+			
             $email = $this->input->post('email', true);
             $this->load->library('email'); //panggil library email codeigniter
             $config = [
