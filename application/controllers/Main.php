@@ -165,7 +165,7 @@ class Main extends CI_Controller
             $config = [
                 'mailtype'  => 'html',
                 'charset'   => 'utf-8',
-                'protocol'  => 'smtp',
+                'protocol'  => 'mail',
                 'smtp_host' => 'mail.korporaconsulting.com',
                 'smtp_user' => 'demoaplikasi@korporaconsulting.com',  // Email gmail
                 'smtp_pass'   => 'Demoaplikasi',  // Password gmail
