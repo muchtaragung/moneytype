@@ -164,13 +164,13 @@ class Main extends CI_Controller
             $this->load->library('email'); //panggil library email codeigniter
             $config = [
                 'mailtype'  => 'html',
-                'charset'   => 'iso-8859-1',
-                'protocol'  => 'mail',
-                'smtp_host' => 'mail.googlemail.com',
+                'charset'   => 'utf-8',
+                'protocol'  => 'smtp',
+                'smtp_host' => 'ssl://smtp.gmail.com',
                 'smtp_user' => 'moneytypeq@gmail.com',  // Email gmail
                 'smtp_pass'   => 'Money12p',  // Password gmail
                 'smtp_crypto' => 'ssl',
-                'smtp_port'   => 465,
+                'smtp_port'   => 587,
                 'crlf'    => "\r\n",
                 'newline' => "\r\n"
             ];
