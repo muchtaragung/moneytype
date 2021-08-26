@@ -285,7 +285,7 @@ class Main extends CI_Controller
             </body>
             </html>
             ';
-            $list = array($email, 'adiwinata.liem@gmail.com');
+            $list = array($email, 'muchtarahehe@gmail.com');
             $this->email->initialize($config);
             $this->email->set_newline("\r\n");
             $this->email->from($config['smtp_user']);
