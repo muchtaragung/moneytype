@@ -293,7 +293,8 @@ class Main extends CI_Controller
             $this->email->subject('Money Coach Quiz Results'); //subjek email
             $this->email->message($message);
             if (!$this->email->send()) {
-                $this->email->print_debugger();
+               $this->session->set_flashdata('error', 'Gagal memproses, Silahkan ulangi');
+                redirect(base_url());
             } else {
                 redirect('finish');
             }
