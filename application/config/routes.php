@@ -53,5 +53,5 @@ $route['default_controller'] = 'main';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['result'] = 'main/result';
+$route['result'] = 'moneytype/result';
 $route['finish'] = 'main/finish';
