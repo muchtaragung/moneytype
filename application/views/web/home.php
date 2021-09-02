@@ -9,5 +9,4 @@
         </div>
     </div>
 </div>
-<img src="<?php base_url() ?>assets/assets/icon/vidira.png" alt="">
 <!-- Background image -->
