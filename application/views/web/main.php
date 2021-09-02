@@ -154,7 +154,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-6">
                             <div class="form-group mb-2">
                                 <div class="form-check">
                                     <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="impulsive" id="Impulsive">
@@ -268,7 +268,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-1"></div>
                     </div>
                 </div>
                 <div id="target2" style="display: none;">
@@ -389,7 +388,7 @@
                             </div>
 
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-6">
                             <div class="form-group mb-2">
                                 <div class="form-check">
                                     <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="materialistic" id="Materialistic">
@@ -503,13 +502,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-1"></div>
                     </div>
                 </div>
                 <div id="target3" style="display: none;">
                     <div class="row justify-content-center mt-5">
                         <div class="col-md-2"></div>
-                        <div class="col-md-4">
+                        <div class="col-md-5">
                             <div class="form-group mb-2">
                                 <div class="form-check">
                                     <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="goal_oriented" id="goal_oriented">
@@ -689,7 +687,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-1"></div>
                     </div>
                 </div>
                 <div id="selanjutnya" class="row justify-content-center mt-5">

@@ -270,15 +270,6 @@ class Moneytype extends CI_Controller
         'transforms_reality' => $this->input->post('transforms_reality', true),
       );
 
-      // foreach ($type as $key => $value) {
-      //   if (!empty($value)) {
-      //     if ($value == 1) {
-      //       $value = "Yes";
-      //     }
-      //     echo  $key . $value;
-      //     echo "<br>";
-      //   }
-      // }
       $this->excel($type, $user);
       //send email
       $email = $this->input->post('email', true);
@@ -298,10 +289,13 @@ class Moneytype extends CI_Controller
       $message =  '
             <html>
             <head>
-            <title>Money Coach Quiz Results</title>
+            <title>Hasil Money Quiz</title>
             </head>
             <body>
-            <h2>Congratulations! Here are your results</h2>
+            <p>Hello ' . $user['name'] . ',</p>
+            <p>Terima kasih telah mengikuti Money Quiz dari Vidira Money Coaching!</p>
+            <p>Kami telah memberikan hasil Money Quiz Anda di bawah ini. Namun, untuk memahami pentingnya hasil Quiz Anda dan mempelajari tentang Money Type Anda serta perilaku yang mendasarinya, membutuhkan expertise seorang Certified Money Coach. Tapi jangan khawatir, kami siap membantu Anda dan ingin menawarkan sesi Money Coaching secara gratis.</p>
+            <p>Di sesi Anda ini, Certified Money Coach (CMC)® akan membantu Anda menemukan dan memahami bagaimana Money Type Anda mempengaruhi perilaku dan emosi Anda terhadap uang, baik secara pribadi maupun finansial. Karena Profil Uang setiap orang adalah unik, sesi Coaching individu Anda dirancang khusus untuk menangani profil Anda. Tidak ada pendekatan “satu  untuk semua” dalam proses coaching kami. Kami juga berjanji bahwa untuk kali ini, sesi coaching Anda ini tanpa biaya dan tanpa keharusan untuk berkomitmen lebih lanjut.</p>
             <table>
                 <tr>
                 <th width="150px" style="text-align: left ; line-height: 15px;">Archetype</th>
@@ -403,16 +397,22 @@ class Moneytype extends CI_Controller
                       </table>
                     </td>
                 </tr>
-            
+                </table>
+                <p>Jika Anda ingin bertanya lebih lanjut, silahkan menghubungi kami di <a href="mailto:adiwinata@vidiracoaching.com">adiwinata@vidiracoaching.com</a></p>
+                <p>Salam,<br>
+                Adiwinata Liem, CFP®, CMC® <br>
+                Vidira Money Coaching <br></p>
+                <p>"We help ALIGN your MONEY with your DREAM."</p>
             </body>
             </html>
             ';
       // $list = array($email, 'muchtarahehe@gmail.com');
       $this->email->initialize($config);
+      $this->email->attach('./assets/assets/icon/vidira-logo.jpg', 'inline');
       $this->email->set_newline("\r\n");
       $this->email->from($config['smtp_user']);
       $this->email->to($email);
-      $this->email->subject('Money Coach Quiz Results'); //subjek email
+      $this->email->subject('Hasil Money Quiz'); //subjek email
       $this->email->message($message);
       $email1 = $this->email->send();
 
@@ -431,7 +431,7 @@ class Moneytype extends CI_Controller
       $message2 =  '
           <html>
           <head>
-          <title>Money Coach Quiz New User</title>
+          <title>Hasil Money Quiz New User</title>
           </head>
           <body>
           <h2>New User</h2>
@@ -554,11 +554,12 @@ class Moneytype extends CI_Controller
           </body>
           </html>
           ';
+
       $this->email->initialize($config2);
       $this->email->set_newline("\r\n");
       $this->email->from($config2['smtp_user']);
       $this->email->to('muchtarahehe@gmail.com');
-      $this->email->subject('Money Coach Quiz Results New User'); //subjek email
+      $this->email->subject('Hasil Money Quiz New User'); //subjek email
       $this->email->message($message2);
       $this->email->attach('./excel/' . $user['name'] . '-' . $user['phone'] . '.xlsx');
       $email2 =  $this->email->send();
