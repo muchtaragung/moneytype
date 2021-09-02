@@ -287,9 +287,9 @@ class Moneytype extends CI_Controller
                 'mailtype'  => 'html',
                 'charset'   => 'utf-8',
                 'protocol'  => 'mail',
-                'smtp_host' => 'mail.korporaconsulting.com',
-                'smtp_user' => 'demoaplikasi@korporaconsulting.com',  // Email gmail
-                'smtp_pass'   => 'Demoaplikasi',  // Password gmail
+                'smtp_host' => 'mail.vidiracoaching.com',
+                'smtp_user' => 'demoinfo@vidiracoaching.com',  // Email gmail
+                'smtp_pass'   => 'Demoinfo',  // Password gmail
                 'smtp_port'   => 465,
                 'crlf'    => "\r\n",
                 'newline' => "\r\n"
@@ -419,9 +419,9 @@ class Moneytype extends CI_Controller
                 'mailtype'  => 'html',
                 'charset'   => 'utf-8',
                 'protocol'  => 'mail',
-                'smtp_host' => 'mail.korporaconsulting.com',
-                'smtp_user' => 'demoaplikasi@korporaconsulting.com',  // Email gmail
-                'smtp_pass'   => 'Demoaplikasi',  // Password gmail
+                'smtp_host' => 'mail.vidiracoaching.com',
+                'smtp_user' => 'demoinfo@vidiracoaching.com',  // Email gmail
+                'smtp_pass'   => 'Demoinfo',  // Password gmail
                 'smtp_port'   => 465,
                 'crlf'    => "\r\n",
                 'newline' => "\r\n"
