@@ -14,10 +14,10 @@
             <!-- Footer About Text-->
             <div class="col-lg-6">
                 <h4 class="text-uppercase text-dark mb-4">Services</h4>
-                <a class="text-dark" style="text-decoration:none" href="http://startbootstrap.com">One-on-one Coaching</a><br>
-                <a class="text-dark" style="text-decoration:none" href="http://startbootstrap.com">Group Coaching</a><br>
-                <a class="text-dark" style="text-decoration:none" href="http://startbootstrap.com">Workshop Facilitation</a><br>
-                <a class="text-dark" style="text-decoration:none" href="http://startbootstrap.com">Keynotes & Seminars</a>
+                <a class="text-dark" href="#">Financial Planning</a><br>
+                <a class="text-dark" href="#">Money Coaching</a><br>
+                <a class="text-dark" href="#">Resources</a><br>
+                <a class="text-dark" href="#">Contact</a>
             </div>
         </div>
     </div>
