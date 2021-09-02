@@ -1,6 +1,6 @@
 <body id="page-top">
     <div id="nav-scroll" class="nav-scroll">
-        <nav class="navbar navbar-expand-lg bg-warning fixed-top" id="mainNav">
+        <nav class="navbar navbar-expand-lg bg-warning text-uppercase fixed-top" id="mainNav">
             <div class="container">
                 <a class="navbar-brand text-dark" href="#page-top"><img width="170px" src="<?php base_url() ?>assets/assets/icon/vidira.png" alt=""></a>
                 <button class="navbar-toggler font-weight-bold bg-warning text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,10 +31,22 @@
                         <li class="nav-item mx-0 mx-lg-1"><a class="text-dark nav-link rounded" href="">Resources</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="text-dark nav-link rounded" href="">Contact</a></li>
                     </ul>
-                    <ul class="navbar-nav pull-lg-right ">
-                        <li class="nav-item"><a class="btn btn-sm btn-outline-dark btn-social mx-1 text-dark" href="#!"><i class="fab text-primary fa-fw fa-facebook-f"></i></a></li>
-                        <li class="nav-item"><a class="btn btn-sm btn-outline-dark btn-social mx-1 text-dark" href="#!"><i class="fab text-info fa-fw fa-twitter"></i></a></li>
-                        <li class="nav-item"><a class="btn btn-sm btn-outline-dark btn-social mx-1 text-dark" href="#!"><i class="fab text-danger fa-fw fa-instagram"></i></a></li>
+                    <ul class="navbar-nav ml-auto nav-flex-icons">
+                        <li class="nav-item">
+                            <a title="Facebook" class="text-dark nav-link waves-effect waves-light">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a title="Twitter" class="text-dark nav-link waves-effect waves-light">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a title="Instagram" class="text-dark nav-link waves-effect waves-light">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
