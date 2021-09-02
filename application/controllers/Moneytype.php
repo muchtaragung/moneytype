@@ -275,17 +275,16 @@ class Moneytype extends CI_Controller
       $email = $this->input->post('email', true);
       $this->load->library('email'); //panggil library email codeigniter
       $config = [
-        'mailtype'  => 'html',
-        'charset'   => 'utf-8',
-        'protocol'  => 'smtp',
-        'smtp_host' => 'smtp.gmail.com',
-        'smtp_user' => 'moneytypeq@gmail.com',  // Email gmail
-        'smtp_pass'   => 'Money12p',  // Password gmail
-        'smtp_crypto' => 'ssl',
-        'smtp_port'   => 465,
-        'crlf'    => "\r\n",
-        'newline' => "\r\n"
-      ];
+                'mailtype'  => 'html',
+                'charset'   => 'utf-8',
+                'protocol'  => 'mail',
+                'smtp_host' => 'mail.vidiracoaching.com',
+                'smtp_user' => 'demoinfo@vidiracoaching.com',  // Email gmail
+                'smtp_pass'   => 'Demoinfo',  // Password gmail
+                'smtp_port'   => 465,
+                'crlf'    => "\r\n",
+                'newline' => "\r\n"
+            ];
       $message =  '
             <html>
             <head>
@@ -417,17 +416,16 @@ class Moneytype extends CI_Controller
       $email1 = $this->email->send();
 
       $config2 = [
-        'mailtype'  => 'html',
-        'charset'   => 'utf-8',
-        'protocol'  => 'smtp',
-        'smtp_host' => 'smtp.gmail.com',
-        'smtp_user' => 'moneytypeq@gmail.com',  // Email gmail
-        'smtp_pass'   => 'Money12p',  // Password gmail
-        'smtp_crypto' => 'ssl',
-        'smtp_port'   => 465,
-        'crlf'    => "\r\n",
-        'newline' => "\r\n"
-      ];
+                'mailtype'  => 'html',
+                'charset'   => 'utf-8',
+                'protocol'  => 'mail',
+                'smtp_host' => 'mail.vidiracoaching.com',
+                'smtp_user' => 'demoinfo@vidiracoaching.com',  // Email gmail
+                'smtp_pass'   => 'Demoinfo',  // Password gmail
+                'smtp_port'   => 465,
+                'crlf'    => "\r\n",
+                'newline' => "\r\n"
+            ];
       $message2 =  '
           <html>
           <head>
