@@ -1,17 +1,17 @@
     <section class="page-section bg-white text-black mb-0">
         <div class="container">
+            <h3 class="pt-5 mt-5 mb-5 text-center">Money Type Quiz</h3>
             <?php if ($this->session->flashdata('error') != null) { ?>
                 <div class="alert alert-danger" role="alert">
                     <?php echo $this->session->flashdata('error'); ?>
                 </div>
             <?php } ?>
-            <h3 class="pt-5 mt-5 mb-5 text-center">Money Type Quiz</h3>
             <form method="post" id="money" action="<?= base_url() ?>result">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 col-xl-7">
                         <input type="hidden" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash(); ?>">
                         <div class="form-group mb-3">
-                            <input class="form-control form-control-lg" name="name" required type="text" title="Kami membutuhkan nama anda" placeholder="Siapa nama anda?">
+                            <input class="form-control form-control-lg" name="nama" required type="text" title="Kami membutuhkan nama anda" placeholder="Siapa nama anda?">
                             <label for="name"></label>
                             <?php
                             echo form_error('name');
@@ -744,4 +744,7 @@
             });
 
         });
+        // $('#money').submit(function() {
+        //     $(this).find("button[type='submit']").prop('disabled', true);
+        // });
     </script>

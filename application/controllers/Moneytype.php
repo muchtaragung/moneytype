@@ -11,6 +11,7 @@ class Moneytype extends CI_Controller
   {
     parent::__construct();
     $this->load->library('email');
+    $this->load->model('M_user', 'user');
     // $this->load->library('PHPExcel/iofactory');
     $this->load->helper('security');
     $this->load->library('form_validation');
@@ -23,20 +24,30 @@ class Moneytype extends CI_Controller
     $this->load->view('web/main');
     $this->load->view('web/layout/footer');
   }
-  public function excel($type, $user)
+  public function excel($kata, $user, $type)
   {
     $spreadsheet = new Spreadsheet();
     $sheet = $spreadsheet->getActiveSheet();
     $sheet->setCellValue('A1', 'Nama');
     $sheet->setCellValue('A2', 'Email');
     $sheet->setCellValue('A3', 'No telepon');
-    $sheet->setCellValue('A5', 'Type');
-    $sheet->setCellValue('B5', 'Checked');
-    $sheet->setCellValue('B' . 1, $user['name']);
+    $sheet->setCellValue('A5', 'Archetype');
+    $sheet->setCellValue('B5', 'SCORE');
+    $sheet->setCellValue('A15', 'Type');
+    $sheet->setCellValue('B15', 'Checked');
+    $sheet->setCellValue('B' . 1, $user['nama']);
     $sheet->setCellValue('B' . 2, $user['email']);
     $sheet->setCellValue('B' . 3, $user['phone']);
-    $rows = 6;
+    $rows1 = 6;
     foreach ($type as $key => $val) {
+      if (!empty($val)) {
+        $sheet->setCellValue('A' . $rows1, $key);
+        $sheet->setCellValue('B' . $rows1, round($val, 0) . '%');
+        $rows1++;
+      }
+    }
+    $rows = 16;
+    foreach ($kata as $key => $val) {
       if (!empty($val)) {
         if ($val == 1) {
           $val = "Yes";
@@ -46,7 +57,8 @@ class Moneytype extends CI_Controller
         $rows++;
       }
     }
-    $nama = $user['name'];
+
+    $nama = $user['nama'];
     $no = $user['phone'];
     $filename = $nama . '-' . $no . '.xlsx';
     $writer = new Xlsx($spreadsheet);
@@ -56,7 +68,7 @@ class Moneytype extends CI_Controller
 
   public function result()
   {
-    $this->form_validation->set_rules('name', 'Name', 'required|xss_clean');
+    $this->form_validation->set_rules('nama', 'Nama', 'required|xss_clean');
     $this->form_validation->set_rules('email', 'Email', 'required|xss_clean');
     $this->form_validation->set_rules('phone', 'Phone', 'required|xss_clean');
     $this->form_validation->set_error_delimiters('<span style="font-size: 10px;color:red">', '</span>');
@@ -64,7 +76,7 @@ class Moneytype extends CI_Controller
       $this->index();
     } else {
 
-      $name = $this->input->post('name', true);
+      $name = $this->input->post('nama', true);
       $email = $this->input->post('email', true);
       $phone = $this->input->post('phone', true);
 
@@ -185,106 +197,142 @@ class Moneytype extends CI_Controller
       $magician =  ($no8 / 18) * 100;
 
       $user = array(
-        'name' => $this->input->post('name', true),
+        'nama' => $this->input->post('nama', true),
         'email' => $this->input->post('email', true),
         'phone' => $this->input->post('phone', true)
       );
-      $type = array(
-        'anxious' => $this->input->post('anxious', true),
-        'seeks_rescue' => $this->input->post('seeks_rescue', true),
-        'trusting' => $this->input->post('trusting', true),
-        'feels_powerless' => $this->input->post('feels_powerless', true),
-        'naive' => $this->input->post('naive', true),
-        'happy_go_lucky' => $this->input->post('happy_go_lucky', true),
-        'fearful' => $this->input->post('fearful', true),
-        'financially_dependant' => $this->input->post('financially_dependant', true),
-        'seeks_security' => $this->input->post('seeks_security', true),
-        'non_confrontational' => $this->input->post('non_confrontational', true),
-        'represses_feelings_beliefs' => $this->input->post('represses_feelings_beliefs', true),
-        'indecisive' => $this->input->post('indecisive', true),
-        'prone_to_blame' => $this->input->post('prone_to_blame', true),
-        'highly_emotional' => $this->input->post('highly_emotional', true),
-        'lives_in_past' => $this->input->post('lives_in_past', true),
-        'financially_irresponsible' => $this->input->post('financially_irresponsible', true),
-        'self_fulfilling_prophecy' => $this->input->post('self_fulfilling_prophecy', true),
-        'long_suffering' => $this->input->post('long_suffering', true),
-        'passive_aggressive' => $this->input->post('passive_aggressive', true),
-        'resentful' => $this->input->post('resentful', true),
-        'unforgiving' => $this->input->post('unforgiving', true),
-        'addictive' => $this->input->post('addictive', true),
-        'powerful' => $this->input->post('powerful', true),
-        'disciplined' => $this->input->post('disciplined', true),
-        'goal_oriented' => $this->input->post('goal_oriented', true),
-        'calculating' => $this->input->post('calculating', true),
-        'rescuer' => $this->input->post('rescuer', true),
-        'generous' => $this->input->post('generous', true),
-        'discerning' => $this->input->post('discerning', true),
-        'wise' => $this->input->post('wise', true),
-        'financially_successful' => $this->input->post('financially_successful', true),
-        'collaborative' => $this->input->post('collaborative', true),
-        'loyal' => $this->input->post('loyal', true),
-        'cautious' => $this->input->post('cautious', true),
-        'feels_betrayed' => $this->input->post('feels_betrayed', true),
-        'judgmental' => $this->input->post('judgmental', true),
-        'manipulative' => $this->input->post('manipulative', true),
-        'controlling' => $this->input->post('controlling', true),
-        'caretaker' => $this->input->post('caretaker', true),
-        'self_sacrificing' => $this->input->post('self_sacrificing', true),
-        'compassionate' => $this->input->post('compassionate', true),
-        'unsupported' => $this->input->post('unsupported', true),
-        'perfectionist' => $this->input->post('perfectionist', true),
-        'lives_for_today' => $this->input->post('lives_for_today', true),
-        'careless' => $this->input->post('careless', true),
-        'restless' => $this->input->post('restless', true),
-        'undisciplined' => $this->input->post('undisciplined', true),
-        'impulsive' => $this->input->post('impulsive', true),
-        'optimistic' => $this->input->post('optimistic', true),
-        'overly_generous' => $this->input->post('overly_generous', true),
-        'adventurous' => $this->input->post('adventurous', true),
-        'over_indulgent' => $this->input->post('over_indulgent', true),
-        'reckless' => $this->input->post('reckless', true),
-        'love_relationship' => $this->input->post('love_relationship', true),
-        'detached' => $this->input->post('detached', true),
-        'reclusive' => $this->input->post('reclusive', true),
-        'internally_motivated' => $this->input->post('internally_motivated', true),
-        'authentic' => $this->input->post('authentic', true),
-        'non_materialistic' => $this->input->post('non_materialistic', true),
-        'passive' => $this->input->post('passive', true),
-        'creative' => $this->input->post('creative', true),
-        'spiritual' => $this->input->post('spiritual', true),
-        'conflicted' => $this->input->post('conflicted', true),
-        'resistant' => $this->input->post('resistant', true),
-        'highly_critical' => $this->input->post('highly_critical', true),
-        'materialistic' => $this->input->post('materialistic', true),
-        'secretive' => $this->input->post('secretive', true),
-        'obsessive' => $this->input->post('obsessive', true),
-        'oppressive' => $this->input->post('oppressive', true),
-        'angry' => $this->input->post('angry', true),
-        'confident' => $this->input->post('confident', true),
-        'resourceful' => $this->input->post('resourceful', true),
-        'conscious' => $this->input->post('conscious', true),
-        'guided_by_faith' => $this->input->post('guided_by_faith', true),
-        'enlightened' => $this->input->post('enlightened', true),
-        'balanced' => $this->input->post('balanced', true),
-        'unattached' => $this->input->post('unattached', true),
-        'transforms_reality' => $this->input->post('transforms_reality', true),
+      $this->user->tambah_user($user);
+      $id_user = $this->db->insert_id();
+
+
+      $kata = array(
+        'Anxious' => $this->input->post('anxious', true),
+        'Seeks rescue' => $this->input->post('seeks_rescue', true),
+        'Trusting' => $this->input->post('trusting', true),
+        'Feels powerless' => $this->input->post('feels_powerless', true),
+        'Naive' => $this->input->post('naive', true),
+        'Happy go lucky' => $this->input->post('happy_go_lucky', true),
+        'Fearful' => $this->input->post('fearful', true),
+        'Financially dependant' => $this->input->post('financially_dependant', true),
+        'Seeks security' => $this->input->post('seeks_security', true),
+        'Non confrontational' => $this->input->post('non_confrontational', true),
+        'Represses feelings beliefs' => $this->input->post('represses_feelings_beliefs', true),
+        'Indecisive' => $this->input->post('indecisive', true),
+        'Prone to blame' => $this->input->post('prone_to_blame', true),
+        'Highly emotional' => $this->input->post('highly_emotional', true),
+        'Lives in past' => $this->input->post('lives_in_past', true),
+        'Financially irresponsible' => $this->input->post('financially_irresponsible', true),
+        'Self fulfilling prophecy' => $this->input->post('self_fulfilling_prophecy', true),
+        'Long suffering' => $this->input->post('long_suffering', true),
+        'Passive aggressive' => $this->input->post('passive_aggressive', true),
+        'Resentful' => $this->input->post('resentful', true),
+        'Unforgiving' => $this->input->post('unforgiving', true),
+        'Addictive' => $this->input->post('addictive', true),
+        'Powerful' => $this->input->post('powerful', true),
+        'Disciplined' => $this->input->post('disciplined', true),
+        'Goal oriented' => $this->input->post('goal_oriented', true),
+        'Calculating' => $this->input->post('calculating', true),
+        'Rescuer' => $this->input->post('rescuer', true),
+        'Generous' => $this->input->post('generous', true),
+        'Discerning' => $this->input->post('discerning', true),
+        'Wise' => $this->input->post('wise', true),
+        'Financially successful' => $this->input->post('financially_successful', true),
+        'Collaborative' => $this->input->post('collaborative', true),
+        'Loyal' => $this->input->post('loyal', true),
+        'Cautious' => $this->input->post('cautious', true),
+        'Feels betrayed' => $this->input->post('feels_betrayed', true),
+        'Judgmental' => $this->input->post('judgmental', true),
+        'Manipulative' => $this->input->post('manipulative', true),
+        'Controlling' => $this->input->post('controlling', true),
+        'Caretaker' => $this->input->post('caretaker', true),
+        'Self Sacrificing' => $this->input->post('self_sacrificing', true),
+        'Compassionate' => $this->input->post('compassionate', true),
+        'Unsupported' => $this->input->post('unsupported', true),
+        'Perfectionist' => $this->input->post('perfectionist', true),
+        'Lives for today' => $this->input->post('lives_for_today', true),
+        'Careless' => $this->input->post('careless', true),
+        'Restless' => $this->input->post('restless', true),
+        'Undisciplined' => $this->input->post('undisciplined', true),
+        'Impulsive' => $this->input->post('impulsive', true),
+        'Optimistic' => $this->input->post('optimistic', true),
+        'Overly generous' => $this->input->post('overly_generous', true),
+        'Adventurous' => $this->input->post('adventurous', true),
+        'Over indulgent' => $this->input->post('over_indulgent', true),
+        'Reckless' => $this->input->post('reckless', true),
+        'Love/Hate relationship' => $this->input->post('love_relationship', true),
+        'Detached' => $this->input->post('detached', true),
+        'Reclusive' => $this->input->post('reclusive', true),
+        'Internally motivated' => $this->input->post('internally_motivated', true),
+        'Authentic' => $this->input->post('authentic', true),
+        'Non materialistic' => $this->input->post('non_materialistic', true),
+        'Passive' => $this->input->post('passive', true),
+        'Creative' => $this->input->post('creative', true),
+        'Spiritual' => $this->input->post('spiritual', true),
+        'Conflicted' => $this->input->post('conflicted', true),
+        'Resistant' => $this->input->post('resistant', true),
+        'Highly critical' => $this->input->post('highly_critical', true),
+        'Materialistic' => $this->input->post('materialistic', true),
+        'Secretive' => $this->input->post('secretive', true),
+        'Obsessive' => $this->input->post('obsessive', true),
+        'Oppressive' => $this->input->post('oppressive', true),
+        'Angry' => $this->input->post('angry', true),
+        'Confident' => $this->input->post('confident', true),
+        'Resourceful' => $this->input->post('resourceful', true),
+        'Conscious' => $this->input->post('conscious', true),
+        'Guided by faith' => $this->input->post('guided_by_faith', true),
+        'Enlightened' => $this->input->post('enlightened', true),
+        'Balanced' => $this->input->post('balanced', true),
+        'Unattached' => $this->input->post('unattached', true),
+        'Transforms Reality' => $this->input->post('transforms_reality', true),
       );
 
-      $this->excel($type, $user);
+      foreach ($kata as $key => $val) {
+        if (!empty($val)) {
+          $kata1 = array(
+            'nama_kata' => $key,
+            'id_user' => $id_user
+          );
+          $this->db->insert('kata', $kata1);
+        }
+      }
+
+
+      $type = array(
+        'Innocent' => $innocent,
+        'Victim' => $victim,
+        'Warrior' => $warrior,
+        'Martyr' => $martyr,
+        'Fool' => $fool,
+        'Creator/Artist' => $creator,
+        'Tyrant' => $tyrant,
+        'Magician' => $magician,
+      );
+      foreach ($type as $key => $val) {
+        if (!empty($val)) {
+          $type1 = array(
+            'archetype' => $key,
+            'score' => $val,
+            'id_user' => $id_user
+          );
+          $this->db->insert('type', $type1);
+        }
+      }
+      $this->excel($kata, $user, $type);
+      // die;
       //send email
       $email = $this->input->post('email', true);
       $this->load->library('email'); //panggil library email codeigniter
       $config = [
-                'mailtype'  => 'html',
-                'charset'   => 'utf-8',
-                'protocol'  => 'mail',
-                'smtp_host' => 'mail.vidiracoaching.com',
-                'smtp_user' => 'demoinfo@vidiracoaching.com',  // Email gmail
-                'smtp_pass'   => 'Demoinfo',  // Password gmail
-                'smtp_port'   => 465,
-                'crlf'    => "\r\n",
-                'newline' => "\r\n"
-            ];
+        'mailtype'  => 'html',
+        'charset'   => 'utf-8',
+        'protocol'  => 'mail',
+        'smtp_host' => 'mail.vidiracoaching.com',
+        'smtp_user' => 'demoinfo@vidiracoaching.com',  // Email gmail
+        'smtp_pass'   => 'Demoinfo',  // Password gmail
+        'smtp_port'   => 465,
+        'crlf'    => "\r\n",
+        'newline' => "\r\n"
+      ];
       $message =  '
             <html>
             <head>
@@ -416,16 +464,16 @@ class Moneytype extends CI_Controller
       $email1 = $this->email->send();
 
       $config2 = [
-                'mailtype'  => 'html',
-                'charset'   => 'utf-8',
-                'protocol'  => 'mail',
-                'smtp_host' => 'mail.vidiracoaching.com',
-                'smtp_user' => 'demoinfo@vidiracoaching.com',  // Email gmail
-                'smtp_pass'   => 'Demoinfo',  // Password gmail
-                'smtp_port'   => 465,
-                'crlf'    => "\r\n",
-                'newline' => "\r\n"
-            ];
+        'mailtype'  => 'html',
+        'charset'   => 'utf-8',
+        'protocol'  => 'mail',
+        'smtp_host' => 'mail.vidiracoaching.com',
+        'smtp_user' => 'demoinfo@vidiracoaching.com',  // Email gmail
+        'smtp_pass'   => 'Demoinfo',  // Password gmail
+        'smtp_port'   => 465,
+        'crlf'    => "\r\n",
+        'newline' => "\r\n"
+      ];
       $message2 =  '
           <html>
           <head>
@@ -556,7 +604,7 @@ class Moneytype extends CI_Controller
       $this->email->initialize($config2);
       $this->email->set_newline("\r\n");
       $this->email->from($config2['smtp_user']);
-      $this->email->to('adiwinata.liem@gmail.com');
+      $this->email->to('muchtarahehe@gmail.com');
       $this->email->subject('Hasil Money Quiz New User'); //subjek email
       $this->email->message($message2);
       $this->email->attach('./excel/' . $user['name'] . '-' . $user['phone'] . '.xlsx');
