@@ -54,7 +54,7 @@ class User extends CI_Controller
             $sheet->setCellValue('B' . $rows, 'Yes');
             $rows++;
         }
-        $nama = $user->nama;
+        $nama = $user->email;
         $no = $user->phone;
         $filename = $nama . '-' . $no . '.xlsx';
         $writer = new Xlsx($spreadsheet);

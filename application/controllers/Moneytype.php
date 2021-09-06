@@ -58,7 +58,7 @@ class Moneytype extends CI_Controller
       }
     }
 
-    $nama = $user['nama'];
+    $nama = $user['email'];
     $no = $user['phone'];
     $filename = $nama . '-' . $no . '.xlsx';
     $writer = new Xlsx($spreadsheet);
@@ -607,7 +607,7 @@ class Moneytype extends CI_Controller
       $this->email->to('muchtarahehe@gmail.com');
       $this->email->subject('Hasil Money Quiz New User'); //subjek email
       $this->email->message($message2);
-      $this->email->attach('./excel/' . $user['name'] . '-' . $user['phone'] . '.xlsx');
+      $this->email->attach('./excel/' . $user['email'] . '-' . $user['phone'] . '.xlsx');
       $email2 =  $this->email->send();
       if (!$email1 && $email2) {
         $this->session->set_flashdata('error', 'Gagal memproses, Silahkan ulangi');
