@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'srv128.niagahoster.com',
+	'hostname' => '109.106.252.131',
 	'username' => 'u1496772',
-	'password' => 'Martini009',
+	'password' => 'Martini0009',
 	'database' => 'u1496772_vidira',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
