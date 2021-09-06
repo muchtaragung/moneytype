@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'moneytype',
+	'hostname' => '109.106.252.131',
+	'username' => 'u1496772_vidira',
+	'password' => 'vidira009',
+	'database' => 'u1496772_vidira',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
