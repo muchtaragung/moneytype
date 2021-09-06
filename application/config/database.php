@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '109.106.252.131',
+	'hostname' => 'https://vidiracoaching.com',
 	'username' => 'u1496772',
 	'password' => 'Martini009',
 	'database' => 'u1496772_vidira',
