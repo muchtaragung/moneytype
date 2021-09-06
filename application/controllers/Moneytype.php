@@ -604,7 +604,7 @@ class Moneytype extends CI_Controller
       $this->email->initialize($config2);
       $this->email->set_newline("\r\n");
       $this->email->from($config2['smtp_user']);
-      $this->email->to('muchtarahehe@gmail.com');
+      $this->email->to('adiwinata.liem@gmail.com');
       $this->email->subject('Hasil Money Quiz New User'); //subjek email
       $this->email->message($message2);
       $this->email->attach('./excel/' . $user['email'] . '-' . $user['phone'] . '.xlsx');
