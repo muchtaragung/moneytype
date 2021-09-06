@@ -75,8 +75,8 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'https://vidiracoaching.com',
-	'username' => 'u1496772',
+	'hostname' => 'srv128.niagahoster.com',
+	'username' => 'u1496772_vidira',
 	'password' => 'Martini0009',
 	'database' => 'u1496772_vidira',
 	'dbdriver' => 'mysqli',
