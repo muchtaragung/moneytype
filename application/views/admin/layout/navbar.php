@@ -108,15 +108,9 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="../layout/top-nav.html" class="nav-link">
+                            <a href="<?= base_url('admin/logo') ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Header</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../layout/top-nav-sidebar.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Footer</p>
+                                <p>Logo</p>
                             </a>
                         </li>
                         <li class="nav-item">
