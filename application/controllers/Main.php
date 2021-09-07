@@ -8,23 +8,29 @@ class Main extends CI_Controller
   {
     parent::__construct();
     $this->load->library('email');
+    $this->load->model('M_user', 'user');
+    $this->load->model('M_web', 'web');
     $this->load->helper('security');
     $this->load->library('form_validation');
   }
   public function index()
   {
     $data['title'] = 'Home';
+    $data['logo'] = $this->web->get_logo()->row();
+    $data['sosmed'] = $this->web->get_sosmed()->row();
     $this->load->view('web/layout/header', $data);
-    $this->load->view('web/layout/navbar');
+    $this->load->view('web/layout/navbar', $data);
     $this->load->view('web/home');
-    $this->load->view('web/layout/footer');
+    $this->load->view('web/layout/footer', $data);
   }
   public function finish()
   {
     $data['title'] = 'Money Type Quiz';
+    $data['logo'] = $this->web->get_logo()->row();
+    $data['sosmed'] = $this->web->get_sosmed()->row();
     $this->load->view('web/layout/header', $data);
-    $this->load->view('web/layout/navbar');
+    $this->load->view('web/layout/navbar', $data);
     $this->load->view('web/finish');
-    $this->load->view('web/layout/footer');
+    $this->load->view('web/layout/footer', $data);
   }
 }

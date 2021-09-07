@@ -14,15 +14,28 @@ class User extends CI_Controller
         $this->load->helper('security');
         $this->load->library('form_validation');
         $this->load->model('M_user', 'user');
+        $this->load->model('M_web', 'web');
         if ($this->session->userdata('id') == NULL) {
             redirect('admin/login');
         }
     }
     public function index()
     {
+        $data['logo'] = $this->web->get_logo()->row();
         $this->load->view('admin/layout/header');
-        $this->load->view('admin/layout/navbar');
+        $this->load->view('admin/layout/navbar', $data);
         $this->load->view('admin/user');
+        $this->load->view('admin/layout/footer');
+    }
+    public function detail($id)
+    {
+        $data['logo'] = $this->web->get_logo()->row();
+        $data['type'] = $this->user->get_type($id)->result();
+        $data['kata'] = $this->user->get_kata($id)->result();
+        $data['user'] = $this->user->get_user($id)->result();
+        $this->load->view('admin/layout/header');
+        $this->load->view('admin/layout/navbar', $data);
+        $this->load->view('admin/detail_user', $data);
         $this->load->view('admin/layout/footer');
     }
     public function excel($id)
@@ -95,16 +108,7 @@ class User extends CI_Controller
         //output to json format
         echo json_encode($output);
     }
-    public function detail($id)
-    {
-        $data['type'] = $this->user->get_type($id)->result();
-        $data['kata'] = $this->user->get_kata($id)->result();
-        $data['user'] = $this->user->get_user($id)->result();
-        $this->load->view('admin/layout/header');
-        $this->load->view('admin/layout/navbar');
-        $this->load->view('admin/detail_user', $data);
-        $this->load->view('admin/layout/footer');
-    }
+
 
     public function ajax_delete($id)
     {

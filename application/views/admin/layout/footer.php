@@ -25,28 +25,31 @@
 <script src="<?= base_url() ?>assets/admin/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="<?= base_url() ?>assets/admin/datatables-buttons/js/buttons.colVis.min.js"></script>
 <!-- AdminLTE App -->
+<script src="<?= base_url() ?>assets/admin/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <script src="<?= base_url() ?>assets/admin/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?= base_url() ?>assets/admin/demo.js"></script>
-<!-- Page specific script -->
-<script>
+<script src="<?= base_url() . 'assets/admin/ckeditor/ckeditor.js' ?>"></script>
+<script type="text/javascript">
     $(function() {
-        $("#example1").DataTable({
-            "responsive": true,
-            "lengthChange": false,
-            "autoWidth": false,
-            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-        $('#example2').DataTable({
-            "paging": true,
-            "lengthChange": false,
-            "searching": false,
-            "ordering": true,
-            "info": true,
-            "autoWidth": false,
-            "responsive": true,
-        });
+        CKEDITOR.replace('ckeditor');
     });
+
+    $(function() {
+        bsCustomFileInput.init();
+    });
+
+    function previewFile(input) {
+        var file = $("input[type=file]").get(0).files[0];
+
+        if (file) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                $("#previewImg").attr("src", reader.result);
+            }
+            reader.readAsDataURL(file);
+        }
+    }
 </script>
 </body>
 

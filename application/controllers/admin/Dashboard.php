@@ -9,6 +9,8 @@ class Dashboard extends CI_Controller
         parent::__construct();
         $this->load->library('email');
         $this->load->helper('security');
+        $this->load->model('M_user', 'user');
+        $this->load->model('M_web', 'web');
         $this->load->library('form_validation');
         if ($this->session->userdata('id') == NULL) {
             redirect('admin/login');
@@ -16,8 +18,9 @@ class Dashboard extends CI_Controller
     }
     public function index()
     {
+        $data['logo'] = $this->web->get_logo()->row();
         $this->load->view('admin/layout/header');
-        $this->load->view('admin/layout/navbar');
+        $this->load->view('admin/layout/navbar', $data);
         $this->load->view('admin/dashboard');
         $this->load->view('admin/layout/footer');
     }

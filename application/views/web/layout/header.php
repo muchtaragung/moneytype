@@ -21,5 +21,11 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
     <link rel="stylesheet" media="screen" href="<?= base_url() ?>assets/css/screen.css">
     <script src="<?= base_url() ?>assets/js/jquery.validate.js"></script>
+    
 
 </head>
+<style>
+    div.dropdown-toggle {
+        z-index: -1;
+    }
+</style>

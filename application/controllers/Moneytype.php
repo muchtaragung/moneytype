@@ -12,6 +12,7 @@ class Moneytype extends CI_Controller
     parent::__construct();
     $this->load->library('email');
     $this->load->model('M_user', 'user');
+    $this->load->model('M_web', 'web');
     // $this->load->library('PHPExcel/iofactory');
     $this->load->helper('security');
     $this->load->library('form_validation');
@@ -19,10 +20,12 @@ class Moneytype extends CI_Controller
   public function index()
   {
     $data['title'] = 'Money Type Quiz';
+    $data['logo'] = $this->web->get_logo()->row();
+    $data['sosmed'] = $this->web->get_sosmed()->row();
     $this->load->view('web/layout/header', $data);
-    $this->load->view('web/layout/navbar');
+    $this->load->view('web/layout/navbar', $data);
     $this->load->view('web/main');
-    $this->load->view('web/layout/footer');
+    $this->load->view('web/layout/footer', $data);
   }
   public function excel($kata, $user, $type)
   {

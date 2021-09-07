@@ -25,8 +25,8 @@ class Login extends CI_Controller
             if (password_verify($pass, $cek_login->password)) {
                 $this->session->set_userdata('id', $cek_login->id);
                 $this->session->set_userdata('email', $cek_login->email);
-                $this->session->set_userdata('login', 'admin');
-                $this->session->set_userdata('name', 'admin');
+                $this->session->set_userdata('login', 'Admin');
+                $this->session->set_userdata('name', 'Admin');
                 redirect('admin/dashboard');
             } else {
                 $this->session->set_flashdata('error', 'Username Atau Password Salah');

@@ -17,6 +17,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= base_url() ?>assets/admin/adminlte.min.css">
     <script src="<?= base_url() ?>assets/admin/jquery/jquery.min.js"></script>
+    <script src="<?= base_url() ?>assets/js/jquery.validate.js"></script>
 
 </head>
 
