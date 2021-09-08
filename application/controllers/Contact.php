@@ -44,7 +44,7 @@ class Contact extends CI_Controller
         $message = '
                     <html>
                         <head>
-                            <title>user Contact Vidira Coahing</title>
+                            <title>User Contact Vidira Coahing</title>
                         </head>
                         <body>
                             <h2>Contact Vidira Coahing</h2>
