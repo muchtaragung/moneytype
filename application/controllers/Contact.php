@@ -44,10 +44,10 @@ class Contact extends CI_Controller
         $message = '
                     <html>
                         <head>
-                            <title>Hasil Money Quiz New User</title>
+                            <title>user Contact Vidira Coahing</title>
                         </head>
                         <body>
-                            <h2>New User</h2>
+                            <h2>Contact Vidira Coahing</h2>
                             <table>
                                 <tr>
                                      <td width="150px">Name</td>
@@ -68,7 +68,7 @@ class Contact extends CI_Controller
         $this->email->initialize($config);
         $this->email->set_newline("\r\n");
         $this->email->from($config['smtp_user']);
-        $this->email->to('muchtarahehe@gmail.com');
+        $this->email->to('adiwinata.liem@gmail.com');
         $this->email->subject($subjek); //subjek email
         $this->email->message($message);
         $email1 = $this->email->send();
