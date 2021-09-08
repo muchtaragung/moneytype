@@ -2,9 +2,16 @@
         <div class="container">
             <h3 class="pt-5 mt-5 mb-5 text-center">Money Type Quiz</h3>
             <?php if ($this->session->flashdata('error') != null) { ?>
-                <div class="alert alert-danger" role="alert">
-                    <?php echo $this->session->flashdata('error'); ?>
-                </div>
+                <script>
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'error',
+                        text: "<?php echo $this->session->flashdata('error'); ?>",
+                        timer: 2500,
+                        showConfirmButton: false,
+                        type: 'error'
+                    });
+                </script>
             <?php } ?>
             <form method="post" id="money" action="<?= base_url() ?>result">
                 <div class="row justify-content-center">

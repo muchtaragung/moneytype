@@ -36,6 +36,14 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="<?= base_url() ?>admin/contact" <?= $this->uri->segment(2) == 'contact' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
+                        <i class="nav-icon fas fa-id-card"></i>
+                        <p>
+                            Contact
+                        </p>
+                    </a>
+                </li>
                 <li class="nav-header">SETTING</li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">

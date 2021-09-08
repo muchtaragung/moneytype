@@ -17,7 +17,7 @@ class Main extends CI_Controller
   {
     $data['title'] = 'Home';
     $data['logo'] = $this->web->get_logo()->row();
-    $data['sosmed'] = $this->web->get_sosmed()->row();
+    $data['sosmed'] = $this->web->get_sosmed()->result();
     $this->load->view('web/layout/header', $data);
     $this->load->view('web/layout/navbar', $data);
     $this->load->view('web/home');
@@ -27,7 +27,7 @@ class Main extends CI_Controller
   {
     $data['title'] = 'Money Type Quiz';
     $data['logo'] = $this->web->get_logo()->row();
-    $data['sosmed'] = $this->web->get_sosmed()->row();
+    $data['sosmed'] = $this->web->get_sosmed()->result();
     $this->load->view('web/layout/header', $data);
     $this->load->view('web/layout/navbar', $data);
     $this->load->view('web/finish');

@@ -31,22 +31,15 @@
                         <li class="nav-item mx-0 mx-lg-1"><a class="text-dark nav-link rounded" href="">Resources</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="text-dark nav-link rounded" href="<?= base_url() ?>contact">Contact</a></li>
                     </ul>
+
                     <ul class="navbar-nav ml-auto nav-flex-icons">
-                        <li class="nav-item">
-                            <a title="Facebook" target="_blank" href="<?= $sosmed->facebook ?>" class="text-dark nav-link waves-effect waves-light">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a title="Twitter" target="_blank" href="<?= $sosmed->twitter ?>" class="text-dark nav-link waves-effect waves-light">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a title="Instagram" target="_blank" href="<?= $sosmed->instagram ?>" class="text-dark nav-link waves-effect waves-light">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </li>
+                        <?php foreach ($sosmed as $key) { ?>
+                            <li class="nav-item">
+                                <a title="<?= $key->nama_sosmed ?>" target="_blank" href="<?= $key->link ?>" class="text-dark nav-link waves-effect waves-light">
+                                    <i class="<?= $key->icon ?>"></i>
+                                </a>
+                            </li>
+                        <?php  } ?>
                     </ul>
                 </div>
             </div>

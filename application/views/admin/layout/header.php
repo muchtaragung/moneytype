@@ -15,10 +15,10 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/admin/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/admin/datatables-buttons/css/buttons.bootstrap4.min.css">
     <!-- Theme style -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/admin/adminlte.min.css">
     <script src="<?= base_url() ?>assets/admin/jquery/jquery.min.js"></script>
     <script src="<?= base_url() ?>assets/js/jquery.validate.js"></script>
-
 </head>
 
 <body class="hold-transition sidebar-mini">

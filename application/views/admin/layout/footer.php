@@ -14,6 +14,8 @@
 <!-- Bootstrap 4 -->
 <script src="<?= base_url() ?>assets/admin/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- DataTables  & Plugins -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 <script src="<?= base_url() ?>assets/admin/datatables/jquery.dataTables.min.js"></script>
 <script src="<?= base_url() ?>assets/admin/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
 <script src="<?= base_url() ?>assets/admin/datatables-responsive/js/dataTables.responsive.min.js"></script>
@@ -29,12 +31,9 @@
 <script src="<?= base_url() ?>assets/admin/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?= base_url() ?>assets/admin/demo.js"></script>
+
 <script src="<?= base_url() . 'assets/admin/ckeditor/ckeditor.js' ?>"></script>
 <script type="text/javascript">
-    $(function() {
-        CKEDITOR.replace('ckeditor');
-    });
-
     $(function() {
         bsCustomFileInput.init();
     });
@@ -50,6 +49,25 @@
             reader.readAsDataURL(file);
         }
     }
+    jQuery(document).ready(function($) {
+        $('.alert_notif').on('click', function() {
+            var getLink = $(this).attr('href');
+            swal({
+                title: "Apakah anda yakin?",
+                text: "Data yang dihapus tidak dapat kembali.",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Ya, hapus!",
+                cancelButtonText: "Tidak, kembali!",
+                closeOnConfirm: false,
+                closeOnCancel: true
+            }, function() {
+                window.location.href = getLink
+            });
+            return false;
+        });
+    });
 </script>
 </body>
 

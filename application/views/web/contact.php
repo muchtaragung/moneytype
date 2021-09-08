@@ -1,10 +1,38 @@
+<style>
+    .card {
+        border: 2px solid #f0ad4e;
+    }
+</style>
 <section class="page-section text-black mt-5 mb-0">
     <div class="container">
         <section class="mb-4">
-
             <!--Section heading-->
             <h2 class="text-center display-4">Contact</h2>
             <!--Section description-->
+            <?php if ($this->session->flashdata('error') != null) { ?>
+                <script>
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'error',
+                        text: "<?php echo $this->session->flashdata('error'); ?>",
+                        timer: 2500,
+                        showConfirmButton: false,
+                        type: 'error'
+                    });
+                </script>
+            <?php } ?>
+            <?php if ($this->session->flashdata('msg') != null) { ?>
+                <script>
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        text: "<?php echo $this->session->flashdata('msg'); ?>",
+                        timer: 2500,
+                        showConfirmButton: false,
+                        type: 'success'
+                    });
+                </script>
+            <?php } ?>
             <p class="text-center w-responsive mx-auto mb-5">Apakah Anda memiliki pertanyaan? Jangan ragu untuk menghubungi kami secara langsung. Tim kami akan kembali kepada Anda dalam beberapa jam untuk membantu Anda.</p>
             <div class="row">
                 <div class="col-sm-4 d-flex">
@@ -12,7 +40,7 @@
                         <div class="card-body">
                             <i class="fas fa-map-marker-alt mt-4 fa-2x"></i>
 
-                            <p>Jl. Kramat Blok B06, Pangkalan Jati, Cinere, Depok </p>
+                            <p><?= $contact->alamat ?></p>
                         </div>
                     </div>
                 </div>
@@ -20,7 +48,7 @@
                     <div class="card text-center flex-fill">
                         <div class="card-body">
                             <i class="fas fa-phone mt-4 fa-2x"></i>
-                            <p>+ 01 234 567 89</p>
+                            <p><?= $contact->phone ?></p>
                         </div>
                     </div>
                 </div>
@@ -28,8 +56,8 @@
                     <div class="card text-center flex-fill">
                         <div class="card-body">
                             <i class="fas fa-envelope mt-4 fa-2x"></i>
-                            <a href="mailto:info@vidiracoaching.com">
-                                <p>info@vidiracoaching.com</p>
+                            <a href="mailto:<?= $contact->email ?>">
+                                <p><?= $contact->email ?></p>
                             </a>
                         </div>
                     </div>
@@ -41,49 +69,43 @@
                 <div class="col-md-6 offset-md-3 mb-5">
                     <div class="card">
                         <div class="card-body">
-                            <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+                            <form id="contact-form" name="contact-form" action="<?= base_url() ?>contact/email" method="POST">
                                 <!--Grid row-->
                                 <div class="row">
                                     <!--Grid column-->
                                     <div class="col-md-6">
                                         <div class="form-group mb-0">
-                                            <input type="text" id="name" name="name" class="form-control">
-                                            <label for="name">Nama Anda</label>
+                                            <input type="text" title="Tidak boleh kosong!" id="nama" name="nama" class="form-control">
+                                            <label for="nama">Nama Anda</label>
                                         </div>
                                     </div>
                                     <!--Grid column-->
-
                                     <!--Grid column-->
                                     <div class="col-md-6">
                                         <div class="md-form mb-0">
-                                            <input type="text" id="email" name="email" class="form-control">
-                                            <label for="email" class="">Email Anda</label>
+                                            <input type="email" title="Tidak boleh kosong!" id="email" name="email" class="form-control">
+                                            <label for="email" class="email">Email Anda</label>
                                         </div>
                                     </div>
                                     <!--Grid column-->
-
                                 </div>
                                 <!--Grid row-->
-
                                 <!--Grid row-->
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="md-form mb-0">
-                                            <input type="text" id="subject" name="subject" class="form-control">
-                                            <label for="subject" class="">Subjek</label>
+                                            <input type="text" title="Tidak boleh kosong!" id="subject" name="subject" class="form-control">
+                                            <label for="subject" class="subject">Subjek</label>
                                         </div>
                                     </div>
                                 </div>
                                 <!--Grid row-->
-
                                 <!--Grid row-->
                                 <div class="row">
-
                                     <!--Grid column-->
                                     <div class="col-md-12">
-
                                         <div class="md-form">
-                                            <textarea type="text" id="message" name="message" rows="4" class="form-control md-textarea"></textarea>
+                                            <textarea type="text" title="Tidak boleh kosong!" id="message" name="message" rows="4" class="form-control md-textarea"></textarea>
                                             <label for="message">Pesan Anda</label>
                                         </div>
 
@@ -91,11 +113,11 @@
                                 </div>
                                 <!--Grid row-->
 
+
+                                <div class="text-center text-md-left">
+                                    <button class="btn btn-warning" type="submit">Kirim</button>
+                                </div>
                             </form>
-                            <div class="text-center text-md-left">
-                                <a class="btn btn-warning" onclick="document.getElementById('contact-form').submit();">Kirim</a>
-                            </div>
-                            <div class="status"></div>
                         </div>
                     </div>
                 </div>
@@ -104,4 +126,25 @@
         </section>
     </div>
 </section>
+<script>
+    $(document).ready(function() {
+        $('#contact-form').validate({ // initialize the plugin
+            rules: {
+                nama: {
+                    required: true,
+                },
+                email: {
+                    required: true,
+                },
+                subject: {
+                    required: true,
+                },
+                message: {
+                    required: true,
+                }
+            }
+        });
+
+    });
+</script>
 <!--Section: Contact v.2-->

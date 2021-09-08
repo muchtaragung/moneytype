@@ -25,60 +25,42 @@
                             <?php echo $this->session->flashdata('msg'); ?>
                         </div>
                     <?php } ?>
+                    <?php if ($this->session->flashdata('warning') != null) { ?>
+                        <div class="alert alert-warning" role="alert">
+                            <?php echo $this->session->flashdata('warning'); ?>
+                        </div>
+                    <?php } ?>
                 </div>
                 <div class="col-md-12">
-                    <!-- <div class="row mb-3">
+                    <div class="row mb-3">
                         <div class="col-md-12">
-                            <a href="#" class="btn btn-info text-center">Tambah Sosmed</a>
+                            <a href="javascript:;" data-toggle="modal" data-target="#tambah-sosmed">
+                                <button data-toggle="modal" data-target="#ubah-data" class="btn btn-success">Tambah</button>
+                            </a>
                         </div>
-                    </div> -->
+                    </div>
                     <div class="card ">
                         <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-10">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fab fa-facebook-square"></i></span>
+                            <?php foreach ($sosmed as $key) { ?>
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="<?= $key->icon ?>"></i></span>
+                                            </div>
+                                            <input type="text" readonly title="Tidak boleh kosong" value="<?= $key->link ?>" class="form-control" placeholder="Link Facebook">
                                         </div>
-                                        <input type="text" readonly title="Tidak boleh kosong" value="<?php echo $sosmed->facebook ?>" name="facebook" id="facebook" class="form-control" placeholder="Link Facebook">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <a href="javascript:;" data-id="<?= $key->id_sosmed ?>" data-link="<?= $key->link ?>" data-toggle="modal" data-target="#edit-sosmed">
+                                            <button data-toggle="modal" data-target="#ubah-data" title="Edit link" class="btn btn-info"><i class="fas fa-pencil-alt"></i></button>
+                                        </a>
+                                        <a class="alert_notif btn btn-danger" title="Hapus" href="<?= base_url() ?>admin/sosmed/delete/<?= $key->id_sosmed ?>">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
                                     </div>
                                 </div>
-                                <div class="col-md-2">
-                                    <a href="javascript:;" data-id="<?php echo $sosmed->id_sosmed ?>" data-facebook="<?php echo $sosmed->facebook ?>" data-toggle="modal" data-target="#edit-facebook">
-                                        <button data-toggle="modal" data-target="#ubah-data" class="btn btn-info">Edit</button>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-10">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fab fa-twitter"></i></span>
-                                        </div>
-                                        <input type="text" readonly title="Tidak boleh kosong" value="<?php echo $sosmed->twitter ?>" name="twitter" class="form-control" placeholder="Link Twitter">
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <a href="javascript:;" data-id="<?php echo $sosmed->id_sosmed ?>" data-twitter="<?php echo $sosmed->twitter ?>" data-toggle="modal" data-target="#edit-twitter">
-                                        <button data-toggle="modal" data-target="#ubah-data" class="btn btn-info">Edit</button>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-10">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fab fa-instagram"></i></span>
-                                        </div>
-                                        <input type="text" readonly title="Tidak boleh kosong" value="<?php echo $sosmed->instagram ?>" name="instagram" class="form-control" placeholder="Link Instagram">
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <a href="javascript:;" data-id="<?php echo $sosmed->id_sosmed ?>" data-instagram="<?php echo $sosmed->instagram ?>" data-toggle="modal" data-target="#edit-instagram">
-                                        <button data-toggle="modal" data-target="#ubah-data" class="btn btn-info">Edit</button>
-                                    </a>
-                                </div>
-                            </div>
+                            <?php  } ?>
                         </div>
                     </div>
                 </div>
@@ -90,99 +72,66 @@
     <!-- /.content -->
 </div>
 <!-- Modal Ubah -->
-<div class="modal" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="edit-facebook" class="modal fade" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Edit</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form id="sosmed_facebook" action="<?= base_url() ?>admin/sosmed/update" method="post" enctype="multipart/form-data">
-                <div class="modal-body">
-                    <div class="form-group ">
-                        <!-- <label for="customFile">Custom File</label> -->
-                        <input type="hidden" id="id" name="id">
-                        <input type="hidden" name="twitter">
-                        <input type="hidden" name="instagram">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fab fa-facebook-square"></i></span>
+<?php foreach ($sosmed as $key) { ?>
+    <div class="modal" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="edit-sosmed" class="modal fade" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="sosmed" action="<?= base_url() ?>admin/sosmed/update" method="post" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <div class="form-group ">
+                            <!-- <label for="customFile">Custom File</label> -->
+                            <input type="hidden" id="id" name="id">
+                            <div class="form-group mb-3">
+                                <label for="link">Link Sosial Media</label>
+                                <input type="text" title="Tidak boleh kosong" name="link" id="link" class="form-control" placeholder="Link Sosial Media">
                             </div>
-                            <input type="text" title="Tidak boleh kosong" name="facebook" id="facebook" class="form-control" placeholder="Link Facebook">
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Update</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </form>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
-<div class="modal" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="edit-twitter" class="modal fade" tabindex="-1">
+<?php } ?>
+<div class="modal" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="tambah-sosmed" class="modal fade" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Edit</h5>
+                <h5 class="modal-title">Tambah Sosial Media</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form id="sosmed_twitter" action="<?= base_url() ?>admin/sosmed/update" method="post" enctype="multipart/form-data">
+            <form id="tambah_sosmed" action="<?= base_url() ?>admin/sosmed/create" method="post" enctype="multipart/form-data">
                 <div class="modal-body">
-
-                    <div class="form-group ">
-                        <!-- <label for="customFile">Custom File</label> -->
-                        <input type="hidden" id="id" name="id">
-                        <input type="hidden" name="facebook">
-                        <input type="hidden" name="instagram">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fab fa-twitter"></i></span>
-                            </div>
-                            <input type="text" title="Tidak boleh kosong" name="twitter" id="twitter" class="form-control" placeholder="Link Twitter">
-                        </div>
+                    <div class="form-group">
+                        <label for="nama_sosmed">Nama Sosial Media</label>
+                        <select class="form-control" title="Tidak boleh kosong" name="nama_sosmed" id="nama_sosmed">
+                            <option value="" selected disabled>Pilih Sosial Media</option>
+                            <option value="Facebook"><i class="fab fa-twitter">Facebook</i> </option>
+                            <option value="Twitter">Twitter</option>
+                            <option value="Instagram">Instagram</option>
+                            <option value="Youtube">YouTube</option>
+                            <option value="Linkedin">LinkedIn</option>
+                            <option value="Tiktok">Tiktok</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="text" title="Tidak boleh kosong" name="link" id="link" class="form-control" placeholder="Link Sosial Media">
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Update</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<div class="modal" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="edit-instagram" class="modal fade" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Edit</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form id="sosmed_instagram" action="<?= base_url() ?>admin/sosmed/update" method="post" enctype="multipart/form-data">
-                <div class="modal-body">
-
-                    <div class="form-group ">
-                        <!-- <label for="customFile">Custom File</label> -->
-                        <input type="hidden" id="id" name="id">
-                        <input type="hidden" name="twitter">
-                        <input type="hidden" name="facebook">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fab fa-instagram"></i></span>
-                            </div>
-                            <input type="text" title="Tidak boleh kosong" name="instagram" id="instagram" class="form-control" placeholder="Link Instagram">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Update</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                 </div>
             </form>
         </div>
@@ -191,60 +140,34 @@
 <script>
     $(document).ready(function() {
         // Untuk sunting
-        $('#edit-facebook').on('show.bs.modal', function(event) {
+        $('#edit-sosmed').on('show.bs.modal', function(event) {
             var div = $(event.relatedTarget) // Tombol dimana modal di tampilkan
             var modal = $(this)
 
             // Isi nilai pada field
             modal.find('#id').attr("value", div.data('id'));
-            modal.find('#facebook').attr("value", div.data('facebook'));
+            modal.find('#icon').attr("value", div.data('icon'));
+            modal.find('#link').attr("value", div.data('link'));
         });
     });
     $(document).ready(function() {
-        // Untuk sunting
-        $('#edit-twitter').on('show.bs.modal', function(event) {
-            var div = $(event.relatedTarget) // Tombol dimana modal di tampilkan
-            var modal = $(this)
-
-            // Isi nilai pada field
-            modal.find('#id').attr("value", div.data('id'));
-            modal.find('#twitter').attr("value", div.data('twitter'));
-        });
-    });
-    $(document).ready(function() {
-        // Untuk sunting
-        $('#edit-instagram').on('show.bs.modal', function(event) {
-            var div = $(event.relatedTarget) // Tombol dimana modal di tampilkan
-            var modal = $(this)
-
-            // Isi nilai pada field
-            modal.find('#id').attr("value", div.data('id'));
-            modal.find('#instagram').attr("value", div.data('instagram'));
-        });
-    });
-    $(document).ready(function() {
-        $('#sosmed_facebook').validate({
+        $('#sosmed').validate({
             rules: {
-                facebook: {
+                nama_sosmed: {
                     required: true
                 }
             }
         });
-        $('#sosmed_twitter').validate({
+        $('#tambah_sosmed').validate({
             rules: {
-                twitter: {
+                nama_sosmed: {
+                    required: true
+                },
+                link: {
                     required: true
                 }
             }
         });
-        $('#sosmed_instagram').validate({
-            rules: {
-                instagram: {
-                    required: true
-                }
-            }
-        });
-
     });
 </script>
 <!-- Modal -->

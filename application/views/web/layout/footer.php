@@ -6,9 +6,9 @@
             <div class="col-lg-6 mb-5 mb-lg-0">
                 <h4 class="text-uppercase  mb-4"><img width="200px" src="<?= base_url() ?>assets/admin/assets/logo/<?= $logo->logo ?>" alt=""></a></h4>
                 <!-- <h4 class="text-uppercase text-dark mb-4">Around the Web</h4> -->
-                <a target="_blank" href="<?= $sosmed->facebook ?>" class="btn btn-outline-light btn-social mx-1 text-dark" href="#!"><i class="fab text-dark fa-fw fa-facebook-f"></i></a>
-                <a target="_blank" href="<?= $sosmed->twitter ?>" class="btn btn-outline-light btn-social mx-1 text-dark" href="#!"><i class="fab text-dark fa-fw fa-twitter"></i></a>
-                <a target="_blank" href="<?= $sosmed->instagram ?>" class="btn btn-outline-light btn-social mx-1 text-dark" href="#!"><i class="fab text-dark fa-fw fa-instagram"></i></a>
+                <?php foreach ($sosmed as $key) { ?>
+                    <a title="<?= $key->nama_sosmed ?>" target="_blank" href="<?= $key->link ?>" class="btn btn-outline-light btn-social mx-1 text-dark" href="#!"><i class="text-dark fa-fw <?= $key->icon ?>"></i></a>
+                <?php  } ?>
             </div>
 
             <!-- Footer About Text-->
