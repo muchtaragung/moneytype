@@ -10,10 +10,11 @@
     <div class="sidebar">
         <!-- Sidebar user (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="row justify-content-center">
-                <div class="info text-center">
-                    <h4 class="text-white"><?= $this->session->userdata('name') ?></h4>
-                </div>
+            <div class="image">
+                <img src="<?= base_url() ?>assets/admin/assets/icon/user.png" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info">
+                <a href="#" class="d-block"><?= $this->session->userdata('name') ?></a>
             </div>
         </div>
 
@@ -27,6 +28,29 @@
                             Dashboard
                         </p>
                     </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-laptop-house"></i>
+                        <p>
+                            Home
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item active">
+                            <a href="<?= base_url() ?>admin/home/id" <?= $this->uri->segment(3) == 'id' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Indonesia</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url() ?>admin/home" <?= $this->uri->segment(3) == '' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>English</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a href="<?= base_url() ?>admin/user" <?= $this->uri->segment(2) == 'user' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
@@ -54,7 +78,6 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-
                         <li class="nav-item active">
                             <a href="<?= base_url() ?>admin/logo" <?= $this->uri->segment(2) == 'logo' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
                                 <i class="far fa-circle nav-icon"></i>
@@ -65,6 +88,12 @@
                             <a href="<?= base_url() ?>admin/sosmed" <?= $this->uri->segment(2) == 'sosmed' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Sosial Media</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url() ?>admin/email" <?= $this->uri->segment(2) == 'email' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Email</p>
                             </a>
                         </li>
                     </ul>

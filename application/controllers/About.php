@@ -18,6 +18,7 @@ class About extends CI_Controller
         $data['title'] = 'About';
         $data['logo'] = $this->web->get_logo()->row();
         $data['sosmed'] = $this->web->get_sosmed()->result();
+        $data['about'] = $this->web->get_about()->row();
         $this->load->view('web/layout/header', $data);
         $this->load->view('web/layout/navbar', $data);
         $this->load->view('web/about');

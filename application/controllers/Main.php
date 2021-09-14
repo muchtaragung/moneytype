@@ -18,19 +18,26 @@ class Main extends CI_Controller
     $data['title'] = 'Home';
     $data['logo'] = $this->web->get_logo()->row();
     $data['sosmed'] = $this->web->get_sosmed()->result();
-    $this->load->view('web/layout/header', $data);
-    $this->load->view('web/layout/navbar', $data);
-    $this->load->view('web/home');
-    $this->load->view('web/layout/footer', $data);
+    $data['home'] = $this->web->get_home()->row();
+    if ($this->uri->segment(1) == "id") {
+      $this->load->view('web/home/id', $data);
+    } else {
+      $this->load->view('web/home/us', $data);
+    }
   }
   public function finish()
   {
     $data['title'] = 'Money Type Quiz';
     $data['logo'] = $this->web->get_logo()->row();
     $data['sosmed'] = $this->web->get_sosmed()->result();
+
     $this->load->view('web/layout/header', $data);
     $this->load->view('web/layout/navbar', $data);
-    $this->load->view('web/finish');
+    if ($this->uri->segment(1) == "id") {
+      $this->load->view('web/finish/id', $data);
+    } else {
+      $this->load->view('web/finish/us', $data);
+    }
     $this->load->view('web/layout/footer', $data);
   }
 }

@@ -21,11 +21,16 @@ class Contact extends CI_Controller
         $data['sosmed'] = $this->web->get_sosmed()->result();
         $this->load->view('web/layout/header', $data);
         $this->load->view('web/layout/navbar', $data);
-        $this->load->view('web/contact');
+        if ($this->uri->segment(1) == "id") {
+            $this->load->view('web/contact/id', $data);
+        } else {
+            $this->load->view('web/contact/us', $data);
+        }
         $this->load->view('web/layout/footer', $data);
     }
     public function email()
     {
+        $email_penerima = $this->web->get_email()->row();
         $email = $this->input->post('email', true);
         $nama = $this->input->post('nama', true);
         $pesan = $this->input->post('message', true);
@@ -68,7 +73,7 @@ class Contact extends CI_Controller
         $this->email->initialize($config);
         $this->email->set_newline("\r\n");
         $this->email->from($config['smtp_user']);
-        $this->email->to('adiwinata.liem@gmail.com');
+        $this->email->to($email_penerima->email);
         $this->email->subject($subjek); //subjek email
         $this->email->message($message);
         $email1 = $this->email->send();

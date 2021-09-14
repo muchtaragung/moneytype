@@ -8,7 +8,10 @@
     <meta name="author" content="" />
     <title>Vidira <?= $title ?></title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="<?= base_url() ?>assets/assets/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= base_url() ?>assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= base_url() ?>assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url() ?>assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="<?= base_url() ?>assets/favicon/site.webmanifest">
     <!-- Font Awesome icons (free version)-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

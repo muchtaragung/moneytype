@@ -34,7 +34,21 @@
                     <?php } ?>
                 </div>
                 <div class="col-md-8 offset-md-3">
-                    <div class="card " style="width: 30rem;">
+                    <div class="card text-center" style="width: 30rem;">
+                        <div class="card-body">
+                            <div class="shadow-lg p-3 mb-5 bg-white rounded">
+                                <img src="<?= base_url() ?>assets/assets/img/<?= $contact->image ?>" class="card-img-top" alt="...">
+                            </div>
+                            <div class="mt-5 pt-5">
+                                <a href="javascript:;" data-id="<?php echo $contact->id_contact ?>" data-logo="<?php echo $contact->image ?>" data-toggle="modal" data-target="#edit-data">
+                                    <button data-toggle="modal" data-target="#ubah-data" class="btn btn-info">Edit Gambar</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="card ">
                         <form action="" method="post">
                             <div class="card-body">
                                 <input type="hidden" name="id" value="<?= $contact->id_contact ?>">
@@ -67,6 +81,37 @@
     <!-- /.content -->
 </div>
 <!-- Modal Ubah -->
+<div class="modal" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="edit-data" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Gambar Contact</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="image_contact" action="<?= base_url() ?>admin/contact/update_image" method="post" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <div class="text-center">
+                        <img style="width: 250px; " id="previewImg" src="<?= base_url() ?>assets/icon/transparan.png" alt="Placeholder">
+                    </div>
+                    <div class="form-group pt-5">
+                        <!-- <label for="customFile">Custom File</label> -->
+                        <input type="hidden" id="id" name="id">
+                        <div class="custom-file">
+                            <input type="file" name="image" class="custom-file-input" id="image" accept="image/x-png,image/jpg,image/jpeg" onchange="previewFile(this);">
+                            <label class="custom-file-label" for="image">Pilih Gambar</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <div class="modal" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="edit-contact" class="modal fade" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -101,9 +146,17 @@
     </div>
 </div>
 <script>
+    $(function() {
+        $('#image').change(function() {
+            if (Math.round(this.files[0].size / (1024 * 1024)) > 1) {
+                alert('Please select image size less than 1 MB');
+                $("#image").val(null);
+            }
+        });
+    });
     $(document).ready(function() {
         // Untuk sunting
-        $('#edit-contcat').on('show.bs.modal', function(event) {
+        $('#edit-contact').on('show.bs.modal', function(event) {
             var div = $(event.relatedTarget) // Tombol dimana modal di tampilkan
             var modal = $(this)
 
@@ -112,6 +165,37 @@
             modal.find('#email').attr("value", div.data('email'));
             modal.find('#phone').attr("value", div.data('phone'));
             modal.find('#alamat').attr("value", div.data('alamat'));
+        });
+    });
+    $(document).ready(function() {
+        // Untuk sunting
+        $('#edit-data').on('show.bs.modal', function(event) {
+            var div = $(event.relatedTarget) // Tombol dimana modal di tampilkan
+            var modal = $(this)
+
+            // Isi nilai pada field
+            modal.find('#id').attr("value", div.data('id'));
+        });
+    });
+    $(document).ready(function() {
+        $('#image_contact').validate({
+            ignore: [],
+            rules: {
+                image: {
+                    required: true,
+                    accept: 'png|jpg|jpeg'
+                }
+            }
+        });
+
+    });
+    $(document).ready(function() {
+        $('#image').bind('change', function() {
+            var a = (this.files[0].size);
+            alert(a);
+            if (a > 1000000) {
+                alert('large');
+            };
         });
     });
     $(document).ready(function() {

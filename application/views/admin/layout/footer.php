@@ -31,8 +31,8 @@
 <script src="<?= base_url() ?>assets/admin/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?= base_url() ?>assets/admin/demo.js"></script>
-
-<script src="<?= base_url() . 'assets/admin/ckeditor/ckeditor.js' ?>"></script>
+<script src="<?php echo base_url() . 'assets/admin/ckeditor/ckeditor.js' ?>"></script>
+<script src="<?= base_url() ?>assets/admin/summernote/summernote-bs4.min.js"></script>
 <script type="text/javascript">
     $(function() {
         bsCustomFileInput.init();

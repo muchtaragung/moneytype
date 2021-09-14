@@ -37,4 +37,31 @@ class Contact extends CI_Controller
         $this->session->set_flashdata('msg', 'Contact berhasil diupdate');
         redirect('admin/contact');
     }
+    public function update_image()
+    {
+        if (empty($_FILES['image']['name'])) {
+            $file = $this->input->post('image_lama', TRUE);
+        } else {
+            $config['upload_path'] = "./assets/assets/img";
+            $config['allowed_types'] = 'jpeg|jpg|png';
+            $config['max_size'] = '2000';
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+            if ($this->upload->do_upload("image")) {
+                $data = array('upload_data' => $this->upload->data());
+                $file = $data['upload_data']['file_name'];
+            } else {
+                $this->session->set_flashdata('error', 'Gambar gagal di update');
+                redirect('admin/contact');
+            }
+        }
+
+        $id = $this->input->post('id', true);
+        $data = array(
+            'image' => $file
+        );
+        $this->web->update_image($id, $data);
+        $this->session->set_flashdata('msg', 'Gambar berhasil diupdate');
+        redirect('admin/contact');
+    }
 }

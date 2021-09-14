@@ -65,8 +65,8 @@
                         <!-- <label for="customFile">Custom File</label> -->
                         <input type="hidden" id="id" name="id">
                         <div class="custom-file">
-                            <input type="file" name="logo" class="custom-file-input" id="gallery-photo-add" accept="image/x-png,image/jpg,image/jpeg" onchange="previewFile(this);">
-                            <label class="custom-file-label" for="gallery-photo-add">Pilih Logo</label>
+                            <input type="file" name="logo" class="custom-file-input" id="logo" accept="image/x-png,image/jpg,image/jpeg" onchange="previewFile(this);">
+                            <label class="custom-file-label" for="logo">Pilih Logo</label>
                         </div>
                     </div>
                 </div>
@@ -101,13 +101,12 @@
         });
 
     });
-    $(document).ready(function() {
-        $('#logo').bind('change', function() {
-            var a = (this.files[0].size);
-            alert(a);
-            if (a > 1000000) {
-                alert('large');
-            };
+    $(function() {
+        $('#logo').change(function() {
+            if (Math.round(this.files[0].size / (1024 * 1024)) > 1) {
+                alert('Please select image size less than 1 MB');
+                $("#logo").val(null);
+            }
         });
     });
 </script>

@@ -71,6 +71,8 @@ class Moneytype extends CI_Controller
 
   public function result()
   {
+
+
     $this->form_validation->set_rules('nama', 'Nama', 'required|xss_clean');
     $this->form_validation->set_rules('email', 'Email', 'required|xss_clean');
     $this->form_validation->set_rules('phone', 'Phone', 'required|xss_clean');
@@ -78,7 +80,7 @@ class Moneytype extends CI_Controller
     if ($this->form_validation->run() == FALSE) {
       $this->index();
     } else {
-
+      $email_penerima = $this->web->get_email()->row();
       $name = $this->input->post('nama', true);
       $email = $this->input->post('email', true);
       $phone = $this->input->post('phone', true);
@@ -607,16 +609,24 @@ class Moneytype extends CI_Controller
       $this->email->initialize($config2);
       $this->email->set_newline("\r\n");
       $this->email->from($config2['smtp_user']);
-      $this->email->to('adiwinata.liem@gmail.com');
+      $this->email->to($email_penerima->email);
       $this->email->subject('Hasil Money Quiz New User'); //subjek email
       $this->email->message($message2);
       $this->email->attach('./excel/' . $user['email'] . '-' . $user['phone'] . '.xlsx');
       $email2 =  $this->email->send();
       if (!$email1 && $email2) {
         $this->session->set_flashdata('error', 'Gagal memproses, Silahkan ulangi');
-        redirect('moneytype');
+        if ($this->uri->segment(1) != "id") {
+          redirect('moneytype');
+        } else {
+          redirect('' . $this->uri->segment(1) . '/moneytype');
+        }
       } else {
-        redirect('finish');
+        if ($this->uri->segment(1) != "id") {
+          redirect('finish');
+        } else {
+          redirect('' . $this->uri->segment(1) . '/finish');
+        }
       }
     }
   }
