@@ -40,7 +40,7 @@
                                 <img src="<?= base_url() ?>assets/assets/img/<?= $home->image ?>" class="card-img-top" alt="...">
                             </div>
                             <div class="form-group mb-3">
-                                <label for="email">Masthead</label>
+                                <label for="email">Header Label</label>
                                 <textarea readonly title="Tidak boleh kosong" name="email" id="email" class="form-control" placeholder="Email Contact"><?= $home->masthead_us ?></textarea>
                             </div>
                             <div class="mt-5 pt-5">
@@ -82,7 +82,7 @@
                             <label class="custom-file-label" for="gallery-photo-add">Pilih Gambar</label>
                         </div>
                         <div class="form-group mb-3 mt-3">
-                            <label for="email">Masthead</label>
+                            <label for="email">Header Label</label>
                             <textarea title="Tidak boleh kosong" name="masthead" id="masthead" class="form-control" placeholder="Masthead"><?= $home->masthead_us ?></textarea>
                         </div>
                     </div>
