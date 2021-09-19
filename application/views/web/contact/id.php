@@ -1,6 +1,22 @@
 <style>
-    .card {
-        border: 2px solid #f0ad4e;
+    .fa-map-marker-alt {
+        color: orange;
+    }
+
+    .fa-phone {
+        color: orange;
+    }
+
+    .fa-envelope {
+        color: orange;
+    }
+
+    a,
+    a:hover,
+    a:focus,
+    a:active {
+        text-decoration: none;
+        color: inherit;
     }
 </style>
 <div class="text-center bg-image mt-5" style="background-size: cover; background-repeat: no-repeat;background-image: url(<?= base_url() ?>assets/assets/img/<?= $contact->image ?>);height: 60vh;">
@@ -43,95 +59,90 @@
                     });
                 </script>
             <?php } ?>
-            <p class="text-center w-responsive mx-auto mb-5">Apakah Anda memiliki pertanyaan? Jangan ragu untuk menghubungi kami secara langsung. Tim kami akan kembali kepada Anda dalam beberapa jam untuk membantu Anda.</p>
+            <!-- <p class="text-center w-responsive mx-auto mb-5">Apakah Anda memiliki pertanyaan? Jangan ragu untuk menghubungi kami secara langsung. Tim kami akan kembali kepada Anda dalam beberapa jam untuk membantu Anda.</p> -->
             <div class="row">
-                <div class="col-sm-4 d-flex">
-                    <div class="card text-center flex-fill">
-                        <div class="card-body">
-                            <i class="fas fa-map-marker-alt mt-4 fa-2x"></i>
-                            <p><?= $contact->alamat ?></p>
+
+                <div class="col-md-8">
+                    <h2 class="mb-3">HUBUNGI KAMI</h2>
+                    <form id="contact-form" name="contact-form" action="<?= base_url() ?>contact/email" method="POST">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="form-group mb-0">
+                                    <input type="text" title="Tidak boleh kosong!" id="nama" name="nama" class="form-control form-control-lg" placeholder="Nama Anda">
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="md-form mb-0">
+                                    <input type="email" title="Tidak boleh kosong!" id="email" name="email" class="form-control form-control-lg" placeholder="Email Anda">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="md-form mb-0">
+                                    <input type="number" title="Tidak boleh kosong!" id="phone" name="phone" class="form-control form-control-lg" placeholder="Nomer Telepon">
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="md-form mb-0">
+                                    <input type="text" title="Tidak boleh kosong!" id="subject" name="subject" class="form-control form-control-lg" placeholder="Subjek">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!--Grid column-->
+                            <div class="col-md-12 mb-5">
+                                <div class="md-form">
+                                    <textarea type="text" title="Tidak boleh kosong!" id="message" name="message" rows="6" class="form-control form-control-lg" placeholder="Pesan Anda"></textarea>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="text-left text-md-left">
+                            <button class="btn btn-warning" type="submit">Kirim</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <h2>INFO KONTAK</h2>
+                    <div class="row">
+                        <div class="col-1 text-center">
+                            <i class="fas fa-map-marker-alt mt-3"></i>
+                        </div>
+                        <div class="col-11">
+                            <p style="font-size: medium;">
+                                <?= $contact->alamat ?>
+                            </p>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-4 d-flex">
-                    <div class="card text-center flex-fill">
-                        <div class="card-body">
-                            <i class="fas fa-phone mt-4 fa-2x"></i>
-                            <p><?= $contact->phone ?></p>
+                    <div class="row">
+                        <div class="col-1 text-center">
+                            <i class="fas fa-phone mt-3"></i>
+                        </div>
+                        <div class="col-11">
+                            <p style="font-size: medium;">
+                                <?php $data = $contact->phone ?>
+                                <?php
+                                $output = substr($data, -10, -7) . "-" . substr($data, -7, -4) . "-" . substr($data, -4);
+                                echo $output;
+                                ?>
+                            </p>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-4 d-flex">
-                    <div class="card text-center flex-fill">
-                        <div class="card-body">
-                            <i class="fas fa-envelope mt-4 fa-2x"></i>
-                            <a href="mailto:<?= $contact->email ?>">
-                                <p><?= $contact->email ?></p>
-                            </a>
+                    <div class="row">
+                        <div class="col-1">
+                            <i class="fas fa-envelope mt-3"></i>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <p class="text-center">Atau Anda bisa menghubungi kami melalui form dibawah ini.</p>
-                <!--Grid column-->
-                <div class="col-md-6 offset-md-3 mb-5">
-                    <div class="card">
-                        <div class="card-body">
-                            <form id="contact-form" name="contact-form" action="<?= base_url() ?>contact/email" method="POST">
-                                <!--Grid row-->
-                                <div class="row">
-                                    <!--Grid column-->
-                                    <div class="col-md-6">
-                                        <div class="form-group mb-0">
-                                            <input type="text" title="Tidak boleh kosong!" id="nama" name="nama" class="form-control">
-                                            <label for="nama">Nama Anda</label>
-                                        </div>
-                                    </div>
-                                    <!--Grid column-->
-                                    <!--Grid column-->
-                                    <div class="col-md-6">
-                                        <div class="md-form mb-0">
-                                            <input type="email" title="Tidak boleh kosong!" id="email" name="email" class="form-control">
-                                            <label for="email" class="email">Email Anda</label>
-                                        </div>
-                                    </div>
-                                    <!--Grid column-->
-                                </div>
-                                <!--Grid row-->
-                                <!--Grid row-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="md-form mb-0">
-                                            <input type="text" title="Tidak boleh kosong!" id="subject" name="subject" class="form-control">
-                                            <label for="subject" class="subject">Subjek</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--Grid row-->
-                                <!--Grid row-->
-                                <div class="row">
-                                    <!--Grid column-->
-                                    <div class="col-md-12">
-                                        <div class="md-form">
-                                            <textarea type="text" title="Tidak boleh kosong!" id="message" name="message" rows="4" class="form-control md-textarea"></textarea>
-                                            <label for="message">Pesan Anda</label>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <!--Grid row-->
-
-
-                                <div class="text-center text-md-left">
-                                    <button class="btn btn-warning" type="submit">Kirim</button>
-                                </div>
-                            </form>
+                        <div class="col-11">
+                            <p style="font-size: medium;">
+                                <a class="" href="mailto:<?= $contact->email ?>">
+                                    <?= $contact->email ?>
+                                </a>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-
         </section>
     </div>
 </section>
@@ -146,6 +157,9 @@
                     required: true,
                 },
                 subject: {
+                    required: true,
+                },
+                phone: {
                     required: true,
                 },
                 message: {

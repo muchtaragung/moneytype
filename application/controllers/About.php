@@ -19,9 +19,14 @@ class About extends CI_Controller
         $data['logo'] = $this->web->get_logo()->row();
         $data['sosmed'] = $this->web->get_sosmed()->result();
         $data['about'] = $this->web->get_about()->row();
+        $data['contact'] = $this->web->get_contact()->row();
         $this->load->view('web/layout/header', $data);
         $this->load->view('web/layout/navbar', $data);
-        $this->load->view('web/about');
+        if ($this->uri->segment(1) == "id") {
+            $this->load->view('web/about/id', $data);
+        } else {
+            $this->load->view('web/about/us', $data);
+        }
         $this->load->view('web/layout/footer', $data);
     }
 }

@@ -61,6 +61,11 @@ $route['finish'] = 'main/finish';
 //home
 $route['id'] = 'main';
 
+//about
+$route['id/about'] = 'about';
+
+//One-coin service
+$route['id/ocs'] = 'ocs';
 //moneytype
 $route['id/moneytype'] = 'moneytype';
 

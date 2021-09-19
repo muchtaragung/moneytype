@@ -33,7 +33,9 @@ class Contact extends CI_Controller
         $email_penerima = $this->web->get_email()->row();
         $email = $this->input->post('email', true);
         $nama = $this->input->post('nama', true);
+        $phone = $this->input->post('phone', true);
         $pesan = $this->input->post('message', true);
+
         $this->load->library('email'); //panggil library email codeigniter
         $config = [
             'mailtype'  => 'html',
@@ -61,6 +63,10 @@ class Contact extends CI_Controller
                                 <tr>
                                     <td width="150px">Email</td>
                                     <td>' . $email . '</td>
+                                </tr>
+                                <tr>
+                                    <td width="150px">Phone</td>
+                                    <td>' . $phone . '</td>
                                 </tr>
                         </table>
                         <hr>

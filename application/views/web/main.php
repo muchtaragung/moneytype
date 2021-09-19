@@ -47,6 +47,7 @@
                             </div>
                         </div>
                     </div>
+                    <div id="top"></div>
                     <h6 style="font-size: 18px;" class="pt-5 mt-5 mb-5 text-center">Pilihlah kata yang mana saja yang sesuai dengan diri Anda mengenai kecenderungan Anda saat ini seputar uang</h6>
 
                     <div id="target1">
@@ -732,7 +733,16 @@
                 $("#submit-btn").show();
             });
         });
-
+        $("#next1").click(function() {
+            $('html, body').animate({
+                scrollTop: $("#top").offset().top
+            }, 10);
+        });
+        $("#next2").click(function() {
+            $('html, body').animate({
+                scrollTop: $("#top").offset().top
+            }, 10);
+        });
         $(document).ready(function() {
             $('#money').validate({ // initialize the plugin
                 rules: {

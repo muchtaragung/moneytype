@@ -22,6 +22,7 @@ class Moneytype extends CI_Controller
     $data['title'] = 'Money Type Quiz';
     $data['logo'] = $this->web->get_logo()->row();
     $data['sosmed'] = $this->web->get_sosmed()->result();
+    $data['contact'] = $this->web->get_contact()->row();
     $this->load->view('web/layout/header', $data);
     $this->load->view('web/layout/navbar', $data);
     $this->load->view('web/main');

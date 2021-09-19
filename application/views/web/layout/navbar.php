@@ -19,9 +19,9 @@
 <body id="page-top">
     <div id="nav-scroll" class="nav-scroll">
         <nav class="navbar navbar-expand-lg bg-warning text-uppercase fixed-top" id="mainNav">
+            <div class="container-fluid">
+                <a class="navbar-brand text-dark" href="#page-top"><img width="170px" src="<?= base_url() ?>assets/admin/assets/logo/<?= $logo->logo ?>" alt=""></a>
 
-            <a class="navbar-brand text-dark" href="#page-top"><img width="170px" src="<?= base_url() ?>assets/admin/assets/logo/<?= $logo->logo ?>" alt=""></a>
-            <div class="container">
                 <button class="navbar-toggler font-weight-bold bg-warning text-dark rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -31,21 +31,22 @@
                         <ul class="navbar-nav navbar-logo mx-auto">
                             <li class="nav-item mx-0 mx-lg-1"><a class="text-dark nav-link rounded" href="<?= base_url() ?>">Home</a></li>
                             <li class="nav-item mx-0 mx-lg-1"><a class="text-dark nav-link rounded" href="<?= base_url() ?>about">About</a></li>
-                            <li class="nav-item dropdown">
-                                <a class="text-dark nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <li id="ocs1" class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle " href="<?= base_url() ?>ocs" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     One-Coin Service
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <div id="ocs2" class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="#">Financial Planning</a>
                                     <a class="dropdown-item" href="#">Money Coaching</a>
                                 </div>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="text-dark nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                            <li id="emt1" class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="<?= base_url() ?>emt" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     The Eight Money Types
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="<?= base_url() ?>moneytype">Take The Quiz Free!</a>
+                                <div id="emt2" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="<?= base_url()  ?>/moneytype">Take The Quiz Free!</a>
                                 </div>
                             </li>
                             <li class="nav-item mx-0 mx-lg-1"><a class="text-dark nav-link rounded" href="">Resources</a></li>
@@ -74,20 +75,20 @@
                         <ul class="navbar-nav navbar-logo mx-auto">
                             <li class="nav-item mx-0 mx-lg-1"><a class="text-dark nav-link rounded" href="<?= base_url() . $this->uri->segment(1) ?>/">Home</a></li>
                             <li class="nav-item mx-0 mx-lg-1"><a class="text-dark nav-link rounded" href="<?= base_url() . $this->uri->segment(1) ?>/about">About</a></li>
-                            <li class="nav-item dropdown">
-                                <a class="text-dark nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <li id="ocs1" class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="<?= base_url() . $this->uri->segment(1) ?>ocs" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     One-Coin Service
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <div id="ocs2" class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="#">Financial Planning</a>
                                     <a class="dropdown-item" href="#">Money Coaching</a>
                                 </div>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="text-dark nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <li id="emt1" class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="<?= base_url() . $this->uri->segment(1) ?>emt" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     The Eight Money Types
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <div id="emt2" class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="<?= base_url() . $this->uri->segment(1) ?>/moneytype">Take The Quiz Free!</a>
                                 </div>
                             </li>
@@ -118,3 +119,23 @@
             </div>
         </nav>
     </div>
+    <script>
+        $(document).ready(function() {
+            if ($(document).width() < 769) {
+                $('#ocs1').addClass('show');
+                $('#ocs2').addClass('show');
+            } else {
+                $('#ocs1').removeClass('show');
+                $('#ocs2').removeClass('show');
+            }
+        });
+        $(document).ready(function() {
+            if ($(document).width() < 769) {
+                $('#emt1').addClass('show');
+                $('#emt2').addClass('show');
+            } else {
+                $('#emt1').removeClass('show');
+                $('#emt2').removeClass('show');
+            }
+        });
+    </script>
