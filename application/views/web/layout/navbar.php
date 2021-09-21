@@ -76,7 +76,7 @@
                             <li class="nav-item mx-0 mx-lg-1"><a class="text-dark nav-link rounded" href="<?= base_url() . $this->uri->segment(1) ?>/">Home</a></li>
                             <li class="nav-item mx-0 mx-lg-1"><a class="text-dark nav-link rounded" href="<?= base_url() . $this->uri->segment(1) ?>/about">About</a></li>
                             <li id="ocs1" class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="<?= base_url() . $this->uri->segment(1) ?>ocs" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="<?= base_url() . $this->uri->segment(1) ?>/ocs" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     One-Coin Service
                                 </a>
                                 <div id="ocs2" class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -85,7 +85,7 @@
                                 </div>
                             </li>
                             <li id="emt1" class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="<?= base_url() . $this->uri->segment(1) ?>emt" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="<?= base_url() . $this->uri->segment(1) ?>/emt" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     The Eight Money Types
                                 </a>
                                 <div id="emt2" class="dropdown-menu" aria-labelledby="navbarDropdown">
