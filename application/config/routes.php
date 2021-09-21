@@ -74,3 +74,5 @@ $route['id/contact'] = 'contact';
 
 //admin
 $route['id/admin/login'] = 'admin/login';
+$route['admin'] = 'admin/dashboard';
+// $route['id/admin/dashboard'] = 'admin';

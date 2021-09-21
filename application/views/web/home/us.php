@@ -65,7 +65,7 @@
             </a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                <ul class="navbar-nav mx-auto my-2 my-lg-0">
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link rounded" href="<?= base_url() ?>">Home</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link rounded" href="<?= base_url() ?>about">About</a></li>
 
@@ -214,10 +214,8 @@
                         </div>
                         <div class="col-10">
                             <p style="font-size: medium;">
-                                <?php $data = $contact->phone ?>
                                 <?php
-                                $output = substr($data, -10, -7) . "-" . substr($data, -7, -4) . "-" . substr($data, -4);
-                                echo $output;
+                                echo preg_replace('/\d{3}/', '$0-', str_replace('.', 'null', trim($contact->phone)), 2);
                                 ?>
                             </p>
                         </div>

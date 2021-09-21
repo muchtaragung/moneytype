@@ -49,7 +49,7 @@ class Home extends CI_Controller
                 $file = $data['upload_data']['file_name'];
             } else {
                 $this->session->set_flashdata('error', 'Gambar gagal di update');
-                redirect('admin//home/id');
+                redirect('admin/home/id');
             }
         }
 

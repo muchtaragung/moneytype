@@ -121,10 +121,8 @@
                         </div>
                         <div class="col-11">
                             <p style="font-size: medium;">
-                                <?php $data = $contact->phone ?>
                                 <?php
-                                $output = substr($data, -10, -7) . "-" . substr($data, -7, -4) . "-" . substr($data, -4);
-                                echo $output;
+                                echo preg_replace('/\d{3}/', '$0-', str_replace('.', 'null', trim($contact->phone)), 2);
                                 ?>
                             </p>
                         </div>

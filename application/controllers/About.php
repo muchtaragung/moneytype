@@ -10,6 +10,7 @@ class About extends CI_Controller
         $this->load->library('email');
         $this->load->model('M_user', 'user');
         $this->load->model('M_web', 'web');
+        $this->load->model('M_about', 'about');
         $this->load->helper('security');
         $this->load->library('form_validation');
     }
@@ -18,8 +19,11 @@ class About extends CI_Controller
         $data['title'] = 'About';
         $data['logo'] = $this->web->get_logo()->row();
         $data['sosmed'] = $this->web->get_sosmed()->result();
-        $data['about'] = $this->web->get_about()->row();
         $data['contact'] = $this->web->get_contact()->row();
+        $data['about'] = $this->web->get_about()->row();
+        $data['testimoni'] = $this->about->get_testimoni()->result();
+        $data['feature_en'] = $this->about->get_feature_en()->result();
+        $data['feature_id'] = $this->about->get_feature_id()->result();
         $this->load->view('web/layout/header', $data);
         $this->load->view('web/layout/navbar', $data);
         if ($this->uri->segment(1) == "id") {

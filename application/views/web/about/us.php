@@ -1,4 +1,4 @@
-<div class="text-center bg-image mt-5" style="background-size: cover; background-repeat: no-repeat;background-image: url(<?= base_url() ?>assets/assets/img/home2.jpg);height: 60vh;">
+<div class="text-center bg-image mt-5" style="background-size: cover; background-repeat: no-repeat;background-image: url(<?= base_url() ?>assets/assets/img/<?= $about->img_header ?>);height: 60vh;">
     <div class="mask h-100 w-100" style="background-color: rgba(0, 0, 0, 0.6);">
         <div class="d-flex justify-content-center align-items-center h-100">
             <div class="text-white">
@@ -11,33 +11,66 @@
 <section class="page-section text-black mb-0">
     <div class="container">
         <div class="row h-100 align-items-center py-5">
-            <div class="col-lg-5">
-                <h1 class="display-2 text">HI <span style="font-size:42px">I’m Florence Green!</span></h1>
-                <p class="lead text-muted mb-0">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dgolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</p>
-                <a href="#" class="btn btn-warning px-5 rounded-pill shadow-sm mt-5 ">ABOUT ME</a>
+            <div class="col-lg-5 mt-5">
+                <h1 class="display-6 text"><?= $about->header_profile ?></span></h1>
+                <p class="lead text-muted mb-0"><?= $about->profile ?></p>
+                <a href="#" class="btn btn-outline-warning px-5 rounded-pill mt-5 ">ABOUT ME</a>
                 <div class="text-left mt-5">
-                    <h4>CALL NOW</h4>
-                    <p style="font-size: x-large;">800-123-4567</p>
+                    <h3>CALL NOW</h3>
+                    <p style="font-size: 43px;">
+                        <?php
+                        echo preg_replace('/\d{3}/', '$0-', str_replace('.', 'null', trim($about->phone)), 2);
+                        ?>
+                    </p>
                 </div>
-
             </div>
-            <div class="col-lg-7 mt-5 text-right"><img src="<?= base_url() ?>assets/assets/img/about.png" alt="" class="img-fluid"></div>
+            <div class="col-lg-7 mt-5 text-right"><img src="<?= base_url() ?>assets/assets/img/<?= $about->img_profile ?>" alt="" class="img-fluid"></div>
         </div>
     </div>
-    <div class="bg-white py-5">
-        <div class="container py-5">
-            <div class="row align-items-center mb-5">
-                <div class="col-lg-6 order-2 order-lg-1"><i class="fa fa-bar-chart fa-2x mb-3 text-primary"></i>
-                    <h2 class="font-weight-light">Lorem ipsum dolor sit amet</h2>
-                    <p class="font-italic text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a href="#" class="btn btn-warning px-5 rounded-pill shadow-sm">Learn More</a>
-                </div>
-                <div class="col-lg-5 px-5 mx-auto order-1 order-lg-2"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556834139/img-1_e25nvh.jpg" alt="" class="img-fluid mb-4 mb-lg-0"></div>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-5 px-5 mx-auto"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556834136/img-2_vdgqgn.jpg" alt="" class="img-fluid mb-4 mb-lg-0"></div>
-                <div class="col-lg-6"><i class="fa fa-leaf fa-2x mb-3 text-primary"></i>
-                    <h2 class="font-weight-light">Lorem ipsum dolor sit amet</h2>
-                    <p class="font-italic text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a href="#" class="btn btn-warning px-5 rounded-pill shadow-sm">Learn More</a>
+    <style>
+        .pic {
+            display: block;
+            border-radius: 200px;
+            box-sizing: border-box;
+            background-color: #fff;
+            border: 5px solid #cfd8dc;
+        }
+
+        .page-section {
+            padding: 0;
+        }
+
+        i {
+            border-radius: 50%;
+            border: solid black;
+            padding: 10px;
+            width: 16px;
+            height: 16px;
+            text-align: center
+        }
+    </style>
+    <div class="text-center bg-image" style="background-size: cover; background-repeat: no-repeat;background-image: url(<?= base_url() ?>assets/assets/img/<?= $about->img_testimoni ?>);height: auto;">
+        <div class="mask h-100 w-100" style="background-color: rgba(0, 0, 0, 0.6);">
+            <div class="container">
+                <div class="row justify-content-center mt-5">
+                    <div class="col-md-offset-3 col-md-6">
+                        <div id="testimonial-slider" class="owl-carousel mb-5">
+                            <?php foreach ($testimoni as $data) { ?>
+                                <div class="testimonial">
+                                    <div class="pic text-center mt-5 mb-4">
+                                        <img src="<?= base_url() ?>assets/icon/<?= $data->img ?>" class="rounded-circle" alt="" />
+                                    </div>
+                                    <h3 class="text-center text-white mb-3">
+                                        <?= $data->nama ?><small>, <?= $data->job ?></small>
+                                    </h3>
+                                    <div class="text-center text-warning" style="font-size: x-large;"><i class="fas fa-quote-left"></i></div>
+                                    <p class="lead text-white mb-0">
+                                        <?= $data->testimoni ?>
+                                    </p>
+                                </div>
+                            <?php  } ?>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -45,72 +78,40 @@
 
     <div class="bg-light py-5">
         <div class="container py-5">
-            <div class="row mb-4">
-                <div class="col-lg-5">
-                    <h2 class="display-4 font-weight-light">Our team</h2>
-                    <p class="font-italic text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-            </div>
 
             <div class="row text-center">
                 <!-- Team item-->
-                <div class="col-xl-3 col-sm-6 mb-5">
-                    <div class="bg-white rounded shadow-sm py-5 px-4"><img src="<?= base_url() ?>assets/icon/user1.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                        <h5 class="mb-0">Manuella Nevoresky</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-                        <ul class="social mb-0 list-inline mt-3">
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a></li>
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-instagram"></i></a></li>
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-linkedin"></i></a></li>
-                        </ul>
+                <?php foreach ($feature_en as $data) { ?>
+                    <div class="col-xl-3 col-sm-6 mb-5">
+                        <div class="bg-white rounded shadow-sm py-5 px-4 h-100">
+                            <img width="50px" src="<?= base_url() ?>assets/icon/<?= $data->icon ?>" alt="" srcset="">
+                            <h5 class="mb-4 mt-5"><strong><?= $data->title ?></strong></h5>
+                            <p><?= $data->konten ?></p>
+                        </div>
                     </div>
-                </div>
-                <!-- End-->
-
-                <!-- Team item-->
-                <div class="col-xl-3 col-sm-6 mb-5">
-                    <div class="bg-white rounded shadow-sm py-5 px-4"><img src="<?= base_url() ?>assets/icon/user2.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                        <h5 class="mb-0">Samuel Hardy</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-                        <ul class="social mb-0 list-inline mt-3">
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a></li>
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-instagram"></i></a></li>
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- End-->
-
-                <!-- Team item-->
-                <div class="col-xl-3 col-sm-6 mb-5">
-                    <div class="bg-white rounded shadow-sm py-5 px-4"><img src="<?= base_url() ?>assets/icon/user3.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                        <h5 class="mb-0">Tom Sunderland</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-                        <ul class="social mb-0 list-inline mt-3">
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a></li>
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-instagram"></i></a></li>
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- End-->
-
-                <!-- Team item-->
-                <div class="col-xl-3 col-sm-6 mb-5">
-                    <div class="bg-white rounded shadow-sm py-5 px-4"><img src="<?= base_url() ?>assets/icon/user4.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                        <h5 class="mb-0">John Tarly</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-                        <ul class="social mb-0 list-inline mt-3">
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a></li>
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-instagram"></i></a></li>
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- End-->
-
+                <?php } ?>
             </div>
         </div>
     </div>
-    </div>
 </section>
+<script>
+    $(document).ready(function() {
+        $("#testimonial-slider").owlCarousel({
+            items: 1,
+            itemsDesktop: [1000, 1],
+            itemsDesktopSmall: [979, 1],
+            itemsTablet: [768, 1],
+            pagination: true,
+            navigation: false,
+            navigationText: ["", ""],
+            slideSpeed: 1000,
+            singleItem: true,
+            transitionStyle: "fade",
+            autoPlay: true
+        });
+    });
+
+    function nphone(phone) {
+        formated_phone = "(" + phone.substring(0, 3) + ")" + phone.substring(3, 6) + "-" + phone.substring(6, 11)
+    }
+</script>
