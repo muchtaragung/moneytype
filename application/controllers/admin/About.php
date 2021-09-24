@@ -40,6 +40,35 @@ class About extends CI_Controller
         $this->load->view('admin/about/about_id', $data);
         $this->load->view('admin/layout/footer');
     }
+    public function add_testimoni_id()
+    {
+
+        // $a = $this->input->post('img', true);
+        // var_dump($a);
+        // die;
+
+        $config['upload_path'] = "./assets/icon";
+        $config['allowed_types'] = 'jpeg|jpg|png';
+        $config['max_size'] = '1024';
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);
+        if ($this->upload->do_upload("img")) {
+            $data = array('upload_data' => $this->upload->data());
+            $file = $data['upload_data']['file_name'];
+        } else {
+            $this->session->set_flashdata('error', 'Gambar gagal di tambahkan');
+            redirect('admin/about/id');
+        }
+        $data = array(
+            'nama' => $this->input->post('nama', true),
+            'job' =>  $this->input->post('job', true),
+            'testimoni' => $this->input->post('testimoni', true),
+            'img' => $file
+        );
+        $this->about->create_testimoni($data);
+        $this->session->set_flashdata('msg', 'Testimoni berhasil di tambah');
+        redirect('admin/about/id');
+    }
     public function add_testimoni()
     {
 
@@ -57,11 +86,7 @@ class About extends CI_Controller
             $file = $data['upload_data']['file_name'];
         } else {
             $this->session->set_flashdata('error', 'Gambar gagal di tambahkan');
-            if ($this->uri->segment(3) == null) {
-                redirect('admin/about');
-            } else {
-                redirect('admin/about/id');
-            }
+            redirect('admin/about');
         }
         $data = array(
             'nama' => $this->input->post('nama', true),
@@ -71,11 +96,7 @@ class About extends CI_Controller
         );
         $this->about->create_testimoni($data);
         $this->session->set_flashdata('msg', 'Testimoni berhasil di tambah');
-        if ($this->uri->segment(3) == null) {
-            redirect('admin/about');
-        } else {
-            redirect('admin/about/id');
-        }
+        redirect('admin/about');
     }
     public function add_feature_en()
     {
@@ -112,7 +133,7 @@ class About extends CI_Controller
             $file = $data['upload_data']['file_name'];
         } else {
             $this->session->set_flashdata('error', 'Gambar gagal di tambahkan');
-            redirect('admin/about');
+            redirect('admin/about/id');
         }
         $data = array(
             'title' => $this->input->post('title', true),
@@ -138,11 +159,7 @@ class About extends CI_Controller
                 $file = $data['upload_data']['file_name'];
             } else {
                 $this->session->set_flashdata('error', 'Gambar gagal di update');
-                if ($this->uri->segment(3) == null) {
-                    redirect('admin/about');
-                } else {
-                    redirect('admin/about/id');
-                }
+                redirect('admin/about');
             }
         }
 
@@ -152,11 +169,34 @@ class About extends CI_Controller
         );
         $this->about->update_header($id, $data);
         $this->session->set_flashdata('msg', 'Header berhasil diupdate');
-        if ($this->uri->segment(3) == null) {
-            redirect('admin/about');
+        redirect('admin/about');
+    }
+    public function update_header_id()
+    {
+        if (empty($_FILES['gambar']['name'])) {
+            $file = $this->input->post('gambar_lama', TRUE);
         } else {
-            redirect('admin/about/id');
+            $config['upload_path'] = "./assets/assets/img";
+            $config['allowed_types'] = 'jpeg|jpg|png';
+            $config['max_size'] = '1024';
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+            if ($this->upload->do_upload("gambar")) {
+                $data = array('upload_data' => $this->upload->data());
+                $file = $data['upload_data']['file_name'];
+            } else {
+                $this->session->set_flashdata('error', 'Gambar gagal di update');
+                redirect('admin/about/id');
+            }
         }
+
+        $id = $this->input->post('id', true);
+        $data = array(
+            'img_header' => $file
+        );
+        $this->about->update_header($id, $data);
+        $this->session->set_flashdata('msg', 'Header berhasil diupdate');
+        redirect('admin/about/id');
     }
     public function update_header_testimoni()
     {
@@ -173,11 +213,7 @@ class About extends CI_Controller
                 $file = $data['upload_data']['file_name'];
             } else {
                 $this->session->set_flashdata('error', 'Gambar gagal di update');
-                if ($this->uri->segment(3) == null) {
-                    redirect('admin/about');
-                } else {
-                    redirect('admin/about/id');
-                }
+                redirect('admin/about');
             }
         }
 
@@ -187,11 +223,34 @@ class About extends CI_Controller
         );
         $this->about->update_header_testimoni($id, $data);
         $this->session->set_flashdata('msg', 'Header Testimoni berhasil diupdate');
-        if ($this->uri->segment(3) == null) {
-            redirect('admin/about');
+        redirect('admin/about');
+    }
+    public function update_header_testimoni_id()
+    {
+        if (empty($_FILES['gambar']['name'])) {
+            $file = $this->input->post('gambar_lama', TRUE);
         } else {
-            redirect('admin/about/id');
+            $config['upload_path'] = "./assets/assets/img";
+            $config['allowed_types'] = 'jpeg|jpg|png|svg';
+            $config['max_size'] = '1024';
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+            if ($this->upload->do_upload("gambar")) {
+                $data = array('upload_data' => $this->upload->data());
+                $file = $data['upload_data']['file_name'];
+            } else {
+                $this->session->set_flashdata('error', 'Gambar gagal di update');
+                redirect('admin/about/id');
+            }
         }
+
+        $id = $this->input->post('id', true);
+        $data = array(
+            'img_testimoni' => $file
+        );
+        $this->about->update_header_testimoni($id, $data);
+        $this->session->set_flashdata('msg', 'Header Testimoni berhasil diupdate');
+        redirect('admin/about/id');
     }
     public function update_profile()
     {
@@ -211,11 +270,8 @@ class About extends CI_Controller
                 $file = $data['upload_data']['file_name'];
             } else {
                 $this->session->set_flashdata('error', 'Gambar gagal di update');
-                if ($this->uri->segment(3) == null) {
-                    redirect('admin/about');
-                } else {
-                    redirect('admin/about/id');
-                }
+
+                redirect('admin/about');
             }
         }
 
@@ -228,18 +284,10 @@ class About extends CI_Controller
         );
         if ($this->about->update_profile($id, $data)) {
             $this->session->set_flashdata('msg', 'Profile berhasil diupdate');
-            if ($this->uri->segment(3) == null) {
-                redirect('admin/about');
-            } else {
-                redirect('admin/about/id');
-            }
+            redirect('admin/about');
         } else {
             $this->session->set_flashdata('error', 'Profile gagal diupdate');
-            if ($this->uri->segment(3) == null) {
-                redirect('admin/about');
-            } else {
-                redirect('admin/about/id');
-            }
+            redirect('admin/about');
         }
     }
     public function update_profile_id()
@@ -287,11 +335,7 @@ class About extends CI_Controller
                 $file = $data['upload_data']['file_name'];
             } else {
                 $this->session->set_flashdata('error', 'Gambar gagal di update');
-                if ($this->uri->segment(3) == null) {
-                    redirect('admin/about');
-                } else {
-                    redirect('admin/about/id');
-                }
+                redirect('admin/about');
             }
         }
 
@@ -304,11 +348,37 @@ class About extends CI_Controller
         );
         $this->about->update_testimoni($id, $data);
         $this->session->set_flashdata('msg', 'Testimoni berhasil diupdate');
-        if ($this->uri->segment(3) == null) {
-            redirect('admin/about');
+        redirect('admin/about');
+    }
+    public function update_testimoni_id()
+    {
+        if (empty($_FILES['img']['name'])) {
+            $file = $this->input->post('img_lama', TRUE);
         } else {
-            redirect('admin/about/id');
+            $config['upload_path'] = "./assets/icon";
+            $config['allowed_types'] = 'jpeg|jpg|png';
+            $config['max_size'] = '1024';
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+            if ($this->upload->do_upload("img")) {
+                $data = array('upload_data' => $this->upload->data());
+                $file = $data['upload_data']['file_name'];
+            } else {
+                $this->session->set_flashdata('error', 'Gambar gagal di update');
+                redirect('admin/about/id');
+            }
         }
+
+        $id = $this->input->post('id', true);
+        $data = array(
+            'nama' => $this->input->post('nama', true),
+            'job' =>  $this->input->post('job', true),
+            'testimoni' => $this->input->post('testimoni', true),
+            'img' => $file
+        );
+        $this->about->update_testimoni($id, $data);
+        $this->session->set_flashdata('msg', 'Testimoni berhasil diupdate');
+        redirect('admin/about/id');
     }
     public function update_feature_en()
     {
@@ -372,11 +442,13 @@ class About extends CI_Controller
     {
         $this->about->delete_testimoni($id);
         $this->session->set_flashdata('msg', 'Testimoni berhasil dihapus');
-        if ($this->uri->segment(3) == null) {
-            redirect('admin/about');
-        } else {
-            redirect('admin/about/id');
-        }
+        redirect('admin/about');
+    }
+    public function delete_testimoni_id($id)
+    {
+        $this->about->delete_testimoni($id);
+        $this->session->set_flashdata('msg', 'Testimoni berhasil dihapus');
+        redirect('admin/about/id');
     }
     public function delete_feature_en($id)
     {

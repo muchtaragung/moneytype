@@ -52,7 +52,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 $route['default_controller'] = 'main';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-
+//moneytype
 $route['id/result'] = 'moneytype/result';
 $route['result'] = 'moneytype/result';
 $route['id/finish'] = 'main/finish';
@@ -68,6 +68,18 @@ $route['id/about'] = 'about';
 $route['id/ocs'] = 'ocs';
 //moneytype
 $route['id/moneytype'] = 'moneytype';
+
+//resource
+$route['id/resource'] = 'resource';
+$route['id/resource/archive/(:num)'] = 'resource/archive/$1';
+$route['id/search'] = 'resource/search';
+$route['id/resource/artikel/(:any)'] = "resource/detail_resource/$1";
+$route['id/resource/category/(:any)'] = "resource/category/$1";
+$route['id/resource/add_komen'] = "resource/add_komen";
+
+$route['resource/artikel/(:any)'] = "resource/detail_resource/$1";
+$route['resource/(:num)'] = "resource";
+$route['search'] = 'resource/search';
 
 // contact
 $route['id/contact'] = 'contact';

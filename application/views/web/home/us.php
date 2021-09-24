@@ -87,7 +87,7 @@
                             <a class="dropdown-item" href="<?= base_url()  ?>/moneytype">Take The Quiz Free!</a>
                         </div>
                     </li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link rounded" href="">Resources</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link rounded" href="<?= base_url() ?>resource">Resources</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link rounded" href="<?= base_url() ?>contact">Contact</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

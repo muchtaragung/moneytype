@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.transitions.css">
     <link href="<?= base_url() ?>assets/css/styles.css" rel="stylesheet">
+    <link href="<?= base_url() ?>assets/css/main.css?ver=1.2.0" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
     <link rel="stylesheet" media="screen" href="<?= base_url() ?>assets/css/screen.css">
     <script src="<?= base_url() ?>assets/js/jquery.validate.js"></script>

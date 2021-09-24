@@ -76,6 +76,35 @@
                     </ul>
                 </li>
                 <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon far fa-newspaper"></i>
+                        <p>
+                            Resource
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item active">
+                            <a href="<?= base_url() ?>admin/resource/kategori" <?= $this->uri->segment(3) == 'kategori' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Kategori</p>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="<?= base_url() ?>admin/resource/id" <?= $this->uri->segment(3) == 'id' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Indonesia</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url() ?>admin/resource" <?= $this->uri->segment(3) == '' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>English</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
                     <a href="<?= base_url() ?>admin/user" <?= $this->uri->segment(2) == 'user' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
                         <i class="nav-icon fas fa-users"></i>
                         <p>

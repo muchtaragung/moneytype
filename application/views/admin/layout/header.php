@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/admin/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/admin/datatables-buttons/css/buttons.bootstrap4.min.css">
     <!-- Theme style -->
+    <link rel="stylesheet" href="<?= base_url() ?>assets/admin/select2/css/select2.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/admin/select2-bootstrap4-theme/select2-bootstrap4.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/admin/summernote/summernote-bs4.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/admin/adminlte.min.css">
@@ -46,7 +48,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <div class="dropdown-divider"></div>
-                        <a href="<?=base_url()?>admin/profile" class="dropdown-item">
+                        <a href="<?= base_url() ?>admin/profile" class="dropdown-item">
                             <i class="fas fa-lock mr-2"></i> Ubah Password
                         </a>
                         <div class="dropdown-divider"></div>

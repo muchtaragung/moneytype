@@ -31,9 +31,25 @@
 <script src="<?= base_url() ?>assets/admin/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?= base_url() ?>assets/admin/demo.js"></script>
-<script src="<?php echo base_url() . 'assets/admin/ckeditor/ckeditor.js' ?>"></script>
+<!-- <script src="<?php echo base_url() . 'assets/admin/ckeditor/ckeditor.js' ?>"></script> -->
 <script src="<?= base_url() ?>assets/admin/summernote/summernote-bs4.min.js"></script>
+<script src="<?= base_url() ?>assets/admin//select2/js/select2.full.min.js"></script>
 <script type="text/javascript">
+    $('.isi').summernote({
+        height: 200,
+        toolbar: [
+
+            // [groupName, [list of button]]
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough']],
+            ['para', ['ul', 'ol']],
+        ]
+    });
+    //Initialize Select2 Elements
+    $('.select2').select2({
+        theme: 'bootstrap4'
+    })
+
     $(function() {
         bsCustomFileInput.init();
     });
@@ -66,6 +82,40 @@
                 window.location.href = getLink
             });
             return false;
+        });
+    });
+    $(function() {
+        $("#table1").DataTable({
+            "responsive": true,
+            "lengthChange": false,
+            "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+    });
+    $(function() {
+        $("#table2").DataTable({
+            "responsive": true,
+            "lengthChange": false,
+            "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
         });
     });
 </script>

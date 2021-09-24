@@ -27,7 +27,7 @@
                 <div class="card card-outline card-info">
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <form id="header" action="<?= base_url() ?>admin/about/update_header" enctype="multipart/form-data" method="post">
+                        <form id="header" action="<?= base_url() ?>admin/about/update_header_id" enctype="multipart/form-data" method="post">
                             <label for="">Header Image About</label>
                             <input type="hidden" id="id" name="id" value="<?= $about->id_about ?>">
                             <input type="hidden" name="gambar_lama" value="<?= $about->img_header ?>">
@@ -57,7 +57,7 @@
                 <div class="card card-outline card-info">
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <form id="profile_form" action="<?= base_url() ?>admin/about/update_profile" enctype="multipart/form-data" method="post">
+                        <form id="profile_form" action="<?= base_url() ?>admin/about/update_profile_id" enctype="multipart/form-data" method="post">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group pt-4">
@@ -68,21 +68,23 @@
                                     </div>
                                     <div class="form-group pt-2">
                                         <label for="profile">Profile ID</label>
-                                        <textarea id="profile" name="profile" class="form-control" placeholder="Profile" rows="17"><?= $about->profile_id ?></textarea>
+                                        <textarea id="profile" name="profile" class="form-control" placeholder="Profile" rows="14"><?= $about->profile_id ?></textarea>
                                     </div>
                                     <div class="form-group pt-2">
-                                        <label for="header_profile">Phone Number</label>
-                                        <input type="number" maxlength="12" min="0" name="phone" value="<?= $about->phone ?>" class="form-control" placeholder="Phone Number">
+                                        <label for="phone">Number Phone</label>
+                                        <input type="number" maxlength="12" min="0" name="phone" value="<?= $about->phone ?>" class="form-control" placeholder="Header Profile">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group text-center">
-                                        <label class="mt-4" for="gambar">Profile Image</label><br>
-                                        <img width="300px" id="previewImg" src="<?= base_url() ?>assets/assets/img/<?= $about->img_profile ?>" alt="" srcset="">
-                                        <div class="custom-file mt-4">
-                                            <input type="file" name="gambar" class="custom-file-input" id="gambar2" accept="image/x-png,image/jpg,image/jpeg" onchange="previewFile(this);">
-                                            <label class="custom-file-label" for="gambar2">Pilih Gambar</label>
-                                        </div>
+                                <div class="col-md-6 mt-4">
+                                    <label for="isi">Profile Header</label>
+                                    <div class="text-center mb-4">
+                                        <input type="hidden" name="gambar_lama" value="<?= $about->img_profile ?>">
+                                        <img width="300px" src="<?= base_url() ?>assets/assets/img/<?= $about->img_profile ?>" class="image-fluid" id="image-preview" alt="image preview">
+                                    </div>
+                                    <div class="custom-file">
+                                        <input type="file" name="gambar" id="image-source" class="custom-file-input" accept="image/x-png,image/jpg,image/jpeg" onchange="previewImage();">
+                                        <label class="custom-file-label" for="gallery-photo-add">Pilih Gambar</label>
+                                        <small id="helpId" class="text-muted">*Maksimal 1 mb</small>
                                     </div>
                                 </div>
                             </div>
@@ -101,21 +103,22 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card card-outline card-info">
-                    <!-- /.card-header -->
                     <div class="card-header">
                         <h4 class="mb-5">Testimoni</h4>
                     </div>
                     <div class="card-body">
-                        <form id="header_testimoni" action="<?= base_url() ?>admin/about/update_header_testimoni" enctype="multipart/form-data" method="post">
+                        <form id="header_testimoni" action="<?= base_url() ?>admin/about/update_header_testimoni_id" enctype="multipart/form-data" method="post">
                             <label for="">Background Testimoni</label>
                             <input type="hidden" id="id" name="id" value="<?= $about->id_about ?>">
                             <input type="hidden" name="gambar_lama" value="<?= $about->img_testimoni ?>">
-                            <div class="form-group text-center">
-                                <img width="300px" id="previewImg" src="<?= base_url() ?>assets/assets/img/<?= $about->img_testimoni ?>" alt="" srcset="">
-                                <div class="custom-file mt-5">
-                                    <input type="file" name="gambar" class="custom-file-input" id="img_testimoni" accept="image/x-png,image/jpg,image/jpeg" onchange="previewFile(this);">
-                                    <label class="custom-file-label" for="gambar">Pilih Gambar</label>
-                                </div>
+                            <div class="text-center mb-4">
+                                <input type="hidden" name="gambar_lama" value="<?= $about->img_testimoni ?>">
+                                <img width="300px" src="<?= base_url() ?>assets/assets/img/<?= $about->img_testimoni ?>" class="image-fluid" id="image-preview2" alt="image preview">
+                            </div>
+                            <div class="custom-file">
+                                <input type="file" name="gambar" id="image-source2" class="custom-file-input" accept="image/x-png,image/jpg,image/jpeg" onchange="previewImage2();">
+                                <label class="custom-file-label" for="gallery-photo-add">Pilih Gambar</label>
+                                <small id="helpId" class="text-muted">*Maksimal 1 mb</small>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Update</button>
@@ -128,6 +131,7 @@
                             Tambah Testimoni
                         </button>
                     </div>
+
                     <div class="card-body">
                         <div class="table-responsive">
                             <table id="table" class="table table-hover">
@@ -153,7 +157,7 @@
                                             <td><img width="50px" class="rounded-circle" src="<?= base_url() ?>assets/icon/<?php echo $data->img ?>"> </td>
                                             <td class="text-center">
                                                 <a class="btn btn-outline-primary" href="javascript:void(0)" title="Edit" onclick="edit_testimoni('<?php echo $data->id_testimoni ?>')"><i class="fas fa-pen"></i></a>
-                                                <a title="Hapus" class="btn btn-outline-danger alert_notif" href="<?php echo base_url() ?>admin/about/delete_testimoni/<?php echo $data->id_testimoni ?>"><i class="fas fa-trash"></i></a>
+                                                <a title="Hapus" class="btn btn-outline-danger alert_notif" href="<?php echo base_url() ?>admin/about/delete_testimoni_id/<?php echo $data->id_testimoni ?>"><i class="fas fa-trash"></i></a>
                                             </td>
                                         </tr>
                                     <?php }
@@ -182,7 +186,7 @@
                     <div class="container">
                         <div class="row">
                             <?php foreach ($feature_id as $data) { ?>
-                                <div class="col-md-3 mt-1">
+                                <div class="col-md-3 ">
                                     <div class="card h-100">
                                         <div class="bg-white text-center rounded shadow-sm py-5 px-4 h-100">
                                             <img width="50px" src="<?= base_url() ?>assets/icon/<?= $data->icon ?>" alt="" srcset="">
@@ -204,6 +208,24 @@
     </section>
 </div>
 <script>
+    function previewImage() {
+        document.getElementById("image-preview").style.display = "block";
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("image-source").files[0]);
+        oFReader.onload = function(oFREvent) {
+            document.getElementById("image-preview").src = oFREvent.target.result;
+        };
+    };
+
+    function previewImage2() {
+        document.getElementById("image-preview2").style.display = "block";
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("image-source2").files[0]);
+        oFReader.onload = function(oFREvent) {
+            document.getElementById("image-preview2").src = oFREvent.target.result;
+        };
+    };
+
     function add_feature() {
         save_method = 'add';
         $('#feature')[0].reset(); // reset form on modals
@@ -278,7 +300,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form id="form2" enctype="multipart/form-data" action="<?php echo base_url() ?>admin/about/add_testimoni" method="post">
+            <form id="form2" enctype="multipart/form-data" action="<?php echo base_url() ?>admin/about/add_testimoni_id" method="post">
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="nama">Nama</label>
@@ -293,12 +315,16 @@
                         <textarea name="testimoni" rows="10" class="form-control" id="testimoni"></textarea>
                     </div>
                     <label class="mt-4" for="img">Foto testimoni</label><br>
+                    <div class="text-center mb-4">
+                        <img width="300px" style="display: none;" class="image-fluid" id="image-preview3" alt="image preview">
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" name="img" id="image-source3" class="custom-file-input" accept="image/x-png,image/jpg,image/jpeg" onchange="previewImage3();">
+                        <label class="custom-file-label" for="gallery-photo-add">Pilih Gambar</label>
+                        <small id="helpId" class="text-muted">*Maksimal 1 mb</small>
+                    </div>
                     <div class="form-group">
-                        <img width="300px" id="previewImg" src="<?= base_url() ?>assets/icon/transparan.png" alt="" srcset="">
-                        <div class="custom-file mt-5">
-                            <input type="file" name="img" class="custom-file-input" id="img" accept="image/x-png,image/jpg,image/jpeg" onchange="previewFile(this);">
-                            <label class="custom-file-label" for="img">Pilih Gambar</label>
-                        </div>
+                        <button type="submit" class="btn btn-primary">Update</button>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -321,7 +347,7 @@
                     <i data-feather="x"></i>
                 </button>
             </div>
-            <form id="form1" enctype="multipart/form-data" action="<?php echo base_url() ?>admin/about/update_testimoni" method="post">
+            <form id="form1" enctype="multipart/form-data" action="<?php echo base_url() ?>admin/about/update_testimoni_id" method="post">
                 <div class="modal-body">
                     <input type="hidden" name="id" value="">
                     <input type="hidden" name="img_lama" value="">
@@ -338,12 +364,14 @@
                         <textarea name="testimoni" class="form-control" rows="10" id="testimoni"></textarea>
                     </div>
                     <label class="mt-4" for="img">Foto testimoni</label><br>
-                    <div class="form-group">
-                        <img width="300px" id="previewImg" src="<?= base_url() ?>assets/icon/transparan.png" alt="" srcset="">
-                        <div class="custom-file mt-5">
-                            <input type="file" name="img" class="custom-file-input" id="img2" accept="image/x-png,image/jpg,image/jpeg" onchange="previewFile(this);">
-                            <label class="custom-file-label" for="img">Pilih Gambar</label>
-                        </div>
+                    <div class="text-center mb-4">
+                        <input type="hidden" name="img_lama" value="">
+                        <img width="300px" style="display: none;" class="image-fluid" id="image-preview4" alt="image preview">
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" name="img" id="image-source4" class="custom-file-input" accept="image/x-png,image/jpg,image/jpeg" onchange="previewImage4();">
+                        <label class="custom-file-label" for="gallery-photo-add">Pilih Gambar</label>
+                        <small id="helpId" class="text-muted">*Maksimal 1 mb</small>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -377,12 +405,13 @@
                         <textarea name="konten" rows="5" class="form-control" id="konten"></textarea>
                     </div>
                     <label class="mt-4" for="icon">Icon</label><br>
-                    <div class="form-group">
-                        <img width="300px" id="previewImg" src="<?= base_url() ?>assets/icon/transparan.png" alt="" srcset="">
-                        <div class="custom-file mt-5">
-                            <input type="file" name="icon" class="custom-file-input" id="icon" accept="image/x-png,image/jpg,image/jpeg" onchange="previewFile(this);">
-                            <label class="custom-file-label" for="img">Pilih Icon</label>
-                        </div>
+                    <div class="text-center mb-4">
+                        <img width="200px" style="display: none;" class="image-fluid" id="image-preview5" alt="image preview">
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" name="icon" id="image-source5" class="custom-file-input" accept="image/x-png,image/jpg,image/jpeg" onchange="previewImage5();">
+                        <label class="custom-file-label" for="gallery-photo-add">Pilih Icon</label>
+                        <small id="helpId" class="text-muted">*Maksimal 1 mb</small>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -418,12 +447,14 @@
                         <textarea name="konten" rows="5" class="form-control" id="konten"></textarea>
                     </div>
                     <label class="mt-4" for="icon">Icon</label><br>
-                    <div class="form-group">
-                        <img width="300px" id="previewImg" src="<?= base_url() ?>assets/icon/transparan.png" alt="" srcset="">
-                        <div class="custom-file mt-5">
-                            <input type="file" name="icon" class="custom-file-input" id="icon2" accept="image/x-png,image/jpg,image/jpeg" onchange="previewFile(this);">
-                            <label class="custom-file-label" for="img">Pilih Icon</label>
-                        </div>
+                    <div class="text-center mb-4">
+                        <input type="hidden" name="icon_lama" value="">
+                        <img width="200px" style="display: none;" class="image-fluid" id="image-preview6" alt="image preview">
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" name="icon" id="image-source6" class="custom-file-input" accept="image/x-png,image/jpg,image/jpeg" onchange="previewImage6();">
+                        <label class="custom-file-label" for="gallery-photo-add">Pilih Gambar</label>
+                        <small id="helpId" class="text-muted">*Maksimal 1 mb</small>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -438,6 +469,41 @@
     </div>
 </div>
 <script>
+    function previewImage6() {
+        document.getElementById("image-preview6").style.display = "block";
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("image-source6").files[0]);
+        oFReader.onload = function(oFREvent) {
+            document.getElementById("image-preview6").src = oFREvent.target.result;
+        };
+    };
+
+    function previewImage5() {
+        document.getElementById("image-preview5").style.display = "block";
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("image-source5").files[0]);
+        oFReader.onload = function(oFREvent) {
+            document.getElementById("image-preview5").src = oFREvent.target.result;
+        };
+    };
+
+    function previewImage4() {
+        document.getElementById("image-preview4").style.display = "block";
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("image-source4").files[0]);
+        oFReader.onload = function(oFREvent) {
+            document.getElementById("image-preview4").src = oFREvent.target.result;
+        };
+    };
+
+    function previewImage3() {
+        document.getElementById("image-preview3").style.display = "block";
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("image-source3").files[0]);
+        oFReader.onload = function(oFREvent) {
+            document.getElementById("image-preview3").src = oFREvent.target.result;
+        };
+    };
     $(document).ready(function() {
         $('#feature').validate({
             ignore: [],
@@ -536,14 +602,6 @@
             }
         });
         $(function() {
-            $('#img_testimoni').change(function() {
-                if (Math.round(this.files[0].size / (1024 * 1024)) > 1) {
-                    alert('Please select image size less than 1 MB');
-                    $("#img_testimoni").val(null);
-                }
-            });
-        });
-        $(function() {
             $('#img').change(function() {
                 if (Math.round(this.files[0].size / (1024 * 1024)) > 1) {
                     alert('Please select image size less than 1 MB');
@@ -556,6 +614,14 @@
                 if (Math.round(this.files[0].size / (1024 * 1024)) > 1) {
                     alert('Please select image size less than 1 MB');
                     $("#img2").val(null);
+                }
+            });
+        });
+        $(function() {
+            $('#img_testimoni').change(function() {
+                if (Math.round(this.files[0].size / (1024 * 1024)) > 1) {
+                    alert('Please select image size less than 1 MB');
+                    $("#img_testimoni").val(null);
                 }
             });
         });
