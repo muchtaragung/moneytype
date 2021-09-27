@@ -38,6 +38,11 @@
         background-size: cover;
     }
 
+    .card-footer {
+        background: transparent;
+        border-top: 0px;
+    }
+
     @media all and (min-width: 992px) {
         .navbar .nav-item .dropdown-menu {
             display: none;
