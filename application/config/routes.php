@@ -65,7 +65,18 @@ $route['id'] = 'main';
 $route['id/about'] = 'about';
 
 //One-coin service
-$route['id/ocs'] = 'ocs';
+$route['one-coin-service'] = 'ocs';
+$route['id/one-coin-service'] = 'ocs';
+//Financial-planning
+$route['financial-planning'] = 'ocs/fp';
+$route['id/financial-planning'] = 'ocs/fp';
+//money-coaching
+$route['money-coaching'] = 'ocs/mc';
+$route['id/money-coaching'] = 'ocs/mc';
+//money-coaching
+$route['eight-money-types'] = 'emt';
+$route['id/eight-money-types'] = 'emt';
+
 //moneytype
 $route['id/moneytype'] = 'moneytype';
 

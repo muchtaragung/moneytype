@@ -14,7 +14,7 @@
             <div class="col-lg-5 mt-5">
                 <h1 class="display-6 text"><?= $about->header_profile_id ?></span></h1>
                 <p class="lead text-muted mb-0"><?= $about->profile_id ?></p>
-                <a href="#" class="btn btn-outline-warning px-5 rounded-pill mt-5 ">Tentang Saya</a>
+                <a href="<?= base_url() . $this->uri->segment(1) ?>/contact" class="btn btn-outline-warning px-5 rounded-pill mt-5 ">Tentang Saya</a>
                 <div class="text-left mt-5">
                     <h3>TELEPON SEKARANG</h3>
                     <p style="font-size: 43px;">

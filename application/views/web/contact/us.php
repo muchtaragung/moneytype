@@ -99,7 +99,7 @@
                             </div>
                         </div>
                         <div class="text-left text-md-left">
-                            <button class="btn btn-warning" type="submit">Send</button>
+                            <button class="btn btn-outline-warning" type="submit">Send</button>
                         </div>
                     </form>
                 </div>

@@ -15,18 +15,74 @@ class Ocs extends CI_Controller
     }
     public function index()
     {
-        $data['title'] = 'Contact';
-        $data['contact'] = $this->web->get_contact()->row();
-        $data['logo'] = $this->web->get_logo()->row();
-        $data['sosmed'] = $this->web->get_sosmed()->result();
-        $data['contact'] = $this->web->get_contact()->row();
-        $this->load->view('web/layout/header', $data);
-        $this->load->view('web/layout/navbar', $data);
         if ($this->uri->segment(1) == "id") {
+            $data['title'] = 'One-Coin Service';
+            $data['contact'] = $this->web->get_contact()->row();
+            $data['logo'] = $this->web->get_logo()->row();
+            $data['sosmed'] = $this->web->get_sosmed()->result();
+            $data['contact'] = $this->web->get_contact()->row();
+            $this->load->view('web/layout/header', $data);
+            $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/ocs/id', $data);
+            $this->load->view('web/layout/footer', $data);
         } else {
+            $data['title'] = 'One-Coin Service';
+            $data['contact'] = $this->web->get_contact()->row();
+            $data['logo'] = $this->web->get_logo()->row();
+            $data['sosmed'] = $this->web->get_sosmed()->result();
+            $data['contact'] = $this->web->get_contact()->row();
+            $this->load->view('web/layout/header', $data);
+            $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/ocs/us', $data);
+            $this->load->view('web/layout/footer', $data);
         }
-        $this->load->view('web/layout/footer', $data);
+    }
+    public function fp()
+    {
+        if ($this->uri->segment(1) == "id") {
+            $data['title'] = 'Financial Planning';
+            $data['contact'] = $this->web->get_contact()->row();
+            $data['logo'] = $this->web->get_logo()->row();
+            $data['sosmed'] = $this->web->get_sosmed()->result();
+            $data['contact'] = $this->web->get_contact()->row();
+            $this->load->view('web/layout/header', $data);
+            $this->load->view('web/layout/navbar', $data);
+            $this->load->view('web/fp/id', $data);
+            $this->load->view('web/layout/footer', $data);
+        } else {
+            $data['title'] = 'Financial Planning';
+            $data['contact'] = $this->web->get_contact()->row();
+            $data['logo'] = $this->web->get_logo()->row();
+            $data['sosmed'] = $this->web->get_sosmed()->result();
+            $data['contact'] = $this->web->get_contact()->row();
+            $this->load->view('web/layout/header', $data);
+            $this->load->view('web/layout/navbar', $data);
+            $this->load->view('web/fp/us', $data);
+            $this->load->view('web/layout/footer', $data);
+        }
+    }
+    public function mc()
+    {
+        if ($this->uri->segment(1) == "id") {
+            $data['title'] = 'Money Coaching';
+            $data['contact'] = $this->web->get_contact()->row();
+            $data['logo'] = $this->web->get_logo()->row();
+            $data['sosmed'] = $this->web->get_sosmed()->result();
+            $data['contact'] = $this->web->get_contact()->row();
+            $this->load->view('web/layout/header', $data);
+            $this->load->view('web/layout/navbar', $data);
+            $this->load->view('web/mc/id', $data);
+            $this->load->view('web/layout/footer', $data);
+        } else {
+            $data['title'] = 'Money Coaching';
+            $data['contact'] = $this->web->get_contact()->row();
+            $data['logo'] = $this->web->get_logo()->row();
+            $data['sosmed'] = $this->web->get_sosmed()->result();
+            $data['contact'] = $this->web->get_contact()->row();
+            $this->load->view('web/layout/header', $data);
+            $this->load->view('web/layout/navbar', $data);
+            $this->load->view('web/mc/us', $data);
+            $this->load->view('web/layout/footer', $data);
+        }
     }
 }

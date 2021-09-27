@@ -14,7 +14,7 @@
             <div class="col-lg-5 mt-5">
                 <h1 class="display-6 text"><?= $about->header_profile ?></span></h1>
                 <p class="lead text-muted mb-0"><?= $about->profile ?></p>
-                <a href="#" class="btn btn-outline-warning px-5 rounded-pill mt-5 ">ABOUT ME</a>
+                <a href="<?= base_url() ?>contact" class="btn btn-outline-warning px-5 rounded-pill mt-5 ">ABOUT ME</a>
                 <div class="text-left mt-5">
                     <h3>CALL NOW</h3>
                     <p style="font-size: 43px;">
@@ -78,7 +78,6 @@
 
     <div class="bg-light py-5">
         <div class="container py-5">
-
             <div class="row text-center">
                 <!-- Team item-->
                 <?php foreach ($feature_en as $data) { ?>

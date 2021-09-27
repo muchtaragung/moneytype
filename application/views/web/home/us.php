@@ -38,6 +38,11 @@
         background-size: cover;
     }
 
+    .card-footer {
+        background: transparent;
+        border-top: 0px;
+    }
+
     @media all and (min-width: 992px) {
         /* .navbar .nav-item .dropdown-menu {
             display: none;
@@ -70,17 +75,17 @@
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link rounded" href="<?= base_url() ?>about">About</a></li>
 
                     <li id="ocs1" class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="<?= base_url() ?>ocs" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="<?= base_url() ?>one-coin-service" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             One-Coin Service
                         </a>
                         <div id="ocs2" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Financial Planning</a>
-                            <a class="dropdown-item" href="#">Money Coaching</a>
+                            <a class="dropdown-item" href="<?= base_url() ?>financial-planning">Financial Planning</a>
+                            <a class="dropdown-item" href="<?= base_url() ?>money-coaching">Money Coaching</a>
                         </div>
                     </li>
 
                     <li id="emt1" class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="<?= base_url() ?>emt" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="<?= base_url() ?>eight-money-types" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             The Eight Money Types
                         </a>
                         <div id="emt2" class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -113,61 +118,114 @@
             </div>
         </div>
     </header>
-    <!-- About-->
-    <section class="page-section bg-primary" id="about">
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="text-white mt-0">We've got what you need!</h2>
-                    <hr class="divider divider-light" />
-                    <p class="text-white-75 mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p>
-                    <a class="btn btn-light btn-xl" href="#services">Get Started!</a>
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- Services-->
     <section class="page-section" id="services">
         <div class="container px-4 px-lg-5">
-            <h2 class="text-center mt-0">At Your Service</h2>
-            <hr class="divider" />
+            <!-- <h2 class="text-center mt-0">At Your Service</h2> -->
+            <!-- <hr class="divider" /> -->
             <div class="row gx-4 gx-lg-5">
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="mt-5">
-                        <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
-                        <h3 class="h4 mb-2">Sturdy Themes</h3>
-                        <p class="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p>
+                <div class="col-lg-3 col-md-6 text-center ">
+                    <div class="card shadow-lg h-100">
+                        <div class="card-body">
+                            <img width="250px" class="img-fluid" src="<?= base_url() ?>assets/assets/img/ber1.jpg" alt="" srcset="">
+                            <div class="mt-5">
+                                <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
+                                <h3 class="h2 mb-2"><strong>COACH BOOKS</strong></h3>
+                            </div>
+                            <p style="line-height: 2; font-size: 16px" class="text-muted mt-5">You can buy books here for best prices. Clikasd gubergren sea takimata sanctus.</p>
+                        </div>
+                        <div class="card-footer text-muted mx-auto mb-5">
+                            <a href="" class="btn btn-outline-dark btn-md">LEARN MORE</a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
-                    <div class="mt-5">
-                        <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
-                        <h3 class="h4 mb-2">Up to Date</h3>
-                        <p class="text-muted mb-0">All dependencies are kept current to keep things fresh.</p>
+                    <div class="card shadow-lg h-100">
+                        <div class="card-body ">
+                            <img width="250px" class="img-fluid" src="<?= base_url() ?>assets/assets/img/ber2.jpg" alt="" srcset="">
+                            <div class="mt-5">
+                                <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
+                                <h3 class="h2 mb-2"><strong>COACH ARTICLES</strong></h3>
+                            </div>
+                            <p style="line-height: 2; font-size: 16px" class="text-muted mt-5">Check coache’s latest news and updates. Lorem ipsum dolor sit amet dolor sit amet.</p>
+                        </div>
+                        <div class="card-footer text-muted mx-auto mb-5">
+                            <a href="" class="btn btn-outline-dark btn-md">LEARN MORE</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center ">
+                    <div class="card shadow-lg h-100">
+                        <div class="card-body ">
+                            <img width="250px" class="img-fluid" src="<?= base_url() ?>assets/assets/img/ber3.jpg" alt="" srcset="">
+                            <div class="mt-5">
+                                <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
+                                <h3 class="h2 mb-2"><strong>COACH VIDEOS</strong></h3>
+                            </div>
+                            <p style="line-height: 2; font-size: 16px" class="text-muted mt-5">Check latest coache’s live presentations conseur sadipscing elitr sed diam.</p>
+                        </div>
+                        <div class="card-footer text-muted mx-auto mb-5">
+                            <a href="" class="btn btn-outline-dark btn-md">LEARN MORE</a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
-                    <div class="mt-5">
-                        <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
-                        <h3 class="h4 mb-2">Ready to Publish</h3>
-                        <p class="text-muted mb-0">You can use this design as is, or you can make changes!</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="mt-5">
-                        <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
-                        <h3 class="h4 mb-2">Made with Love</h3>
-                        <p class="text-muted mb-0">Is it really open source if it's not made with love?</p>
+                    <div class="card shadow-lg h-100">
+                        <div class="card-body">
+                            <img width="250px" class="img-fluid" src="<?= base_url() ?>assets/assets/img/ber4.jpg" alt="" srcset="">
+                            <div class="mt-5">
+                                <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
+                                <h3 class="h2 mb-2"><strong>Sturdy Themes</strong></h3>
+                            </div>
+                            <p style="line-height: 2; font-size: 16px" class="text-muted mt-5">Our themes are updated regularly to keep them bug free!</p>
+                        </div>
+                        <div class="card-footer text-muted mx-auto mb-5">
+                            <a href="" class="btn btn-outline-dark btn-md">LEARN MORE</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- Call to action-->
-    <section class="page-section bg-dark text-white">
-        <div class="container px-4 px-lg-5 text-center">
-            <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
-            <a class="btn btn-light btn-xl" href="https://startbootstrap.com/theme/creative/">Download Now!</a>
+    <section class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <h1 class="display-6 text"><?= $about->header_profile ?></span></h1>
+                    <p class="lead text-muted mb-0"><?= $about->profile ?></p>
+                    <a href="<?= base_url() ?>contact" class="btn btn-outline-warning px-5 rounded-pill mt-5 ">ABOUT ME</a>
+                    <div class="text-left mt-5">
+                        <h3>CALL NOW</h3>
+                        <p style="font-size: 43px;">
+                            <?php
+                            echo preg_replace('/\d{3}/', '$0-', str_replace('.', 'null', trim($about->phone)), 2);
+                            ?>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="text-center">
+                        <img src="<?= base_url() ?>assets/assets/img/<?= $about->img_profile ?>" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white py-5">
+            <div class="container py-5">
+                <div class="row text-center">
+                    <!-- Team item-->
+                    <?php foreach ($feature_en as $data) { ?>
+                        <div class="col-xl-3 col-sm-6 mb-5">
+                            <div class="bg-white rounded shadow-sm py-5 px-4 h-100">
+                                <img width="50px" src="<?= base_url() ?>assets/icon/<?= $data->icon ?>" alt="" srcset="">
+                                <h5 class="mb-4 mt-5"><strong><?= $data->title ?></strong></h5>
+                                <p style="line-height: 2;"><?= $data->konten ?></p>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
         </div>
     </section>
     <!-- Contact-->

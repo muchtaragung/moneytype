@@ -79,7 +79,7 @@
                         <input type="text" class="form-control form-control-sm" name="sub">
                     </div>
                     <div class="col-md-3">
-                        <button type="submit" class="btn btn-sm btn-warning">Sub</button>
+                        <button type="submit" class="btn btn-sm btn-outline-warning">Sub</button>
                     </div>
                 </div>
 

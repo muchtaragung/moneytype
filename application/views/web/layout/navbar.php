@@ -32,21 +32,21 @@
                             <li class="nav-item mx-0 mx-lg-1"><a class="text-dark nav-link rounded" href="<?= base_url() ?>">Home</a></li>
                             <li class="nav-item mx-0 mx-lg-1"><a class="text-dark nav-link rounded" href="<?= base_url() ?>about">About</a></li>
                             <li id="ocs1" class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle " href="<?= base_url() ?>ocs" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle " href="<?= base_url() ?>one-coin-service" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     One-Coin Service
                                 </a>
                                 <div id="ocs2" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Financial Planning</a>
-                                    <a class="dropdown-item" href="#">Money Coaching</a>
+                                    <a class="dropdown-item" href="<?= base_url() ?>financial-planning">Financial Planning</a>
+                                    <a class="dropdown-item" href="<?= base_url() ?>money-coaching">Money Coaching</a>
                                 </div>
                             </li>
 
                             <li id="emt1" class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="<?= base_url() ?>emt" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="<?= base_url() ?>eight-money-types" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     The Eight Money Types
                                 </a>
                                 <div id="emt2" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="<?= base_url()  ?>/moneytype">Take The Quiz Free!</a>
+                                    <a class="dropdown-item" href="<?= base_url()  ?>moneytype">Take The Quiz Free!</a>
                                 </div>
                             </li>
                             <li class="nav-item mx-0 mx-lg-1"><a class="text-dark nav-link rounded" href="<?= base_url() ?>resource">Resources</a></li>
@@ -76,16 +76,16 @@
                             <li class="nav-item mx-0 mx-lg-1"><a class="text-dark nav-link rounded" href="<?= base_url() . $this->uri->segment(1) ?>/">Home</a></li>
                             <li class="nav-item mx-0 mx-lg-1"><a class="text-dark nav-link rounded" href="<?= base_url() . $this->uri->segment(1) ?>/about">About</a></li>
                             <li id="ocs1" class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="<?= base_url() . $this->uri->segment(1) ?>/ocs" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="<?= base_url() . $this->uri->segment(1) ?>/one-coin-service" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     One-Coin Service
                                 </a>
                                 <div id="ocs2" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Financial Planning</a>
-                                    <a class="dropdown-item" href="#">Money Coaching</a>
+                                    <a class="dropdown-item" href="<?= base_url() . $this->uri->segment(1) ?>/financial-planning">Financial Planning</a>
+                                    <a class="dropdown-item" href="<?= base_url() . $this->uri->segment(1) ?>/money-coaching">Money Coaching</a>
                                 </div>
                             </li>
                             <li id="emt1" class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="<?= base_url() . $this->uri->segment(1) ?>/emt" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="<?= base_url() . $this->uri->segment(1) ?>/eight-money-types" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     The Eight Money Types
                                 </a>
                                 <div id="emt2" class="dropdown-menu" aria-labelledby="navbarDropdown">
