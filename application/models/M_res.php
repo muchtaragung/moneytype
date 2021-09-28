@@ -249,6 +249,26 @@ class M_res extends CI_Model
         $query = $this->db->get();
         return $query;
     }
+    public function get_resource_id_footer()
+    {
+        $this->db->select('*');
+        $this->db->from('blog_id');
+        $this->db->join('kategori_blog', 'kategori_blog.id_kategori = blog_id.id_kategori');
+        $this->db->order_by('blog_id.tanggal_post', 'DESC');
+        $this->db->limit(2);
+        $query = $this->db->get();
+        return $query;
+    }
+    public function get_resource_en_footer()
+    {
+        $this->db->select('*');
+        $this->db->from('blog');
+        $this->db->join('kategori_blog', 'kategori_blog.id_kategori = blog.id_kategori');
+        $this->db->order_by('blog.tanggal_post', 'DESC');
+        $this->db->limit(2);
+        $query = $this->db->get();
+        return $query;
+    }
     public function archives_id()
     {
         $query = 'SELECT Month(tanggal_post), COUNT(tanggal_post) AS jml FROM blog_id GROUP BY Month(`tanggal_post`)';

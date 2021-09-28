@@ -18,8 +18,8 @@
         <div class="d-flex align-items-center h-100">
             <div class="container">
                 <div class="text-white">
-                    <h1 class="text-left display-3"><strong>Money Coaching</strong> </h1>
-                    <p style="font-size: medium;" class="text-left">Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.</p>
+                    <h1 class="text-center display-4"><strong>Money Coaching</strong> </h1>
+                    <!-- <p style="font-size: medium;" class="text-left">Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.</p> -->
                     <!-- <a class="btn btn-warning btn-lg" href="<?= base_url() ?>moneytype" role="button">Money Type Quiz</a> -->
                 </div>
             </div>

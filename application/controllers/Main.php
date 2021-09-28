@@ -11,6 +11,7 @@ class Main extends CI_Controller
     $this->load->model('M_user', 'user');
     $this->load->model('M_web', 'web');
     $this->load->model('M_about', 'about');
+    $this->load->model('M_res', 'res');
     $this->load->helper('security');
     $this->load->library('form_validation');
   }
@@ -26,9 +27,13 @@ class Main extends CI_Controller
     $data['testimoni'] = $this->about->get_testimoni()->result();
     $data['feature_en'] = $this->about->get_feature_en()->result();
     $data['feature_id'] = $this->about->get_feature_id()->result();
+
+
     if ($this->uri->segment(1) == "id") {
+      $data['recent_footer'] = $this->res->get_resource_id_footer()->result();
       $this->load->view('web/home/id', $data);
     } else {
+      $data['recent_footer'] = $this->res->get_resource_en_footer()->result();
       $this->load->view('web/home/us', $data);
     }
   }
@@ -41,8 +46,10 @@ class Main extends CI_Controller
     $this->load->view('web/layout/header', $data);
     $this->load->view('web/layout/navbar', $data);
     if ($this->uri->segment(1) == "id") {
+      $data['recent_footer'] = $this->res->get_resource_id_footer()->result();
       $this->load->view('web/finish/id', $data);
     } else {
+      $data['recent_footer'] = $this->res->get_resource_en_footer()->result();
       $this->load->view('web/finish/us', $data);
     }
     $this->load->view('web/layout/footer', $data);

@@ -11,6 +11,7 @@ class About extends CI_Controller
         $this->load->model('M_user', 'user');
         $this->load->model('M_web', 'web');
         $this->load->model('M_about', 'about');
+        $this->load->model('M_res', 'res');
         $this->load->helper('security');
         $this->load->library('form_validation');
     }
@@ -27,8 +28,10 @@ class About extends CI_Controller
         $this->load->view('web/layout/header', $data);
         $this->load->view('web/layout/navbar', $data);
         if ($this->uri->segment(1) == "id") {
+            $data['recent_footer'] = $this->res->get_resource_id_footer()->result();
             $this->load->view('web/about/id', $data);
         } else {
+            $data['recent_footer'] = $this->res->get_resource_en_footer()->result();
             $this->load->view('web/about/us', $data);
         }
         $this->load->view('web/layout/footer', $data);

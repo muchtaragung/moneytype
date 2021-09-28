@@ -53,4 +53,32 @@ class Logo extends CI_Controller
         $this->session->set_flashdata('msg', 'Logo berhasil diupdate');
         redirect('admin/logo');
     }
+    public function update_footer()
+    {
+        if (empty($_FILES['logo']['name'])) {
+            $file = $this->input->post('logo_lama', TRUE);
+        } else {
+            $config['upload_path'] = "./assets/admin/assets/logo";
+            $config['allowed_types'] = 'jpeg|jpg|png';
+            $config['max_size'] = '2000';
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+            if ($this->upload->do_upload("logo")) {
+                $data = array('upload_data' => $this->upload->data());
+                $file = $data['upload_data']['file_name'];
+            } else {
+                $this->session->set_flashdata('error', 'Logo gagal di update');
+                redirect('admin/logo');
+            }
+        }
+
+        $id = $this->input->post('id', true);
+        $data = array(
+            'logo_footer' => $file,
+            'update_at' => date("Y-m-d h:i:s")
+        );
+        $this->web->update_logo($id, $data);
+        $this->session->set_flashdata('msg', 'Logo berhasil diupdate');
+        redirect('admin/logo');
+    }
 }

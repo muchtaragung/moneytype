@@ -18,8 +18,8 @@
         <div class="d-flex align-items-center h-100">
             <div class="container">
                 <div class="text-white">
-                    <h1 class="text-left display-3"><strong>Financial Planning</strong> </h1>
-                    <p style="font-size: medium;" class="text-left">Melepaskan informasi lintas media secara efisien tanpa nilai lintas media. Maksimalkan pengiriman tepat waktu dengan cepat untuk skema waktu nyata.</p>
+                    <h1 class="text-center display-4"><strong>Financial Planning</strong> </h1>
+                    <!-- <p style="font-size: medium;" class="text-left">Melepaskan informasi lintas media secara efisien tanpa nilai lintas media. Maksimalkan pengiriman tepat waktu dengan cepat untuk skema waktu nyata.</p> -->
                     <!-- <a class="btn btn-warning btn-lg" href="<?= base_url() ?>moneytype" role="button">Money Type Quiz</a> -->
                 </div>
             </div>

@@ -6,12 +6,14 @@ class Login extends CI_Controller
     {
         parent::__construct();
         $this->load->model('m_auth', 'auth');
+        $this->load->model('m_web', 'web');
         $this->load->library('form_validation');
     }
 
     public function index()
     {
-        $this->load->view('admin/login');
+        $data['logo'] = $this->web->get_logo()->row();
+        $this->load->view('admin/login', $data);
     }
     public function auth()
     {

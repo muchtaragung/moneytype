@@ -10,6 +10,7 @@ class Contact extends CI_Controller
         $this->load->library('email');
         $this->load->model('M_user', 'user');
         $this->load->model('M_web', 'web');
+        $this->load->model('M_res', 'res');
         $this->load->helper('security');
         $this->load->library('form_validation');
     }
@@ -22,8 +23,10 @@ class Contact extends CI_Controller
         $this->load->view('web/layout/header', $data);
         $this->load->view('web/layout/navbar', $data);
         if ($this->uri->segment(1) == "id") {
+            $data['recent_footer'] = $this->res->get_resource_id_footer()->result();
             $this->load->view('web/contact/id', $data);
         } else {
+            $data['recent_footer'] = $this->res->get_resource_en_footer()->result();
             $this->load->view('web/contact/us', $data);
         }
         $this->load->view('web/layout/footer', $data);

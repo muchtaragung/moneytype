@@ -703,14 +703,14 @@
                     </div>
                     <div id="selanjutnya" class="row justify-content-center mt-5">
                         <div class="col-md-5 offset-md-3">
-                            <a type="button" id="next1" class="next1 btn btn-warning btn-xl">Selanjutnya</a>
-                            <a type="button" id="next2" class="next2 btn btn-warning btn-xl" style="display: none;">Selanjutnya</a>
-                            <button class="btn btn-warning btn-xl" id="submitButton" style="display: none;" type="submit">Kirimkan Saya Hasil Money Type Quiz</button>
+                            <a type="button" id="next1" class="next1 btn btn-outline-warning btn-xl">Selanjutnya</a>
+                            <a type="button" id="next2" class="next2 btn btn-outline-warning btn-xl" style="display: none;">Selanjutnya</a>
+                            <button class="btn btn-outline-warning btn-xl" id="submitButton" style="display: none;" type="submit">Kirimkan Saya Hasil Money Type Quiz</button>
                         </div>
                     </div>
                     <div style="display: none;" id="submit-btn" class="row justify-content-center mt-5">
                         <div class="col-md-7 offset-md-3">
-                            <button class="btn btn-warning btn-xl" id="submitButton" type="submit">Kirimkan Saya Hasil Money Type Quiz</button>
+                            <button class="btn btn-outline-warning btn-xl" id="submitButton" type="submit">Kirimkan Saya Hasil Money Type Quiz</button>
                         </div>
                     </div>
 

@@ -10,6 +10,8 @@ class Emt extends CI_Controller
         $this->load->library('email');
         $this->load->model('M_user', 'user');
         $this->load->model('M_web', 'web');
+        $this->load->model('M_emt', 'emt');
+        $this->load->model('M_res', 'res');
         $this->load->helper('security');
         $this->load->library('form_validation');
     }
@@ -20,7 +22,11 @@ class Emt extends CI_Controller
             $data['contact'] = $this->web->get_contact()->row();
             $data['logo'] = $this->web->get_logo()->row();
             $data['sosmed'] = $this->web->get_sosmed()->result();
-            $data['contact'] = $this->web->get_contact()->row();
+            $data['type'] = $this->emt->get_type_id()->result();
+            $data['feature'] = $this->emt->get_feature_id()->result();
+            $data['emt'] = $this->emt->get_emt_id()->row();
+            $data['header_feature'] = $this->emt->get_header_feature_emt_us()->row();
+            $data['recent_footer'] = $this->res->get_resource_id_footer()->result();
             $this->load->view('web/layout/header', $data);
             $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/emt/id', $data);
@@ -30,7 +36,11 @@ class Emt extends CI_Controller
             $data['contact'] = $this->web->get_contact()->row();
             $data['logo'] = $this->web->get_logo()->row();
             $data['sosmed'] = $this->web->get_sosmed()->result();
-            $data['contact'] = $this->web->get_contact()->row();
+            $data['type'] = $this->emt->get_type_us()->result();
+            $data['feature'] = $this->emt->get_feature_us()->result();
+            $data['emt'] = $this->emt->get_emt_us()->row();
+            $data['header_feature'] = $this->emt->get_header_feature_emt_us()->row();
+            $data['recent_footer'] = $this->res->get_resource_en_footer()->result();
             $this->load->view('web/layout/header', $data);
             $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/emt/us', $data);

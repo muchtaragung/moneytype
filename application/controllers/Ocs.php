@@ -10,6 +10,7 @@ class Ocs extends CI_Controller
         $this->load->library('email');
         $this->load->model('M_user', 'user');
         $this->load->model('M_web', 'web');
+        $this->load->model('M_res', 'res');
         $this->load->helper('security');
         $this->load->library('form_validation');
     }
@@ -21,6 +22,7 @@ class Ocs extends CI_Controller
             $data['logo'] = $this->web->get_logo()->row();
             $data['sosmed'] = $this->web->get_sosmed()->result();
             $data['contact'] = $this->web->get_contact()->row();
+            $data['recent_footer'] = $this->res->get_resource_id_footer()->result();
             $this->load->view('web/layout/header', $data);
             $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/ocs/id', $data);
@@ -31,6 +33,7 @@ class Ocs extends CI_Controller
             $data['logo'] = $this->web->get_logo()->row();
             $data['sosmed'] = $this->web->get_sosmed()->result();
             $data['contact'] = $this->web->get_contact()->row();
+            $data['recent_footer'] = $this->res->get_resource_en_footer()->result();
             $this->load->view('web/layout/header', $data);
             $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/ocs/us', $data);
@@ -45,6 +48,7 @@ class Ocs extends CI_Controller
             $data['logo'] = $this->web->get_logo()->row();
             $data['sosmed'] = $this->web->get_sosmed()->result();
             $data['contact'] = $this->web->get_contact()->row();
+            $data['recent_footer'] = $this->res->get_resource_id_footer()->result();
             $this->load->view('web/layout/header', $data);
             $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/fp/id', $data);
@@ -55,6 +59,7 @@ class Ocs extends CI_Controller
             $data['logo'] = $this->web->get_logo()->row();
             $data['sosmed'] = $this->web->get_sosmed()->result();
             $data['contact'] = $this->web->get_contact()->row();
+            $data['recent_footer'] = $this->res->get_resource_en_footer()->result();
             $this->load->view('web/layout/header', $data);
             $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/fp/us', $data);
@@ -69,6 +74,7 @@ class Ocs extends CI_Controller
             $data['logo'] = $this->web->get_logo()->row();
             $data['sosmed'] = $this->web->get_sosmed()->result();
             $data['contact'] = $this->web->get_contact()->row();
+            $data['recent_footer'] = $this->res->get_resource_id_footer()->result();
             $this->load->view('web/layout/header', $data);
             $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/mc/id', $data);
@@ -79,6 +85,7 @@ class Ocs extends CI_Controller
             $data['logo'] = $this->web->get_logo()->row();
             $data['sosmed'] = $this->web->get_sosmed()->result();
             $data['contact'] = $this->web->get_contact()->row();
+            $data['recent_footer'] = $this->res->get_resource_en_footer()->result();
             $this->load->view('web/layout/header', $data);
             $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/mc/us', $data);

@@ -65,7 +65,7 @@
     <nav class="navbar navbar-expand-lg navbar-light text-uppercase fixed-top py-3" id="mainNav">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="<?= base_url() ?>assets/admin/assets/logo/<?= $logo->logo ?>" width="150px" alt="">
+                <img src="<?= base_url() ?>assets/admin/assets/logo/<?= $logo->logo_footer ?>" width="150px" alt="">
             </a>
 
             <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -253,7 +253,7 @@
             <div class="row">
                 <!-- Footer Social Icons-->
                 <div class="col-lg-3 mb-5 mb-lg-0">
-                    <h4 class="text-uppercase  mb-4"><img width="200px" src="<?= base_url() ?>assets/admin/assets/logo/<?= $logo->logo ?>" alt=""></a></h4>
+                    <h4 class="text-uppercase  mb-4"><img width="200px" src="<?= base_url() ?>assets/admin/assets/logo/<?= $logo->logo_footer ?>" alt=""></a></h4>
                     <div class="row">
                         <div class="col-1 text-center">
                             <i class="fas fa-map-marker-alt mt-1"></i>
@@ -295,18 +295,14 @@
                 <!-- Footer Location-->
                 <div class="col-lg-3 mb-5 mb-lg-0">
                     <h4 class="text-uppercase mb-4">LATEST NEWS</h4>
-                    <a style="background-color:transparent" href="">
-                        <p class="lead mb-0">
-                            Sit amet consetetur sadipscing tempor invidunt dolore.
-                        </p>
-                    </a>
-                    <p style="color:orange">25 Desember 2021</p>
-                    <a style="background-color:transparent" href="">
-                        <p class="lead mb-0">
-                            Sit amet consetetur sadipscing tempor invidunt dolore.
-                        </p>
-                    </a>
-                    <p style="color:orange">19 Desember 2021</p>
+                    <?php foreach ($recent_footer as $key) { ?>
+                        <a style="background-color:transparent" href="<?= base_url() ?>id/resource/artikel/<?= $key->slug ?>">
+                            <p class="lead mb-0">
+                                <?= $key->judul ?>
+                            </p>
+                        </a>
+                        <p style="color:orange"><?= date('d F Y', strtotime($key->tanggal_post)); ?></p>
+                    <?php  } ?>
                 </div>
 
                 <!-- Footer About Text-->
@@ -370,10 +366,10 @@
         $(function() {
             $(window).scroll(function() {
                 if ($(this).scrollTop() > 100) {
-                    $('.navbar .navbar-brand img').attr('src', '<?= base_url() ?>assets/admin/assets/logo/vidira.png');
+                    $('.navbar .navbar-brand img').attr('src', '<?= base_url() ?>assets/admin/assets/logo/<?= $logo->logo ?>');
                 }
                 if ($(this).scrollTop() < 100) {
-                    $('.navbar .navbar-brand img').attr('src', '<?= base_url() ?>assets/admin/assets/logo/<?= $logo->logo ?>');
+                    $('.navbar .navbar-brand img').attr('src', '<?= base_url() ?>assets/admin/assets/logo/<?= $logo->logo_footer ?>');
                 }
             })
         });

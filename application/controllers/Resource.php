@@ -27,6 +27,7 @@ class Resource extends CI_Controller
             $data['logo'] = $this->web->get_logo()->row();
             $data['sosmed'] = $this->web->get_sosmed()->result();
             $data['contact'] = $this->web->get_contact()->row();
+            $data['recent_footer'] = $this->res->get_resource_id_footer()->result();
 
             //konfigurasi pagination
             $config['base_url'] = site_url('resource'); //site url
@@ -78,7 +79,7 @@ class Resource extends CI_Controller
             $data['logo'] = $this->web->get_logo()->row();
             $data['sosmed'] = $this->web->get_sosmed()->result();
             $data['contact'] = $this->web->get_contact()->row();
-
+            $data['recent_footer'] = $this->res->get_resource_en_footer()->result();
             //konfigurasi pagination
             $config['base_url'] = site_url('resource'); //site url
             $config['total_rows'] = $this->db->count_all('blog'); //total row
@@ -127,6 +128,7 @@ class Resource extends CI_Controller
             $data['resource_id_detail'] = $this->res->get_resource_id_detail($slug)->row();
             $data['komen'] = $this->res->list_komen_id($slug)->result();
             $data['recent'] = $this->res->get_resource_id_limit()->result();
+            $data['recent_footer'] = $this->res->get_resource_id_footer()->result();
             $data['archives'] = $this->res->archives_id()->result_array();
             $data['resource'] = $this->res->get_resource_header()->row();
             $data['kategori'] = $this->res->get_kategori()->result();
@@ -134,6 +136,7 @@ class Resource extends CI_Controller
             $data['logo'] = $this->web->get_logo()->row();
             $data['sosmed'] = $this->web->get_sosmed()->result();
             $data['contact'] = $this->web->get_contact()->row();
+            $data['recent_footer'] = $this->res->get_resource_id_footer()->result();
             $this->load->view('web/layout/header', $data);
             $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/resource/detail_id', $data);
@@ -143,6 +146,7 @@ class Resource extends CI_Controller
             $data['resource_us_detail'] = $this->res->get_resource_us_detail($slug)->row();
             $data['komen'] = $this->res->list_komen_us($slug)->result();
             $data['recent'] = $this->res->get_resource_us_limit()->result();
+            $data['recent_footer'] = $this->res->get_resource_en_footer()->result();
             $data['archives'] = $this->res->archives()->result_array();
             $data['resource'] = $this->res->get_resource_header()->row();
             $data['kategori'] = $this->res->get_kategori()->result();
@@ -150,6 +154,7 @@ class Resource extends CI_Controller
             $data['logo'] = $this->web->get_logo()->row();
             $data['sosmed'] = $this->web->get_sosmed()->result();
             $data['contact'] = $this->web->get_contact()->row();
+            $data['recent_footer'] = $this->res->get_resource_en_footer()->result();
             $this->load->view('web/layout/header', $data);
             $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/resource/detail_us', $data);
@@ -169,6 +174,7 @@ class Resource extends CI_Controller
             $data['logo'] = $this->web->get_logo()->row();
             $data['sosmed'] = $this->web->get_sosmed()->result();
             $data['contact'] = $this->web->get_contact()->row();
+            $data['recent_footer'] = $this->res->get_resource_id_footer()->result();
             $this->load->view('web/layout/header', $data);
             $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/resource/archive_id', $data);
@@ -184,6 +190,7 @@ class Resource extends CI_Controller
             $data['logo'] = $this->web->get_logo()->row();
             $data['sosmed'] = $this->web->get_sosmed()->result();
             $data['contact'] = $this->web->get_contact()->row();
+            $data['recent_footer'] = $this->res->get_resource_en_footer()->result();
             $this->load->view('web/layout/header', $data);
             $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/resource/archive_us', $data);
@@ -203,6 +210,7 @@ class Resource extends CI_Controller
             $data['logo'] = $this->web->get_logo()->row();
             $data['sosmed'] = $this->web->get_sosmed()->result();
             $data['contact'] = $this->web->get_contact()->row();
+            $data['recent_footer'] = $this->res->get_resource_id_footer()->result();
             $this->load->view('web/layout/header', $data);
             $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/resource/category_id', $data);
@@ -218,6 +226,7 @@ class Resource extends CI_Controller
             $data['logo'] = $this->web->get_logo()->row();
             $data['sosmed'] = $this->web->get_sosmed()->result();
             $data['contact'] = $this->web->get_contact()->row();
+            $data['recent_footer'] = $this->res->get_resource_en_footer()->result();
             $this->load->view('web/layout/header', $data);
             $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/resource/category_us', $data);
@@ -238,6 +247,7 @@ class Resource extends CI_Controller
             $data['logo'] = $this->web->get_logo()->row();
             $data['sosmed'] = $this->web->get_sosmed()->result();
             $data['contact'] = $this->web->get_contact()->row();
+            $data['recent_footer'] = $this->res->get_resource_id_footer()->result();
             $this->load->view('web/layout/header', $data);
             $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/resource/search_id', $data);
@@ -254,6 +264,7 @@ class Resource extends CI_Controller
             $data['logo'] = $this->web->get_logo()->row();
             $data['sosmed'] = $this->web->get_sosmed()->result();
             $data['contact'] = $this->web->get_contact()->row();
+            $data['recent_footer'] = $this->res->get_resource_en_footer()->result();
             $this->load->view('web/layout/header', $data);
             $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/resource/search_us', $data);
