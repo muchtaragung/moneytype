@@ -36,7 +36,7 @@ class Emt extends CI_Controller
         $data['type'] = $this->emt->get_type_id()->result();
         $data['feature'] = $this->emt->get_feature_id()->result();
         $data['emt'] = $this->emt->get_emt_id()->row();
-        $data['header_feature'] = $this->emt->get_header_feature_emt_us()->row();
+        $data['header_feature'] = $this->emt->get_header_feature_emt_id()->row();
         $this->load->view('admin/layout/header');
         $this->load->view('admin/layout/navbar', $data);
         $this->load->view('admin/emt/emt_id', $data);
@@ -305,7 +305,7 @@ class Emt extends CI_Controller
             'konten' =>  $this->input->post('konten', true),
         );
         $this->emt->update_header_feature_en($id, $data);
-        $this->session->set_flashdata('msg', 'Background Feature berhasil diupdate');
+        $this->session->set_flashdata('msg', 'Header Feature berhasil diupdate');
         redirect('admin/emt');
     }
     public function update_header_feature_id()
@@ -316,8 +316,8 @@ class Emt extends CI_Controller
             'header' => $this->input->post('header', true),
             'konten' =>  $this->input->post('konten', true)
         );
-        $this->emt->update_header_feature_en($id, $data);
-        $this->session->set_flashdata('msg', 'Background Feature berhasil diupdate');
+        $this->emt->update_header_feature_id($id, $data);
+        $this->session->set_flashdata('msg', 'Header Feature berhasil diupdate');
         redirect('admin/emt/id');
     }
     public function delete_type($id)

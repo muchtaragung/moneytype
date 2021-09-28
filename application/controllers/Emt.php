@@ -25,7 +25,7 @@ class Emt extends CI_Controller
             $data['type'] = $this->emt->get_type_id()->result();
             $data['feature'] = $this->emt->get_feature_id()->result();
             $data['emt'] = $this->emt->get_emt_id()->row();
-            $data['header_feature'] = $this->emt->get_header_feature_emt_us()->row();
+            $data['header_feature'] = $this->emt->get_header_feature_emt_id()->row();
             $data['recent_footer'] = $this->res->get_resource_id_footer()->result();
             $this->load->view('web/layout/header', $data);
             $this->load->view('web/layout/navbar', $data);

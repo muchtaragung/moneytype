@@ -49,6 +49,12 @@ class M_emt extends CI_Model
         $this->db->update('header_feature_emt', $data);
         return true;
     }
+    public function update_header_feature_id($id, $data)
+    {
+        $this->db->where('id_feature', $id);
+        $this->db->update('header_feature_emt_id', $data);
+        return true;
+    }
     public function update_type_us($id, $data)
     {
         $this->db->where('id_type', $id);
