@@ -34,7 +34,7 @@
                 <p style="font-size: large;" class="text-left mb-0"><?= $emt->sub_feature_id ?></p>
                 <a href="<?= base_url() . $this->uri->segment(1)  ?>/contact" class="btn btn-outline-warning px-5 rounded-pill shadow-sm mt-5 ">MULAI</a>
             </div>
-            <div class="col-lg-6 mt-5 d-lg-block"><img src="<?= base_url() ?>assets/assets/img/<?= $emt->img_feature ?>" alt="" class="img-fluid"></div>
+            <div class="col-lg-6 mt-5 d-lg-block"><img width="700px" src="<?= base_url() ?>assets/assets/img/<?= $emt->img_feature ?>" alt="" class="img-fluid"></div>
         </div>
         <hr>
     </div>
@@ -46,7 +46,7 @@
                     <div class="col-md-4 border-right border-left">
                         <h2 class="display-6"><?= $data->header ?></h2>
                         <p style="font-size: large;" class="text-left mb-5"><?= $data->konten ?></p>
-                        <a href="<?= base_url() . $this->uri->segment(1)  ?>/contact" class="btn btn-light mt-5 text-warning">PELAJARI LEBIH</a>
+                        <a href="<?= base_url() . $this->uri->segment(1)  ?>/contact" class="btn btn-outline-light mt-5 text-warning">PELAJARI LEBIH</a>
                     </div>
                 <?php } ?>
             </div>
@@ -68,7 +68,7 @@
                                     <div class="col-md-4 ">
                                         <h1><?= $data->header ?></h1>
                                         <p style="font-size: large;" class="text-left mb-5"><?= $data->konten ?></p>
-                                        <a href="<?= base_url() . $this->uri->segment(1)  ?>/contact" class="btn btn-light mt-5 text-warning">MULAI</a>
+                                        <a href="<?= base_url() . $this->uri->segment(1)  ?>/contact" class="btn btn-outline-light mt-5 text-warning">MULAI</a>
                                     </div>
                                 <?php } ?>
                             </div>

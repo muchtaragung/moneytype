@@ -323,9 +323,6 @@
                         <label class="custom-file-label" for="gallery-photo-add">Pilih Gambar</label>
                         <small id="helpId" class="text-muted">*Maksimal 1 mb</small>
                     </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Update</button>
-                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

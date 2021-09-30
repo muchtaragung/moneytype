@@ -57,8 +57,6 @@ class Emt extends CI_Controller
     }
     public function add_type_id()
     {
-
-
         $data = array(
             'header' => $this->input->post('header', true),
             'konten' =>  $this->input->post('konten', true)
