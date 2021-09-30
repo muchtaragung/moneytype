@@ -38,8 +38,8 @@
                     <div class="col-lg-6 mt-5">
                         <h1 class="display-5"><?= $key->header ?></h1>
                         <p style="font-size: large ;line-height: 2;" class="text-left mb-0"><?= $key->konten ?></p>
-                        <a href="<?= base_url() ?>contact" class="btn btn-outline-warning px-5 rounded-pill shadow-sm mt-5 ">GET STARTED</a>
-                        <a href="<?= base_url() ?>contact" class="btn btn-outline-light px-5 rounded-pill shadow-sm mt-5 text-dark">LEARN MORE <i class="fas fa-check"></i></a>
+                        <a href="<?= base_url() ?>id/contact" class="btn btn-outline-warning px-5 rounded-pill shadow-sm mt-5 ">GET STARTED</a>
+                        <a href="<?= base_url() ?>id/contact" class="btn btn-outline-light px-5 rounded-pill shadow-sm mt-5 text-dark">LEARN MORE <i class="fas fa-check"></i></a>
                     </div>
                 </div>
             </div>
@@ -49,8 +49,8 @@
                     <div class="col-lg-6 mt-5">
                         <h1 class="display-5"><?= $key->header ?></h1>
                         <p style="font-size: large;line-height: 2;" class="text-left mb-0"><?= $key->konten ?></p>
-                        <a href="<?= base_url() ?>contact" class="btn btn-outline-warning px-5 rounded-pill shadow-sm mt-5 ">GET STARTED</a>
-                        <a href="<?= base_url() ?>contact" class="btn btn-outline-light px-5 rounded-pill shadow-sm mt-5 text-dark">LEARN MORE <i class="fas fa-check"></i></a>
+                        <a href="<?= base_url() ?>id/contact" class="btn btn-outline-warning px-5 rounded-pill shadow-sm mt-5 ">GET STARTED</a>
+                        <a href="<?= base_url() ?>id/contact" class="btn btn-outline-light px-5 rounded-pill shadow-sm mt-5 text-dark">LEARN MORE <i class="fas fa-check"></i></a>
                     </div>
                     <div class="col-lg-6 mt-3 d-lg-block"><img src="<?= base_url() ?>assets/assets/img/<?= $key->img ?>" alt="" class="img-fluid"></div>
                 </div>
