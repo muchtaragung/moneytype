@@ -57,7 +57,7 @@
             <div class="col-lg-6 mt-5">
                 <h1 class="display-4"><?= $feature2->header ?></h1>
                 <p style="font-size: large;" class="text-left mb-0"><?= $feature2->konten ?></p>
-                <a href="<?= base_url() ?>contact" class="btn btn-outline-warning px-5 rounded-pill shadow-sm mt-5 ">GET STARTED</a>
+                <a href="<?= base_url() . $this->uri->segment(1) ?>/contact" class="btn btn-outline-warning px-5 rounded-pill shadow-sm mt-5 ">GET STARTED</a>
             </div>
         </div>
         <hr>
@@ -93,13 +93,13 @@
                     <div class="col-md-4 border-right">
                         <h2 class="display-6"><?= $data->header ?></h2>
                         <p style="font-size: 16px; line-height: 2;" class="text-left mb-5"><?= $data->konten ?>.</p>
-                        <a href="<?= base_url() ?>contact" class="btn btn-light mt-5 text-warning">LEARN MORE</a>
+                        <a href="<?= base_url() . $this->uri->segment(1) ?>/contact" class="btn btn-light mt-5 text-warning">LEARN MORE</a>
                     </div>
                 <?php   } ?>
             </div>
         </div>
     </div>
-    <div class="bg-image mt-5" style="background-size: cover; background-repeat: no-repeat;background-image: url(<?= base_url() ?>assets/assets/img/<?= $contact->image ?>);height: auto;">
+    <div class="bg-image mt-5" style="background-size: cover; background-repeat: no-repeat;background-image: url(<?= base_url() ?>assets/assets/img/<?= $fp->bg ?>);height: auto;">
         <div class="mask h-100 w-100" style="background-color: rgba(0, 0, 0, 0.6);">
             <div class="d-flex align-items-center h-100">
                 <div class="container">

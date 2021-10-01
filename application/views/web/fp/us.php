@@ -99,7 +99,7 @@
             </div>
         </div>
     </div>
-    <div class="bg-image mt-5" style="background-size: cover; background-repeat: no-repeat;background-image: url(<?= base_url() ?>assets/assets/img/<?= $contact->image ?>);height: auto;">
+    <div class="bg-image mt-5" style="background-size: cover; background-repeat: no-repeat;background-image: url(<?= base_url() ?>assets/assets/img/<?= $fp->bg ?>);height: auto;">
         <div class="mask h-100 w-100" style="background-color: rgba(0, 0, 0, 0.6);">
             <div class="d-flex align-items-center h-100">
                 <div class="container">
