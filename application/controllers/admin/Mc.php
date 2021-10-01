@@ -12,7 +12,6 @@ class Mc extends CI_Controller
         $this->load->model('M_user', 'user');
         $this->load->model('M_web', 'web');
         $this->load->model('M_mc', 'mc');
-        $this->load->model('M_ocs', 'ocs');
         $this->load->library('form_validation');
         if ($this->session->userdata('id') == NULL) {
             redirect('admin/login');

@@ -100,6 +100,29 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-chart-bar"></i>
+                        <p>
+                            Financial Planning
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item active">
+                            <a href="<?= base_url() ?>admin/fp/id" <?= $this->uri->segment(3) == 'id' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Indonesia</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url() ?>admin/fp" <?= $this->uri->segment(3) == '' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>English</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-wallet"></i>
                         <p>
                             Money Coaching

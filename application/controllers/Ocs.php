@@ -13,6 +13,7 @@ class Ocs extends CI_Controller
         $this->load->model('M_res', 'res');
         $this->load->model('M_ocs', 'ocs');
         $this->load->model('M_mc', 'mc');
+        $this->load->model('M_fp', 'fp');
         $this->load->helper('security');
         $this->load->library('form_validation');
     }
@@ -59,6 +60,17 @@ class Ocs extends CI_Controller
             $data['sosmed'] = $this->web->get_sosmed()->result();
             $data['contact'] = $this->web->get_contact()->row();
             $data['recent_footer'] = $this->res->get_resource_id_footer()->result();
+
+
+            $data['fp'] = $this->fp->get_fp_id()->row();
+            $data['header_feature'] = $this->fp->get_header_feature_id()->row();
+            $data['header_feature3'] = $this->fp->get_header_feature3_id()->row();
+            $data['header_feature5'] = $this->fp->get_header_feature5_id()->row();
+            $data['feature1'] = $this->fp->get_feature_id()->result();
+            $data['feature2'] = $this->fp->get_feature2_id()->row();
+            $data['feature3'] = $this->fp->get_feature3_id()->result();
+            $data['feature4'] = $this->fp->get_feature4_id()->result();
+            $data['feature5'] = $this->fp->get_feature5_id()->result();
             $this->load->view('web/layout/header', $data);
             $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/fp/id', $data);
@@ -70,6 +82,16 @@ class Ocs extends CI_Controller
             $data['sosmed'] = $this->web->get_sosmed()->result();
             $data['contact'] = $this->web->get_contact()->row();
             $data['recent_footer'] = $this->res->get_resource_en_footer()->result();
+
+            $data['fp'] = $this->fp->get_fp_us()->row();
+            $data['header_feature'] = $this->fp->get_header_feature_us()->row();
+            $data['header_feature3'] = $this->fp->get_header_feature3_us()->row();
+            $data['header_feature5'] = $this->fp->get_header_feature5_us()->row();
+            $data['feature1'] = $this->fp->get_feature_us()->result();
+            $data['feature2'] = $this->fp->get_feature2_us()->row();
+            $data['feature3'] = $this->fp->get_feature3_us()->result();
+            $data['feature4'] = $this->fp->get_feature4_us()->result();
+            $data['feature5'] = $this->fp->get_feature5_us()->result();
             $this->load->view('web/layout/header', $data);
             $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/fp/us', $data);
