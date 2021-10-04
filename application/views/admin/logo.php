@@ -118,13 +118,13 @@
             <form id="logo_web2" action="<?= base_url() ?>admin/logo/update_footer" method="post" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="text-center">
-                        <img style="width: 250px; " id="previewImg" src="<?= base_url() ?>assets/icon/transparan.png" alt="Placeholder">
+                        <img style="width: 250px; " id="previewImg2" src="<?= base_url() ?>assets/icon/transparan.png" alt="Placeholder">
                     </div>
                     <div class="form-group pt-5">
                         <!-- <label for="customFile">Custom File</label> -->
                         <input type="hidden" id="id" name="id">
                         <div class="custom-file">
-                            <input type="file" name="logo" class="custom-file-input" id="logo" accept="image/x-png,image/jpg,image/jpeg" onchange="previewFile(this);">
+                            <input type="file" name="logo" class="custom-file-input" id="logo2" accept="image/x-png,image/jpg,image/jpeg" onchange="previewFile2(this);">
                             <label class="custom-file-label" for="logo">Pilih Logo</label>
                         </div>
                     </div>
@@ -138,6 +138,17 @@
     </div>
 </div>
 <script>
+    function previewFile2(input) {
+        var file = $("#logo2").get(0).files[0];
+
+        if (file) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                $("#previewImg2").attr("src", reader.result);
+            }
+            reader.readAsDataURL(file);
+        }
+    }
     $(document).ready(function() {
         // Untuk sunting
         $('#edit-data').on('show.bs.modal', function(event) {
