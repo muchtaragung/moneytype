@@ -10,69 +10,70 @@
         </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
             <div class="row">
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-info">
-                        <div class="inner">
-                            <h3><?php echo $this->db->count_all_results('users'); ?></h3>
+                <div class="col-md-3 col-sm-6 col-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-info"><a href="<?= base_url() ?>admin/resource"><i class="far fa-newspaper"></i></a></span>
 
-                            <p>User (visitor Money type)</p>
+                        <div class="info-box-content">
+                            <a style="color: black" href="<?= base_url() ?>admin/resource"><span class="info-box-text">Resource EN</span></a>
+                            <span class="info-box-number"><?php echo $this->db->count_all_results('blog'); ?></span>
                         </div>
-                        <div class="icon">
-                            <i class="ion ion-bag"></i>
-                        </div>
-                        <a href="<?= base_url('admin/user') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        <!-- /.info-box-content -->
                     </div>
+                    <!-- /.info-box -->
                 </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
+                <div class="col-md-3 col-sm-6 col-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-danger"><a href="<?= base_url() ?>admin/resource/id"><i class="far fa-newspaper"></i></a></span>
+
+                        <div class="info-box-content">
+                            <a style="color: black" href="<?= base_url() ?>admin/resource/id"><span class="info-box-text">Resource ID</span></a>
+                            <span class="info-box-number"><?php echo $this->db->count_all_results('blog_id'); ?></span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </div>
+                <div class="col-md-3 col-sm-6 col-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-info"> <a href="<?= base_url() ?>admin/resource"><i class="fas fa-comments"></i></a></span>
+
+                        <div class="info-box-content">
+                            <a style="color: black" href="<?= base_url() ?>admin/resource"><span class="info-box-text">Comment Resource EN</span></a>
+                            <span class="info-box-number"><?php echo $komen_us ?></span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </div>
+                <div class="col-md-3 col-sm-6 col-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-danger"> <a href="<?= base_url() ?>admin/resource/id"><i class="fas fa-comments"></i></a></span>
+                        <div class="info-box-content">
+                            <a style="color: black" href="<?= base_url() ?>admin/resource"><span class="info-box-text">Comment Resource ID</span></a>
+                            <span class="info-box-number"><?php echo $komen_id ?></span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </div>
+
+                <div class="col-lg-12 col-6">
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                            <h3><?php echo $this->db->count_all_results('blog'); ?></h3>
-
-
-                            <p>Resource EN</p>
+                            <h3><?php echo $this->db->count_all_results('users'); ?></h3>
+                            <p>User (visitor Money type)</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-stats-bars"></i>
+                            <i class="fas fa-users"></i>
                         </div>
-                        <a href="<?= base_url() ?>admin/resource" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-warning">
-                        <div class="inner">
-                            <h3><?php echo $this->db->count_all_results('blog_id'); ?></h3>
-                            <p>Resource ID</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-person-add"></i>
-                        </div>
-                        <a href="<?= base_url() ?>admin/resource/id" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-danger">
-                        <div class="inner">
-                            <h3>65</h3>
-
-                            <p>Unique Visitors</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-pie-graph"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="<?= base_url('admin/user') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->

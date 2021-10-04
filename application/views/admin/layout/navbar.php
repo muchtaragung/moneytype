@@ -39,13 +39,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item active">
-                            <a href="<?= base_url() ?>admin/home/id" <?= $this->uri->segment(3) == 'id' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
+                            <a href="<?= base_url() ?>admin/home/id" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Indonesia</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url() ?>admin/home" <?= $this->uri->segment(3) == '' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
+                            <a href="<?= base_url() ?>admin/home" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>English</p>
                             </a>
@@ -62,13 +62,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item active">
-                            <a href="<?= base_url() ?>admin/about/id" <?= $this->uri->segment(3) == 'id' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
+                            <a href="<?= base_url() ?>admin/about/id" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Indonesia</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url() ?>admin/about" <?= $this->uri->segment(3) == '' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
+                            <a href="<?= base_url() ?>admin/about" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>English</p>
                             </a>
@@ -85,13 +85,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item active">
-                            <a href="<?= base_url() ?>admin/ocs/id" <?= $this->uri->segment(3) == 'id' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
+                            <a href="<?= base_url() ?>admin/ocs/id" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Indonesia</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url() ?>admin/ocs" <?= $this->uri->segment(3) == '' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
+                            <a href="<?= base_url() ?>admin/ocs" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>English</p>
                             </a>
@@ -108,13 +108,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item active">
-                            <a href="<?= base_url() ?>admin/fp/id" <?= $this->uri->segment(3) == 'id' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
+                            <a href="<?= base_url() ?>admin/fp/id" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Indonesia</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url() ?>admin/fp" <?= $this->uri->segment(3) == '' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
+                            <a href="<?= base_url() ?>admin/fp" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>English</p>
                             </a>
@@ -131,13 +131,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item active">
-                            <a href="<?= base_url() ?>admin/mc/id" <?= $this->uri->segment(3) == 'id' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
+                            <a href="<?= base_url() ?>admin/mc/id" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Indonesia</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url() ?>admin/mc" <?= $this->uri->segment(3) == '' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
+                            <a href="<?= base_url() ?>admin/mc" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>English</p>
                             </a>
@@ -160,13 +160,13 @@
                             </a>
                         </li>
                         <li class="nav-item active">
-                            <a href="<?= base_url() ?>admin/emt/id" <?= $this->uri->segment(3) == 'id' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
+                            <a href="<?= base_url() ?>admin/emt/id" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Indonesia</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url() ?>admin/emt" <?= $this->uri->segment(3) == '' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
+                            <a href="<?= base_url() ?>admin/emt" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>English</p>
                             </a>
@@ -189,13 +189,13 @@
                             </a>
                         </li>
                         <li class="nav-item active">
-                            <a href="<?= base_url() ?>admin/resource/id" <?= $this->uri->segment(3) == 'id' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
+                            <a href="<?= base_url() ?>admin/resource/id" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Indonesia</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url() ?>admin/resource" <?= $this->uri->segment(3) == '' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
+                            <a href="<?= base_url() ?>admin/resource" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>English</p>
                             </a>

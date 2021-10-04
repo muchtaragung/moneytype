@@ -2,6 +2,20 @@
 
 class M_web extends CI_Model
 {
+    public function get_komen_us()
+    {
+        $this->db->select('*');
+        $this->db->from('komen_blog_us');
+        $this->db->where('akses=0');
+        return $this->db->count_all_results();
+    }
+    public function get_komen_id()
+    {
+        $this->db->select('*');
+        $this->db->from('komen_blog_id');
+        $this->db->where('akses=0');
+        return $this->db->count_all_results();
+    }
     public function update_logo($id, $data)
     {
         $this->db->where('id_logo', $id);

@@ -19,6 +19,8 @@ class Dashboard extends CI_Controller
     public function index()
     {
         $data['logo'] = $this->web->get_logo()->row();
+        $data['komen_us'] = $this->web->get_komen_us();
+        $data['komen_id'] = $this->web->get_komen_id();
         $this->load->view('admin/layout/header');
         $this->load->view('admin/layout/navbar', $data);
         $this->load->view('admin/dashboard');
