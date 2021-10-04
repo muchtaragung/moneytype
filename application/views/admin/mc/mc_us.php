@@ -68,7 +68,7 @@
                     <!-- /.card-header -->
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table id="table1" class="table table-hover">
+                            <table id="table1" class="table table1 table-hover">
                                 <thead>
                                     <tr>
                                         <th>No</th>
@@ -158,7 +158,7 @@
                     <div class="card-bod">
                         <div class="container">
                             <div class="table-responsive">
-                                <table id="table2" class="table table-hover">
+                                <table id="table2" class="table table1 table-hover">
                                     <thead>
                                         <tr>
                                             <th>No</th>
@@ -248,7 +248,7 @@
                     <div class="card-bod">
                         <div class="container">
                             <div class="table-responsive">
-                                <table id="table2" class="table table-hover">
+                                <table id="table2" class="table table1 table-hover">
                                     <thead>
                                         <tr>
                                             <th>No</th>

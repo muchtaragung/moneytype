@@ -21,7 +21,7 @@
                         <!-- /.card-header -->
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table id="table" class="table table-hover">
+                                <table id="table_user" class="table table-hover">
                                     <thead>
                                         <tr>
                                             <th>No</th>
@@ -52,13 +52,10 @@
     var table;
     $(document).ready(function() {
         var token = "<?php echo $this->security->get_csrf_hash(); ?>";
-        table = $('#table').DataTable({
-            "bInfo": false,
+        table = $('#table_user').DataTable({
             "responsive": true,
             "lengthChange": false,
-            "autoWidth": false,
             "searching": true,
-            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
             "processing": true, //Feature control the processing indicator.
             "serverSide": true, //Feature control DataTables' server-side processing mode.
 
@@ -165,7 +162,7 @@
         });
     }
     jQuery(document).ready(function($) {
-        $('#table').on('click', '.alert_notif', function() {
+        $('#table_user').on('click', '.alert_notif', function() {
             var getLink = $(this).attr('href');
             swal({
                 title: "Apakah anda yakin?",

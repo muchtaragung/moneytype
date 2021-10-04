@@ -34,7 +34,7 @@
                                 Tambah Kategori
                             </button>
                             <div class="table-responsive">
-                                <table id="table1" class="table table-hover">
+                                <table id="table1" class="table table1 table-hover">
                                     <thead>
                                         <tr>
                                             <th>No</th>

@@ -85,7 +85,7 @@
         });
     });
     $(function() {
-        $(".table").DataTable({
+        $(".table1").DataTable({
             "responsive": true,
             "lengthChange": false,
             "autoWidth": false,
