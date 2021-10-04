@@ -57,7 +57,7 @@
                 <?php
                 if ($this->uri->segment(1) == 'id') { ?>
                     <?php foreach ($recent_footer as $key) { ?>
-                        <a style="background-color:transparent" href="<?= base_url() ?>id/resource/artikel/<?= $key->slug ?>">
+                        <a style="background-color:transparent" href="<?= base_url() ?>id/artikel/<?= $key->slug ?>">
                             <p class="lead mb-0">
                                 <?= $key->judul ?>
                             </p>
@@ -66,7 +66,7 @@
                     <?php  } ?>
                 <?php } else { ?>
                     <?php foreach ($recent_footer as $key) { ?>
-                        <a style="background-color:transparent" href="<?= base_url() ?>resource/artikel/<?= $key->slug ?>">
+                        <a style="background-color:transparent" href="<?= base_url() ?>artikel/<?= $key->slug ?>">
                             <p class="lead mb-0">
                                 <?= $key->judul ?>
                             </p>

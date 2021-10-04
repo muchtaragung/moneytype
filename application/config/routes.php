@@ -84,11 +84,11 @@ $route['id/moneytype'] = 'moneytype';
 $route['id/resource'] = 'resource';
 $route['id/resource/archive/(:num)'] = 'resource/archive/$1';
 $route['id/search'] = 'resource/search';
-$route['id/resource/artikel/(:any)'] = "resource/detail_resource/$1";
+$route['id/artikel/(:any)'] = "resource/detail_resource/$1";
 $route['id/resource/category/(:any)'] = "resource/category/$1";
 $route['id/resource/add_komen'] = "resource/add_komen";
 
-$route['resource/artikel/(:any)'] = "resource/detail_resource/$1";
+$route['artikel/(:any)'] = "resource/detail_resource/$1";
 $route['resource/(:num)'] = "resource";
 $route['search'] = 'resource/search';
 

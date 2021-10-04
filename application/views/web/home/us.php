@@ -298,7 +298,7 @@
                 <div class="col-lg-3 mb-5 mb-lg-0">
                     <h4 class="text-uppercase mb-4">LATEST NEWS</h4>
                     <?php foreach ($recent_footer as $key) { ?>
-                        <a style="background-color:transparent" href="<?= base_url() ?>resource/artikel/<?= $key->slug ?>">
+                        <a style="background-color:transparent" href="<?= base_url() ?>artikel/<?= $key->slug ?>">
                             <p class="lead mb-0">
                                 <?= $key->judul ?>
                             </p>

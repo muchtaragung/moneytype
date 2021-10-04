@@ -35,7 +35,7 @@
                             <?php
                             foreach ($resource_us_search as $data) { ?>
                                 <div class="card" data-groups="[&quot;<?= $data->nama_kategori ?>&quot;]">
-                                    <a href="<?= base_url() ?>resource/artikel/<?= $data->slug ?>">
+                                    <a href="<?= base_url() ?>artikel/<?= $data->slug ?>">
                                         <figure class="pp-effect">
                                             <img class="img-fluid" src="<?= base_url() ?>assets/assets/blog/<?= $data->img ?>" alt="Nature" />
                                             <figcaption>
@@ -60,12 +60,12 @@
                         <div class="cardborder-0 mt-3" style="max-width: 540px;">
                             <div class="row no-gutters">
                                 <div class="col-md-4">
-                                    <a href="<?= base_url() ?>resource/artikel/<?= $data->slug ?>"><img src="<?= base_url() ?>assets/assets/blog/<?= $data->img ?>" class="card-img" alt="..."></a>
+                                    <a href="<?= base_url() ?>artikel/<?= $data->slug ?>"><img src="<?= base_url() ?>assets/assets/blog/<?= $data->img ?>" class="card-img" alt="..."></a>
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
                                         <p class="card-text"><?= date('d F Y', strtotime($data->tanggal_post)); ?></p>
-                                        <a href="<?= base_url() ?>resource/artikel/<?= $data->slug ?>">
+                                        <a href="<?= base_url() ?>artikel/<?= $data->slug ?>">
                                             <h5 class="card-title"><?= $data->judul ?></h5>
                                         </a>
                                     </div>
