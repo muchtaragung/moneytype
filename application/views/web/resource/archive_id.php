@@ -51,7 +51,7 @@
             </div>
             <div class="col-md-4 mt-3 mb-5">
                 <div class="container">
-                    <h2 class="mb-5" style="border-bottom:2px solid #ffc107;">Recent Post</h2>
+                    <h2 class="mb-5" style="border-bottom:2px solid #ffc107;">Postingan Terbaru</h2>
                     <?php foreach ($recent as $data) { ?>
                         <div class="cardborder-0 mt-3" style="max-width: 540px;">
                             <div class="row no-gutters">
@@ -69,7 +69,7 @@
                             </div>
                         </div>
                     <?php } ?>
-                    <h2 class="mb-4 mt-3" style="border-bottom:2px solid #ffc107;">Archives</h2>
+                    <h2 class="mb-4 mt-3" style="border-bottom:2px solid #ffc107;">Arsip</h2>
 
                     <?php
                     // var_dump($archives);
@@ -78,7 +78,7 @@
                             <h4 class="mb-3" style="border-bottom:1px"><?= bulan($data['Month(tanggal_post)']) ?> (<?= $data['jml'] ?>)</h4>
                         </a>
                     <?php } ?>
-                    <h2 class="mb-4 mt-5" style="border-bottom:2px solid #ffc107;">Categories</h2>
+                    <h2 class="mb-4 mt-5" style="border-bottom:2px solid #ffc107;">Kategori</h2>
                     <div class="container">
                         <div class="pp-category-filter">
                             <div class="row">
