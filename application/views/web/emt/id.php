@@ -80,7 +80,7 @@
                         <h1 class="text-left display-3 mt-5 pt-5"><strong><?= $header_feature->header ?></strong> </h1>
                         <p style="font-size: large;" class="text-left mb-5"><?= $header_feature->konten ?></p>
                     </div>
-                    <div class="card mt-5">
+                    <div class="card mt-5 mb-5">
                         <div class="card-body">
                             <div class="row">
                                 <?php
@@ -93,12 +93,6 @@
                                 <?php } ?>
                             </div>
                         </div>
-                    </div>
-                    <div class="text-center text-white pt-5 mt-5">
-                        <h3>TAKE THE QUIZ FREE!</h3>
-                    </div>
-                    <div class="text-center mb-5 pb-5">
-                        <a href="<?= base_url() . $this->uri->segment(1) ?>/moneytype" class="btn btn-outline-warning px-5 rounded-pill shadow-sm mt-5 ">MULAI</a>
                     </div>
                 </div>
             </div>
