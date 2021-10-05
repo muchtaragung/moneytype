@@ -13,6 +13,7 @@
 <!-- jQuery -->
 <!-- Bootstrap 4 -->
 <script src="<?= base_url() ?>assets/admin/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?= base_url() ?>assets/admin/jquery-ui/jquery-ui.min.js"></script>
 <!-- DataTables  & Plugins -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
@@ -30,19 +31,29 @@
 <script src="<?= base_url() ?>assets/admin/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <script src="<?= base_url() ?>assets/admin/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
+<script src="<?= base_url() ?>assets/admin/ekko-lightbox/ekko-lightbox.min.js"></script>
 <script src="<?= base_url() ?>assets/admin/demo.js"></script>
 <!-- <script src="<?php echo base_url() . 'assets/admin/ckeditor/ckeditor.js' ?>"></script> -->
 <script src="<?= base_url() ?>assets/admin/summernote/summernote-bs4.min.js"></script>
 <script src="<?= base_url() ?>assets/admin//select2/js/select2.full.min.js"></script>
 <script type="text/javascript">
+    $(function() {
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox({
+                alwaysShowClose: true
+            });
+        });
+    })
     $('.isi').summernote({
-        height: 200,
+        height: 400,
         toolbar: [
 
             // [groupName, [list of button]]
             ['style', ['bold', 'italic', 'underline', 'clear']],
             ['font', ['strikethrough']],
             ['para', ['ul', 'ol']],
+            ['insert', ['link']],
         ]
     });
     //Initialize Select2 Elements

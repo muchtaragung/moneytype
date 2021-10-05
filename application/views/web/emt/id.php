@@ -12,6 +12,11 @@
     .border-left {
         border-left: 1px solid #ddd;
     }
+
+    .card-footer {
+        background: transparent;
+        border-top: 0px;
+    }
 </style>
 <div class="text-center bg-image mt-5" style="background-size: cover; background-repeat: no-repeat;background-image: url(<?= base_url() ?>assets/assets/img/<?= $emt->img_header ?>);height: 60vh;">
     <div class="mask h-100 w-100" style="background-color: rgba(0, 0, 0, 0.6);">
@@ -43,12 +48,27 @@
             <div class="row">
                 <?php
                 foreach ($type as $data) { ?>
-                    <div class="col-md-4 border-right border-left">
-                        <h2 class="display-6"><?= $data->header ?></h2>
-                        <p style="font-size: large;" class="text-left mb-5"><?= $data->konten ?></p>
-                        <a href="<?= base_url() . $this->uri->segment(1)  ?>/contact" class="btn btn-outline-light mt-5 text-warning">PELAJARI LEBIH</a>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h2 class="display-6"><?= $data->header ?></h2>
+                                <p style="font-size: large;" class="mb-5"><?= $data->konten ?></p>
+                            </div>
+                            <div class="card-footer text-muted mx-auto mb-5">
+                                <a href="<?= base_url() . $this->uri->segment(1)  ?>/contact" class="btn btn-outline-dark btn-md">LEARN MORE</a>
+                                <!-- <a href="<?= base_url() . $this->uri->segment(1)  ?>/contact" class="btn btn-outline-light mt-5 text-warning">LEARN MORE</a> -->
+                            </div>
+                        </div>
                     </div>
                 <?php } ?>
+            </div>
+            <div class="row">
+                <div class="text-center text-dark pt-5 mt-5">
+                    <h3>TAKE THE QUIZ FREE!</h3>
+                </div>
+                <div class="text-center">
+                    <a href="<?= base_url() ?>moneytype" class="btn btn-outline-warning px-5 rounded-pill shadow-sm mt-5 ">GET STARTED</a>
+                </div>
             </div>
         </div>
     </div>

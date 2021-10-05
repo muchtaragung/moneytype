@@ -34,7 +34,9 @@
                                 <input type="hidden" id="id" name="id" value="<?= $resource->id_resource ?>">
                                 <input type="hidden" name="gambar_lama" value="<?= $resource->img_header ?>">
                                 <div class="text-center mb-4">
+
                                     <img width="250px" src="<?= base_url() ?>assets/assets/img/<?= $resource->img_header ?>" class="image-fluid" id="image-preview2" alt="image preview">
+
                                 </div>
                                 <div class="custom-file">
                                     <input type="file" required name="gambar" id="image-source2" class="custom-file-input" accept="image/x-png,image/jpg,image/jpeg" onchange="previewImage2();">
@@ -48,7 +50,7 @@
                             <hr>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card card-outline card-info">
                         <!-- /.card-header -->
                         <div class="card-body">
                             <button type="button" class="btn btn-outline-success block" onclick="add_resource()" data-bs-toggle="modal">
@@ -57,7 +59,7 @@
                             <div class="table-responsive">
                                 <table id="table1" class="table table1 table-hover">
                                     <thead>
-                                        <tr>
+                                        <tr class="text-center">
                                             <th>No</th>
                                             <th>Judul</th>
                                             <th>Isi</th>
@@ -76,7 +78,11 @@
                                                 <td><?= $data->judul ?></td>
                                                 <td><?= $data->isi ?></td>
                                                 <td><?= $data->nama_kategori ?></td>
-                                                <td> <img class="img-fluid" src="<?= base_url() ?>assets/assets/blog/<?= $data->img ?>" alt=""> </td>
+                                                <td>
+                                                    <a href="<?= base_url() ?>assets/assets/blog/<?= $data->img ?>" data-toggle="lightbox" data-title="<?= $data->judul ?>" data-gallery="gallery">
+                                                        <img width="200px" class="img-fluid" src="<?= base_url() ?>assets/assets/blog/<?= $data->img ?>" alt="">
+                                                    </a>
+                                                </td>
                                                 <td><?= $data->tanggal_post ?></td>
                                                 <td class="text-center">
                                                     <a class="btn btn-outline-primary" href="<?php echo base_url() ?>admin/resource/edit_resource_en/<?php echo $data->id_blog ?>" title="Edit"><i class="fas fa-pen"></i></a>
@@ -91,7 +97,7 @@
                         <!-- /.card-body -->
                     </div>
                     <!-- /.card -->
-                    <div class="card">
+                    <div class="card card-outline card-info">
                         <!-- /.card-header -->
                         <div class="card-header">
                             <h4>Komentar Resource</h4>

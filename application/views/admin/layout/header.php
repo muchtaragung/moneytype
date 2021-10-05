@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/admin/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/admin/datatables-buttons/css/buttons.bootstrap4.min.css">
     <!-- Theme style -->
+    <link rel="stylesheet" href="<?= base_url() ?>assets/admin/ekko-lightbox/ekko-lightbox.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/admin/select2/css/select2.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/admin/select2-bootstrap4-theme/select2-bootstrap4.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/admin/summernote/summernote-bs4.min.css">

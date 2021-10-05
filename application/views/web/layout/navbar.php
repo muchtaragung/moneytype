@@ -4,7 +4,6 @@
             display: none;
         }
 
-        .navbar .nav-item:hover .nav-link {}
 
         .navbar .nav-item:hover .dropdown-menu {
             display: block;
