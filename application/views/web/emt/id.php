@@ -67,7 +67,7 @@
                     <h3>TAKE THE QUIZ FREE!</h3>
                 </div>
                 <div class="text-center">
-                    <a href="<?= base_url() ?>moneytype" class="btn btn-outline-warning px-5 rounded-pill shadow-sm mt-5 ">GET STARTED</a>
+                    <a href="<?= base_url() . $this->uri->segment(1) ?>/moneytype" class="btn btn-outline-warning px-5 rounded-pill shadow-sm mt-5 ">GET STARTED</a>
                 </div>
             </div>
         </div>
