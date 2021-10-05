@@ -53,7 +53,7 @@
             </div>
             <!-- Footer Location-->
             <div class="col-lg-3 mb-5 mb-lg-0">
-                <h4 class="text-uppercase mb-4">LATEST NEWS</h4>
+                <h4 class="text-uppercase mb-4">RESOURCE</h4>
                 <?php
                 if ($this->uri->segment(1) == 'id') { ?>
                     <?php foreach ($recent_footer as $key) { ?>
