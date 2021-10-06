@@ -27,7 +27,7 @@
         <!-- /.login-logo -->
         <div class="card card-outline card-warning">
             <div class="card-header text-center">
-                <img src="<?= base_url() ?>assets/admin/assets/logo/<?= $logo->logo_footer ?>" class="brand-image elevation-3" style="opacity: .8">
+                <img width="200px" src="<?= base_url() ?>assets/admin/assets/logo/<?= $logo->logo_footer ?>" class="brand-image elevation-3" style="opacity: .8">
                 <h3 class="mt-4">Login Admin</h3>
                 <?php if ($this->session->flashdata('error') != null) { ?>
                     <div class="alert alert-danger" role="alert">
