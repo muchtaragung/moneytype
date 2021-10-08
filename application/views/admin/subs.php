@@ -68,12 +68,6 @@
         $('#feature_modal').modal('show'); // show bootstrap modal
         $('.modal-title').text('Kirim Email'); // Set Title to Bootstrap modal title
     }
-
-    function send() {
-        save_method = 'add';
-        $('#feature_modal1').modal('show'); // show bootstrap modal
-        $('.modal-title').text('Kirim Email'); // Set Title to Bootstrap modal title
-    }
 </script>
 <div class="modal fade text-left" id="feature_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
     <div class="modal-dialog modal-dialog" role="document">

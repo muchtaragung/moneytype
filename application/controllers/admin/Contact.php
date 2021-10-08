@@ -189,10 +189,10 @@ class Contact extends CI_Controller
         $email1 = $this->email->send();
         if (!$email1) {
             $this->session->set_flashdata('error', 'Gagal memproses, Silahkan ulangi');
-            redirect('contact/subs');
+            redirect('admin/contact/subs');
         } else {
             $this->session->set_flashdata('msg', 'Berhasil mengirim email');
-            redirect('contact/subs');
+            redirect('admin/contact/subs');
         }
     }
     public function send()
@@ -222,10 +222,10 @@ class Contact extends CI_Controller
         $email1 = $this->email->send();
         if (!$email1) {
             $this->session->set_flashdata('error', 'Gagal memproses, Silahkan ulangi');
-            redirect('contact/subs');
+            redirect('admin/contact/subs');
         } else {
             $this->session->set_flashdata('msg', 'Berhasil mengirim email');
-            redirect('contact/subs');
+            redirect('admin/contact/subs');
         }
     }
 }
