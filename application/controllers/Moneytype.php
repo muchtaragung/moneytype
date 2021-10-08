@@ -352,7 +352,7 @@ class Moneytype extends CI_Controller
             <title>Hasil Money Quiz</title>
             </head>
             <body>
-            <p>Hello ' . $user['name'] . ',</p>
+            <p>Hello ' . $user['nama'] . ',</p>
             ' . $temp->isi . '
             <table>
                 <tr>
