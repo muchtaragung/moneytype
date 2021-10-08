@@ -110,7 +110,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form id="contact" action="<?= base_url() ?>admin/email/update_email_Web" method="post" enctype="multipart/form-data">
+            <form id="contact" action="<?= base_url() ?>admin/email/update_email_web" method="post" enctype="multipart/form-data">
                 <div class="modal-body">
                     <input type="hidden" name="id" value="<?= $email->id_email ?>">
                     <input type="hidden" name="password" value="<?= $email->password ?>">

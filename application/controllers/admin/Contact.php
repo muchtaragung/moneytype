@@ -158,4 +158,74 @@ class Contact extends CI_Controller
         $this->load->view('admin/subs', $data);
         $this->load->view('admin/layout/footer');
     }
+    public function send_all()
+    {
+        $subs = $this->contact->get_subs()->result();
+        foreach ($subs as $data) {
+            $list[] = $data->email;
+        }
+
+        $email_penerima = $this->web->get_email()->row();
+        $this->load->library('email'); //panggil library email codeigniter
+        $config = [
+            'mailtype'  => 'html',
+            'charset'   => 'utf-8',
+            'protocol'  => 'mail',
+            'smtp_host' => 'mail.vidiracoaching.com',
+            'smtp_user' => $email_penerima->email_web,
+            'smtp_pass'   => $email_penerima->password,
+            'smtp_port'   => 465,
+            'crlf'    => "\r\n",
+            'newline' => "\r\n"
+        ];
+        $message = $this->input->post('isi', true);
+        $subjek = $this->input->post('subjek', true);
+        $this->email->initialize($config);
+        $this->email->set_newline("\r\n");
+        $this->email->from($config['smtp_user']);
+        $this->email->to($list);
+        $this->email->subject($subjek); //subjek email
+        $this->email->message($message);
+        $email1 = $this->email->send();
+        if (!$email1) {
+            $this->session->set_flashdata('error', 'Gagal memproses, Silahkan ulangi');
+            redirect('contact/subs');
+        } else {
+            $this->session->set_flashdata('msg', 'Berhasil mengirim email');
+            redirect('contact/subs');
+        }
+    }
+    public function send()
+    {
+        $email = $this->post->input('email', true);
+        $email_penerima = $this->web->get_email()->row();
+        $this->load->library('email'); //panggil library email codeigniter
+        $config = [
+            'mailtype'  => 'html',
+            'charset'   => 'utf-8',
+            'protocol'  => 'mail',
+            'smtp_host' => 'mail.vidiracoaching.com',
+            'smtp_user' => $email_penerima->email_web,
+            'smtp_pass'   => $email_penerima->password,
+            'smtp_port'   => 465,
+            'crlf'    => "\r\n",
+            'newline' => "\r\n"
+        ];
+        $message = $this->input->post('isi', true);
+        $subjek = $this->input->post('subjek', true);
+        $this->email->initialize($config);
+        $this->email->set_newline("\r\n");
+        $this->email->from($config['smtp_user']);
+        $this->email->to($email);
+        $this->email->subject($subjek); //subjek email
+        $this->email->message($message);
+        $email1 = $this->email->send();
+        if (!$email1) {
+            $this->session->set_flashdata('error', 'Gagal memproses, Silahkan ulangi');
+            redirect('contact/subs');
+        } else {
+            $this->session->set_flashdata('msg', 'Berhasil mengirim email');
+            redirect('contact/subs');
+        }
+    }
 }
