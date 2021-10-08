@@ -39,6 +39,12 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item active">
+                            <a href="<?= base_url() ?>admin/home/galeri" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Gallery</p>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
                             <a href="<?= base_url() ?>admin/home/id" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Indonesia</p>
@@ -203,12 +209,33 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= base_url() ?>admin/contact" <?= $this->uri->segment(2) == 'contact' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-id-card"></i>
                         <p>
                             Contact
+                            <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item active">
+                            <a href="<?= base_url() ?>admin/contact/faq" <?= $this->uri->segment(2) == 'user' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Faq English</p>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="<?= base_url() ?>admin/contact/faq_id" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Faq Indonesia</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url() ?>admin/contact" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Informasi</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="nav-header">SETTING</li>
                 <li class="nav-item">

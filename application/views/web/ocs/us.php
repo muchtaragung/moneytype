@@ -75,8 +75,8 @@
                         </div>
                     </div>
                     <div class="text-center mb-5 pb-5 pt-5">
-                        <a href="#" class="btn btn-outline-warning px-5 rounded-pill shadow-sm mt-5 ">GET STARTED</a>
-                        <a href="#" class="btn btn-outline-light px-5 rounded-pill shadow-sm mt-5 ">LEARN MORE</a>
+                        <a href="<?= base_url() ?>contact" class="btn btn-outline-warning px-5 rounded-pill shadow-sm mt-5 ">GET STARTED</a>
+                        <a href="<?= base_url() ?>contact" class="btn btn-outline-light px-5 rounded-pill shadow-sm mt-5 ">LEARN MORE</a>
                     </div>
                 </div>
             </div>

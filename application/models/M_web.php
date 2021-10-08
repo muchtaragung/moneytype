@@ -52,10 +52,37 @@ class M_web extends CI_Model
         $query = $this->db->get('contact');
         return $query;
     }
+    public function get_galeri()
+    {
+        $query = $this->db->get('galeri');
+        return $query;
+    }
+    public function get_galeri_web()
+    {
+        // $this->db->where('akses=1');
+        $this->db->order_by('id_galeri', 'DESC');
+        $this->db->limit(12);
+        $query = $this->db->get('galeri');
+        return $query;
+    }
+    public function create_galeri($data)
+    {
+        $this->db->insert('galeri', $data);
+    }
+    public function delete_galeri($id)
+    {
+        $this->db->delete('galeri', array('id_galeri' => $id));
+    }
     public function update_contact($id, $data)
     {
         $this->db->where('id_contact', $id);
         $this->db->update('contact', $data);
+        return true;
+    }
+    public function akses_galeri($id, $data)
+    {
+        $this->db->where('id_admin', $id);
+        $this->db->update('galeri', $data);
         return true;
     }
     public function update_image_contact($id, $data)
@@ -92,6 +119,12 @@ class M_web extends CI_Model
         return $query;
     }
     public function update_email($id, $data)
+    {
+        $this->db->where('id_email', $id);
+        $this->db->update('email_penerima', $data);
+        return true;
+    }
+    public function update_email_web($id, $data)
     {
         $this->db->where('id_email', $id);
         $this->db->update('email_penerima', $data);

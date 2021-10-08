@@ -27,8 +27,8 @@ class Main extends CI_Controller
     $data['testimoni'] = $this->about->get_testimoni()->result();
     $data['feature_en'] = $this->about->get_feature_en()->result();
     $data['feature_id'] = $this->about->get_feature_id()->result();
-
-
+    $data['galeri'] = $this->web->get_galeri_web()->result();
+    $data['status'] = $this->web->get_galeri_web()->row();
     if ($this->uri->segment(1) == "id") {
       $data['recent_footer'] = $this->res->get_resource_id_footer()->result();
       $this->load->view('web/home/id', $data);
@@ -43,6 +43,8 @@ class Main extends CI_Controller
     $data['logo'] = $this->web->get_logo()->row();
     $data['sosmed'] = $this->web->get_sosmed()->result();
     $data['contact'] = $this->web->get_contact()->row();
+    $data['galeri'] = $this->web->get_galeri_web()->result();
+    $data['status'] = $this->web->get_galeri_web()->row();
     $this->load->view('web/layout/header', $data);
     $this->load->view('web/layout/navbar', $data);
     if ($this->uri->segment(1) == "id") {

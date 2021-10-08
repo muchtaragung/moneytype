@@ -25,6 +25,8 @@ class About extends CI_Controller
         $data['testimoni'] = $this->about->get_testimoni()->result();
         $data['feature_en'] = $this->about->get_feature_en()->result();
         $data['feature_id'] = $this->about->get_feature_id()->result();
+        $data['galeri'] = $this->web->get_galeri_web()->result();
+        $data['status'] = $this->web->get_galeri_web()->row();
         $this->load->view('web/layout/header', $data);
         $this->load->view('web/layout/navbar', $data);
         if ($this->uri->segment(1) == "id") {

@@ -25,6 +25,8 @@ class Moneytype extends CI_Controller
     $data['sosmed'] = $this->web->get_sosmed()->result();
     $data['contact'] = $this->web->get_contact()->row();
     $data['recent_footer'] = $this->res->get_resource_id_footer()->result();
+    $data['galeri'] = $this->web->get_galeri_web()->result();
+    $data['status'] = $this->web->get_galeri_web()->row();
     $this->load->view('web/layout/header', $data);
     $this->load->view('web/layout/navbar', $data);
     $this->load->view('web/main');
@@ -84,6 +86,9 @@ class Moneytype extends CI_Controller
       $this->index();
     } else {
       $email_penerima = $this->web->get_email()->row();
+      $temp = $this->user->get_template()->row();
+      $logo = $this->web->get_logo()->row();
+
       $name = $this->input->post('nama', true);
       $email = $this->input->post('email', true);
       $phone = $this->input->post('phone', true);
@@ -335,8 +340,8 @@ class Moneytype extends CI_Controller
         'charset'   => 'utf-8',
         'protocol'  => 'mail',
         'smtp_host' => 'mail.vidiracoaching.com',
-        'smtp_user' => 'demoinfo@vidiracoaching.com',  // Email gmail
-        'smtp_pass'   => 'Demoinfo',  // Password gmail
+        'smtp_user' => $email_penerima->email_web,
+        'smtp_pass'   => $email_penerima->password,
         'smtp_port'   => 465,
         'crlf'    => "\r\n",
         'newline' => "\r\n"
@@ -348,9 +353,7 @@ class Moneytype extends CI_Controller
             </head>
             <body>
             <p>Hello ' . $user['name'] . ',</p>
-            <p>Terima kasih telah mengikuti Money Quiz dari Vidira Money Coaching!</p>
-            <p>Kami telah memberikan hasil Money Quiz Anda di bawah ini. Namun, untuk memahami pentingnya hasil Quiz Anda dan mempelajari tentang Money Type Anda serta perilaku yang mendasarinya, membutuhkan expertise seorang Certified Money Coach. Tapi jangan khawatir, kami siap membantu Anda dan ingin menawarkan sesi Money Coaching secara gratis.</p>
-            <p>Di sesi Anda ini, Certified Money Coach (CMC)® akan membantu Anda menemukan dan memahami bagaimana Money Type Anda mempengaruhi perilaku dan emosi Anda terhadap uang, baik secara pribadi maupun finansial. Karena Profil Uang setiap orang adalah unik, sesi Coaching individu Anda dirancang khusus untuk menangani profil Anda. Tidak ada pendekatan “satu  untuk semua” dalam proses coaching kami. Kami juga berjanji bahwa untuk kali ini, sesi coaching Anda ini tanpa biaya dan tanpa keharusan untuk berkomitmen lebih lanjut.</p>
+            ' . $temp->isi . '
             <table>
                 <tr>
                 <th width="150px" style="text-align: left ; line-height: 15px;">Archetype</th>
@@ -453,17 +456,13 @@ class Moneytype extends CI_Controller
                     </td>
                 </tr>
                 </table>
-                <p>Jika Anda ingin bertanya lebih lanjut, silahkan menghubungi kami di <a href="mailto:adiwinata@vidiracoaching.com">adiwinata@vidiracoaching.com</a></p>
-                <p>Salam,<br>
-                Adiwinata Liem, CFP®, CMC® <br>
-                Vidira Money Coaching <br></p>
-                <p>"We help ALIGN your MONEY with your DREAM."</p>
+                ' . $temp->penutup . '
             </body>
             </html>
             ';
       // $list = array($email, 'muchtarahehe@gmail.com');
       $this->email->initialize($config);
-      $this->email->attach('./assets/assets/icon/vidira-logo.jpg', 'inline');
+      $this->email->attach('./assets/admin/assets/logo/' . $logo->logo_footer . ' ', 'inline');
       $this->email->set_newline("\r\n");
       $this->email->from($config['smtp_user']);
       $this->email->to($email);
@@ -476,8 +475,8 @@ class Moneytype extends CI_Controller
         'charset'   => 'utf-8',
         'protocol'  => 'mail',
         'smtp_host' => 'mail.vidiracoaching.com',
-        'smtp_user' => 'demoinfo@vidiracoaching.com',  // Email gmail
-        'smtp_pass'   => 'Demoinfo',  // Password gmail
+        'smtp_user' => $email_penerima->email_web,  // Email gmail
+        'smtp_pass'   => $email_penerima->password,  // Password gmail
         'smtp_port'   => 465,
         'crlf'    => "\r\n",
         'newline' => "\r\n"

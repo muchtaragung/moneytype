@@ -98,12 +98,22 @@ class M_user extends CI_Model
         $query = $this->db->get();
         return $query;
     }
-    
+
     public function update_users($id, $data)
     {
         $this->db->where('id_user', $id);
         $this->db->update('users', $data);
         return true;
     }
-    
+    public function get_template()
+    {
+        $query = $this->db->get('template_email');
+        return $query;
+    }
+    public function update_template($id, $data)
+    {
+        $this->db->where('id_email', $id);
+        $this->db->update('template_email', $data);
+        return true;
+    }
 }

@@ -19,6 +19,7 @@
         color: inherit;
     }
 </style>
+<link href="<?= base_url() ?>assets/css/faq.css" rel="stylesheet">
 <div class="text-center bg-image mt-5" style="background-size: cover; background-repeat: no-repeat;background-image: url(<?= base_url() ?>assets/assets/img/<?= $contact->image ?>);height: 60vh;">
     <div class="mask h-100 w-100" style="background-color: rgba(0, 0, 0, 0.6);">
         <div class="d-flex justify-content-center align-items-center h-100">
@@ -60,10 +61,29 @@
                 </script>
             <?php } ?>
             <!-- <p class="text-center w-responsive mx-auto mb-5">Apakah Anda memiliki pertanyaan? Jangan ragu untuk menghubungi kami secara langsung. Tim kami akan kembali kepada Anda dalam beberapa jam untuk membantu Anda.</p> -->
-            <div class="row">
 
+            <div class="row">
                 <div class="col-md-8">
-                    <h2 class="mb-3">CONTACT US</h2>
+                    <h2 class="mb-3">Frequently Asked Questions</h2>
+                    <?php foreach ($faq as $key) : ?>
+                        <?php $name = str_replace(' ', '_', $key->tanya); ?>
+                        <?php $id = str_replace('?', '', $name); ?>
+                        <div class="accordion accordion-type-2 accordion-flush" id="faq">
+                            <div class="card mt-2">
+                                <div class="card-header d-flex justify-content-between">
+                                    <a class="collapsed" role="button" data-toggle="collapse" href="#<?= $id ?>" aria-expanded="false">
+                                        <h4><?= $key->tanya ?></h4>
+                                    </a>
+                                </div>
+                                <div id="<?= $id ?>" class="collapse" data-parent="#faq">
+                                    <div class="card-body">
+                                        <p style="font-size: large;"> <?= $key->jawab ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach ?>
+                    <h2 class="mb-3 mt-5">Contact us</h2>
                     <form id="contact-form" name="contact-form" action="<?= base_url() ?>contact/email" method="POST">
                         <div class="row">
                             <div class="col-md-6 mb-3">

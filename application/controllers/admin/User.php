@@ -22,6 +22,8 @@ class User extends CI_Controller
     public function index()
     {
         $data['logo'] = $this->web->get_logo()->row();
+        $data['email'] = $this->user->get_template()->row();
+
         $this->load->view('admin/layout/header');
         $this->load->view('admin/layout/navbar', $data);
         $this->load->view('admin/user');
@@ -129,6 +131,17 @@ class User extends CI_Controller
         $data = $this->security->xss_clean($data);
         $this->user->update_user($id, $data);
         $this->session->set_flashdata('msg', 'Data berhasil diupdate');
+        redirect('admin/user');
+    }
+    public function update_template()
+    {
+        $id = $this->input->post('id', true);
+        $data = array(
+            'isi' =>  $this->input->post('isi', true),
+            'penutup' =>  $this->input->post('penutup', true),
+        );
+        $this->user->update_template($id, $data);
+        $this->session->set_flashdata('msg', 'Template berhasil diupdate');
         redirect('admin/user');
     }
 }

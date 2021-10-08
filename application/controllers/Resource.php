@@ -28,7 +28,8 @@ class Resource extends CI_Controller
             $data['sosmed'] = $this->web->get_sosmed()->result();
             $data['contact'] = $this->web->get_contact()->row();
             $data['recent_footer'] = $this->res->get_resource_id_footer()->result();
-
+            $data['galeri'] = $this->web->get_galeri_web()->result();
+            $data['status'] = $this->web->get_galeri_web()->row();
             //konfigurasi pagination
             $config['base_url'] = site_url('resource'); //site url
             $config['total_rows'] = $this->db->count_all('blog'); //total row
@@ -80,6 +81,8 @@ class Resource extends CI_Controller
             $data['sosmed'] = $this->web->get_sosmed()->result();
             $data['contact'] = $this->web->get_contact()->row();
             $data['recent_footer'] = $this->res->get_resource_en_footer()->result();
+            $data['galeri'] = $this->web->get_galeri_web()->result();
+            $data['status'] = $this->web->get_galeri_web()->row();
             //konfigurasi pagination
             $config['base_url'] = site_url('resource'); //site url
             $config['total_rows'] = $this->db->count_all('blog'); //total row
@@ -137,6 +140,8 @@ class Resource extends CI_Controller
             $data['sosmed'] = $this->web->get_sosmed()->result();
             $data['contact'] = $this->web->get_contact()->row();
             $data['recent_footer'] = $this->res->get_resource_id_footer()->result();
+            $data['galeri'] = $this->web->get_galeri_web()->result();
+            $data['status'] = $this->web->get_galeri_web()->row();
             $this->load->view('web/layout/header', $data);
             $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/resource/detail_id', $data);
@@ -155,6 +160,8 @@ class Resource extends CI_Controller
             $data['sosmed'] = $this->web->get_sosmed()->result();
             $data['contact'] = $this->web->get_contact()->row();
             $data['recent_footer'] = $this->res->get_resource_en_footer()->result();
+            $data['galeri'] = $this->web->get_galeri_web()->result();
+            $data['status'] = $this->web->get_galeri_web()->row();
             $this->load->view('web/layout/header', $data);
             $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/resource/detail_us', $data);
@@ -175,6 +182,8 @@ class Resource extends CI_Controller
             $data['sosmed'] = $this->web->get_sosmed()->result();
             $data['contact'] = $this->web->get_contact()->row();
             $data['recent_footer'] = $this->res->get_resource_id_footer()->result();
+            $data['galeri'] = $this->web->get_galeri_web()->result();
+            $data['status'] = $this->web->get_galeri_web()->row();
             $this->load->view('web/layout/header', $data);
             $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/resource/archive_id', $data);
@@ -191,6 +200,8 @@ class Resource extends CI_Controller
             $data['sosmed'] = $this->web->get_sosmed()->result();
             $data['contact'] = $this->web->get_contact()->row();
             $data['recent_footer'] = $this->res->get_resource_en_footer()->result();
+            $data['galeri'] = $this->web->get_galeri_web()->result();
+            $data['status'] = $this->web->get_galeri_web()->row();
             $this->load->view('web/layout/header', $data);
             $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/resource/archive_us', $data);
@@ -211,6 +222,8 @@ class Resource extends CI_Controller
             $data['sosmed'] = $this->web->get_sosmed()->result();
             $data['contact'] = $this->web->get_contact()->row();
             $data['recent_footer'] = $this->res->get_resource_id_footer()->result();
+            $data['galeri'] = $this->web->get_galeri_web()->result();
+            $data['status'] = $this->web->get_galeri_web()->row();
             $this->load->view('web/layout/header', $data);
             $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/resource/category_id', $data);
@@ -227,6 +240,8 @@ class Resource extends CI_Controller
             $data['sosmed'] = $this->web->get_sosmed()->result();
             $data['contact'] = $this->web->get_contact()->row();
             $data['recent_footer'] = $this->res->get_resource_en_footer()->result();
+            $data['galeri'] = $this->web->get_galeri_web()->result();
+            $data['status'] = $this->web->get_galeri_web()->row();
             $this->load->view('web/layout/header', $data);
             $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/resource/category_us', $data);
@@ -248,6 +263,8 @@ class Resource extends CI_Controller
             $data['sosmed'] = $this->web->get_sosmed()->result();
             $data['contact'] = $this->web->get_contact()->row();
             $data['recent_footer'] = $this->res->get_resource_id_footer()->result();
+            $data['galeri'] = $this->web->get_galeri_web()->result();
+            $data['status'] = $this->web->get_galeri_web()->row();
             $this->load->view('web/layout/header', $data);
             $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/resource/search_id', $data);
@@ -265,6 +282,8 @@ class Resource extends CI_Controller
             $data['sosmed'] = $this->web->get_sosmed()->result();
             $data['contact'] = $this->web->get_contact()->row();
             $data['recent_footer'] = $this->res->get_resource_en_footer()->result();
+            $data['galeri'] = $this->web->get_galeri_web()->result();
+            $data['status'] = $this->web->get_galeri_web()->row();
             $this->load->view('web/layout/header', $data);
             $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/resource/search_us', $data);

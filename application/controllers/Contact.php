@@ -11,6 +11,7 @@ class Contact extends CI_Controller
         $this->load->model('M_user', 'user');
         $this->load->model('M_web', 'web');
         $this->load->model('M_res', 'res');
+        $this->load->model('M_contact', 'contact');
         $this->load->helper('security');
         $this->load->library('form_validation');
     }
@@ -20,12 +21,16 @@ class Contact extends CI_Controller
         $data['contact'] = $this->web->get_contact()->row();
         $data['logo'] = $this->web->get_logo()->row();
         $data['sosmed'] = $this->web->get_sosmed()->result();
+        $data['galeri'] = $this->web->get_galeri_web()->result();
+        $data['status'] = $this->web->get_galeri_web()->row();
         $this->load->view('web/layout/header', $data);
         $this->load->view('web/layout/navbar', $data);
         if ($this->uri->segment(1) == "id") {
+            $data['faq'] = $this->contact->get_faq_id()->result();
             $data['recent_footer'] = $this->res->get_resource_id_footer()->result();
             $this->load->view('web/contact/id', $data);
         } else {
+            $data['faq'] = $this->contact->get_faq_en()->result();
             $data['recent_footer'] = $this->res->get_resource_en_footer()->result();
             $this->load->view('web/contact/us', $data);
         }

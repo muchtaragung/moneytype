@@ -12,9 +12,9 @@
         <div class="row">
             <!-- Footer Social Icons-->
             <div class="col-lg-3 mb-5 mb-lg-0">
-                <h4 class="text-uppercase  mb-4"><img width="200px" src="<?= base_url() ?>assets/admin/assets/logo/<?= $logo->logo_footer ?>" alt=""></a></h4>
+                <h4 class="text-uppercase text-left mb-4"><img class="img-fluid" width="270px" src="<?= base_url() ?>assets/admin/assets/logo/<?= $logo->logo_footer ?>" alt=""></h4>
                 <div class="row">
-                    <div class="col-1 text-center">
+                    <div class="col-2 text-right">
                         <i class="fas fa-map-marker-alt mt-3"></i>
                     </div>
                     <div class="col-10">
@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-1 text-center">
+                    <div class="col-2 text-right">
                         <i class="fas fa-phone mt-3"></i>
                     </div>
                     <div class="col-10">
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <div class="col-1">
+                    <div class="col-2 text-right">
                         <i class="fas fa-envelope mt-3"></i>
                     </div>
                     <div class="col-10">
@@ -53,7 +53,7 @@
             </div>
             <!-- Footer Location-->
             <div class="col-lg-3 mb-5 mb-lg-0">
-                <h4 class="text-uppercase mb-4">RESOURCE</h4>
+                <h3 class="text-uppercase mb-4">RESOURCES</h3>
                 <?php
                 if ($this->uri->segment(1) == 'id') { ?>
                     <?php foreach ($recent_footer as $key) { ?>
@@ -78,7 +78,7 @@
 
             <!-- Footer About Text-->
             <div class="col-lg-3">
-                <h4 class="text-uppercase mb-4">NEWSLETTER</h4>
+                <h3 class="text-uppercase mb-4">NEWSLETTER</h3>
                 <p class="lead mb-0">
                     Subscribe to our latest news to be updated, we promise not to spam!
                 </p>
@@ -90,14 +90,27 @@
                         <button type="submit" class="btn btn-sm btn-outline-warning">Sub</button>
                     </div>
                 </div>
-
             </div>
             <div class="col-lg-3">
-                <h4 class="text-uppercase mb-4">GALERY</h4>
-                <p class="lead mb-0">
-                </p>
+                <h3 class="text-uppercase mb-4">GALLERY</h3>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="galeri">
+                            <!-- <div class="col-md-12"> -->
+                            <?php if ($status->akses == 1) { ?>
+                                <?php foreach ($galeri as $data) { ?>
+                                    <a href="<?= base_url() ?>assets/assets/galeri/<?= $data->img ?>" class="image-tile" data-abc="true">
+                                        <img width="70px" src="<?= base_url() ?>assets/assets/galeri/<?= $data->img ?>" alt="Vidira Gallery">
+                                    </a>
+                                <?php  } ?>
+                            <?php  } ?>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
     </div>
 </footer>
 <!-- Copyright Section-->
@@ -113,8 +126,15 @@
 <!-- Core theme JS-->
 <script src="<?= base_url() ?>assets/js/scripts.js"></script>
 <script src="<?= base_url() ?>assets/js/main.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/lightgallery-all.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('.galeri').lightGallery();
+    });
+</script>
 <!-- <script>
     window.onscroll = function() {
         var currentScrollPos = window.pageYOffset;

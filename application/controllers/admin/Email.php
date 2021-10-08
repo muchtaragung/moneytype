@@ -35,4 +35,21 @@ class Email extends CI_Controller
         $this->session->set_flashdata('msg', 'Email berhasil diupdate');
         redirect('admin/email');
     }
+    public function update_email_web()
+    {
+        if (empty($this->input->post('password'))) {
+            $password = $this->input->post('password_lama', TRUE);
+        } else {
+            $password = $this->input->post('password', true);
+        }
+        $id = $this->input->post('id', true);
+
+        $data = array(
+            'email_web' =>  $this->input->post('email_web', true),
+            'password' =>  $password,
+        );
+        $this->web->update_email_web($id, $data);
+        $this->session->set_flashdata('msg', 'Email Web berhasil diupdate');
+        redirect('admin/email');
+    }
 }

@@ -26,6 +26,7 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="<?= base_url() ?>assets/home/css/styles.css" rel="stylesheet" />
     <script src="<?= base_url() ?>assets/admin/jquery/jquery.min.js" type="text/javascript"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.0/css/lightgallery.min.css" rel="stylesheet">
 </head>
 <style>
     header.masthead {
@@ -42,51 +43,40 @@
         background: transparent;
         border-top: 0px;
     }
-
-    @media all and (min-width: 992px) {
-        .navbar .nav-item .dropdown-menu {
-            display: none;
-        }
-
-        .navbar .nav-item:hover .nav-link {}
-
-        .navbar .nav-item:hover .dropdown-menu {
-            display: block;
-        }
-
-        .navbar .nav-item .dropdown-menu {
-            margin-top: 0;
-        }
-    }
 </style>
 
 <body id="page-top">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light text-uppercase fixed-top py-3" id="mainNav">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="<?= base_url() ?>assets/admin/assets/logo/<?= $logo->logo_footer ?>" width="150px" alt="">
+            <a class="navbar-brand px-4" href="#">
+                <img src="<?= base_url() ?>assets/admin/assets/logo/<?= $logo->logo_footer ?>" width="180px" alt="">
             </a>
-
             <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav mx-auto my-2 my-lg-0">
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link rounded" href="<?= base_url() . $this->uri->segment(1) ?>">Home</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link rounded" href="<?= base_url() . $this->uri->segment(1) ?>/about">About</a></li>
                     <li id="ocs1" class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="<?= base_url() . $this->uri->segment(1) ?>/one-coin-service" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            One-Coin Service
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Our Services
                         </a>
                         <div id="ocs2" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="<?= base_url() . $this->uri->segment(1) ?>/financial-planning">Financial Planning</a>
-                            <a class="dropdown-item" href="<?= base_url() . $this->uri->segment(1) ?>/money-coaching">Money Coaching</a>
+                            <a class="dropdown-item" href="<?= base_url() . $this->uri->segment(1) ?>/one-coin-service">One-Coin Service</a>
+                            <ul style="list-style-type: none;">
+                                <li class="">
+                                    <a class="dropdown-item" href="<?= base_url() . $this->uri->segment(1) ?>/financial-planning">Financial Planning</a>
+                                    <a class="dropdown-item" href="<?= base_url() . $this->uri->segment(1) ?>/money-coaching">Money Coaching</a>
+                                </li>
+                            </ul>
                         </div>
                     </li>
                     <li id="emt1" class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="<?= base_url() . $this->uri->segment(1) ?>/eight-money-types" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            The Eight Money Types
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Money Types Explained
                         </a>
                         <div id="emt2" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="<?= base_url() . $this->uri->segment(1) ?>/eight-money-types">The Eight Money Types</a>
                             <a class="dropdown-item" href="<?= base_url() . $this->uri->segment(1) ?>/moneytype">Take The Quiz Free!</a>
                         </div>
                     </li>
@@ -96,7 +86,7 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Language
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div id="bahasa" class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="<?= base_url() ?>id/"> <img width="25px" src="<?= base_url() ?>assets/icon/id.png" alt="" srcset=""> Indonesia</a>
                             <a class="dropdown-item" href="<?= base_url() ?>"> <img width="25px" src="<?= base_url() ?>assets/icon/us.png" alt="" srcset=""> English</a>
                         </div>
@@ -227,17 +217,29 @@
         </div>
     </section>
     <!-- Contact-->
-    <section class="page-section" id="contact">
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-lg-8 col-xl-6 text-center">
-                    <h2 class="mt-0">Let's Get In Touch!</h2>
-                    <hr class="divider" />
-                    <p class="text-muted mb-5">Ready to start your next project with us? Send us a messages and we will get back to you as soon as possible!</p>
+    <?php if ($status->akses == 1) { ?>
+        <section class="page-section" id="contact">
+            <!-- Page Content -->
+            <div class="container">
+
+                <h1 class="fw-light text-center text-lg-start mt-4 mb-0">Gallery</h1>
+
+                <hr class="mt-2 mb-5">
+
+                <div class="row justify-content-center text-lg-start">
+                    <div class="galeri">
+                        <!-- <div class="col-md-12"> -->
+                        <?php foreach ($galeri as $data) { ?>
+                            <!-- <div class="col-lg-3 col-md-4 col-6"> -->
+                            <a href="<?= base_url() ?>assets/assets/galeri/<?= $data->img ?>" class="image-tile" data-abc="true">
+                                <img width="270px" class="img-fluid img-thumbnail" src="<?= base_url() ?>assets/assets/galeri/<?= $data->img ?>" alt="Vidira Gallery">
+                            </a>
+                            <!-- </div> -->
+                        <?php  } ?>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    <?php } ?>
     <!-- Footer-->
     <style>
         a,
@@ -253,7 +255,7 @@
             <div class="row">
                 <!-- Footer Social Icons-->
                 <div class="col-lg-3 mb-5 mb-lg-0">
-                    <h4 class="text-uppercase  mb-4"><img width="200px" src="<?= base_url() ?>assets/admin/assets/logo/<?= $logo->logo_footer ?>" alt=""></a></h4>
+                    <h4 class="text-uppercase text-left mb-4"><img class="img-fluid" width="270px" src="<?= base_url() ?>assets/admin/assets/logo/<?= $logo->logo_footer ?>" alt=""></h4>
                     <div class="row">
                         <div class="col-1 text-center">
                             <i class="fas fa-map-marker-alt mt-1"></i>
@@ -293,8 +295,8 @@
                     <?php  } ?>
                 </div>
                 <!-- Footer Location-->
-                <div class="col-lg-3 mb-5 mb-lg-0">
-                    <h4 class="text-uppercase mb-4">RESOURCE</h4>
+                <div class="col-lg-3 mb-5 pt-3 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">RESOURCES</h4>
                     <?php foreach ($recent_footer as $key) { ?>
                         <a style="background-color:transparent" href="<?= base_url() ?>id/artikel/<?= $key->slug ?>">
                             <p class="lead mb-0">
@@ -307,7 +309,7 @@
 
                 <!-- Footer About Text-->
                 <div class="col-lg-3">
-                    <h4 class="text-uppercase mb-4">NEWSLETTER</h4>
+                    <h4 class="text-uppercase pt-3 mb-4">NEWSLETTER</h4>
                     <p class="lead mb-0">
                         Subscribe to our latest news to be updated, we promise not to spam!
                     </p>
@@ -316,15 +318,28 @@
                             <input type="text" class="form-control form-control-sm" name="sub">
                         </div>
                         <div class="col-md-3">
-                            <button type="submit" class="btn btn-sm btn-warning">Sub</button>
+                            <button type="submit" class="btn btn-sm btn-outline-warning">Sub</button>
                         </div>
                     </div>
 
                 </div>
-                <div class="col-lg-3">
-                    <h4 class="text-uppercase mb-4">GALERY</h4>
-                    <p class="lead mb-0">
-                    </p>
+                <div class="col-lg-3 mt-3">
+                    <h4 class="text-uppercase mb-4">GALLERY</h4>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="galeri">
+                                <!-- <div class="col-md-12"> -->
+                                <?php if ($status->akses == 1) { ?>
+                                    <?php foreach ($galeri as $data) { ?>
+                                        <a href="<?= base_url() ?>assets/assets/galeri/<?= $data->img ?>" class="image-tile" data-abc="true">
+                                            <img width="70px" src="<?= base_url() ?>assets/assets/galeri/<?= $data->img ?>" alt="Vidira Gallery">
+                                        </a>
+                                    <?php  } ?>
+                                <?php  } ?>
+                                <!-- </div> -->
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -342,24 +357,11 @@
     <!-- Core theme JS-->
     <script src="<?= base_url() ?>assets/home/js/scripts.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/lightgallery-all.min.js"></script>
+
     <script>
         $(document).ready(function() {
-            if ($(document).width() < 769) {
-                $('#ocs1').addClass('show');
-                $('#ocs2').addClass('show');
-            } else {
-                $('#ocs1').removeClass('show');
-                $('#ocs2').removeClass('show');
-            }
-        });
-        $(document).ready(function() {
-            if ($(document).width() < 769) {
-                $('#emt1').addClass('show');
-                $('#emt2').addClass('show');
-            } else {
-                $('#emt1').removeClass('show');
-                $('#emt2').removeClass('show');
-            }
+            $('#lightgallery').lightGallery();
         });
     </script>
     <script>

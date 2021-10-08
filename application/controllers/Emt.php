@@ -27,6 +27,8 @@ class Emt extends CI_Controller
             $data['emt'] = $this->emt->get_emt_id()->row();
             $data['header_feature'] = $this->emt->get_header_feature_emt_id()->row();
             $data['recent_footer'] = $this->res->get_resource_id_footer()->result();
+            $data['galeri'] = $this->web->get_galeri_web()->result();
+            $data['status'] = $this->web->get_galeri_web()->row();
             $this->load->view('web/layout/header', $data);
             $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/emt/id', $data);
@@ -41,6 +43,8 @@ class Emt extends CI_Controller
             $data['emt'] = $this->emt->get_emt_us()->row();
             $data['header_feature'] = $this->emt->get_header_feature_emt_us()->row();
             $data['recent_footer'] = $this->res->get_resource_en_footer()->result();
+            $data['galeri'] = $this->web->get_galeri_web()->result();
+            $data['status'] = $this->web->get_galeri_web()->row();
             $this->load->view('web/layout/header', $data);
             $this->load->view('web/layout/navbar', $data);
             $this->load->view('web/emt/us', $data);

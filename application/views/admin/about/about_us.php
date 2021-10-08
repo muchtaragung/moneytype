@@ -655,30 +655,4 @@
             });
         });
     });
-
-    // $(function() {
-    //     CKEDITOR.replace('isi');
-    // });
-    // $(function() {
-    //     // Summernote
-    //     $('#isi').summernote({
-    //         fontSizes: ['8', '9', '10', '11', '12', '14', '18', '24', '36', '48', '64', '82', '150'],
-    //         height: 300,
-    //         placeholder: 'Isi About..',
-    //         disableDragAndDrop: true,
-    //         codeviewFilter: false,
-    //         codeviewIframeFilter: true,
-    //         toolbar: [
-    //             ['style', ['style']],
-    //             ['font', ['bold', 'underline', 'clear']],
-    //             ['fontsize', ['fontsize']],
-    //             ['fontname', ['fontname']],
-    //             ['height', ['height']],
-    //             ['color', ['color']],
-    //             ['para', ['ul', 'ol', 'paragraph']],
-    //             ['table', ['table']],
-    //             ['view', ['fullscreen', 'help']],
-    //         ],
-    //     });
-    // })
 </script>

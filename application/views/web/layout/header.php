@@ -25,13 +25,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.transitions.css">
     <link href="<?= base_url() ?>assets/css/styles.css" rel="stylesheet">
+    <!-- <link href="<?= base_url() ?>assets/css/galeri.css" rel="stylesheet"> -->
     <link href="<?= base_url() ?>assets/css/main.css?ver=1.2.0" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.2.0/css/ionicons.min.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
     <link rel="stylesheet" media="screen" href="<?= base_url() ?>assets/css/screen.css">
     <script src="<?= base_url() ?>assets/js/jquery.validate.js"></script>
     <link rel="stylesheet" href="<?= base_url() ?>assets/admin/package/dist/sweetalert2.min.css">
     <script src="<?= base_url() ?>assets/admin/package/dist/sweetalert2.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.0/css/lightgallery.min.css" rel="stylesheet">
 </head>
 <style>
     div.dropdown-toggle {

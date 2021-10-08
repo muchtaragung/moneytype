@@ -1,26 +1,8 @@
-<style>
-    @media all and (min-width: 992px) {
-        .navbar .nav-item .dropdown-menu {
-            display: none;
-        }
-
-
-        .navbar .nav-item:hover .dropdown-menu {
-            display: block;
-        }
-
-        .navbar .nav-item .dropdown-menu {
-            margin-top: 0;
-        }
-    }
-</style>
-
 <body id="page-top">
     <div id="nav-scroll" class="nav-scroll">
         <nav class="navbar navbar-expand-lg bg-warning text-uppercase fixed-top" id="mainNav">
             <div class="container-fluid">
                 <a class="navbar-brand text-dark" href="#page-top"><img width="170px" src="<?= base_url() ?>assets/admin/assets/logo/<?= $logo->logo ?>" alt=""></a>
-
                 <button class="navbar-toggler font-weight-bold bg-warning text-dark rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -31,20 +13,31 @@
                             <li class="nav-item mx-0 mx-lg-1"><a class="text-dark nav-link rounded" href="<?= base_url() ?>">Home</a></li>
                             <li class="nav-item mx-0 mx-lg-1"><a class="text-dark nav-link rounded" href="<?= base_url() ?>about">About</a></li>
                             <li id="ocs1" class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle " href="<?= base_url() ?>one-coin-service" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                    One-Coin Service
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Our Services
                                 </a>
+                                <!-- <a class="nav-link dropdown-toggle " href="<?= base_url() ?>one-coin-service" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    One-Coin Service
+                                </a> -->
                                 <div id="ocs2" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="<?= base_url() ?>financial-planning">Financial Planning</a>
-                                    <a class="dropdown-item" href="<?= base_url() ?>money-coaching">Money Coaching</a>
+                                    <a class="dropdown-item" href="<?= base_url() ?>one-coin-service">One-Coin Service</a>
+                                    <ul style="list-style-type: none;">
+                                        <li class="px-3">
+                                            <a class="dropdown-item" href="<?= base_url() ?>financial-planning">Financial Planning</a>
+                                            <a class="dropdown-item" href="<?= base_url() ?>money-coaching">Money Coaching</a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </li>
-
                             <li id="emt1" class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="<?= base_url() ?>eight-money-types" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                    The Eight Money Types
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Money Types Explained
                                 </a>
+                                <!-- <a class="nav-link dropdown-toggle" href="<?= base_url() ?>eight-money-types" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    The Eight Money Types
+                                </a> -->
                                 <div id="emt2" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="<?= base_url()  ?>eight-money-types"> The Eight Money Types</a>
                                     <a class="dropdown-item" href="<?= base_url()  ?>moneytype">Take The Quiz Free!</a>
                                 </div>
                             </li>
@@ -75,19 +68,25 @@
                             <li class="nav-item mx-0 mx-lg-1"><a class="text-dark nav-link rounded" href="<?= base_url() . $this->uri->segment(1) ?>/">Home</a></li>
                             <li class="nav-item mx-0 mx-lg-1"><a class="text-dark nav-link rounded" href="<?= base_url() . $this->uri->segment(1) ?>/about">About</a></li>
                             <li id="ocs1" class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="<?= base_url() . $this->uri->segment(1) ?>/one-coin-service" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                    One-Coin Service
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Our Services
                                 </a>
                                 <div id="ocs2" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="<?= base_url() . $this->uri->segment(1) ?>/financial-planning">Financial Planning</a>
-                                    <a class="dropdown-item" href="<?= base_url() . $this->uri->segment(1) ?>/money-coaching">Money Coaching</a>
+                                    <a class="dropdown-item" href="<?= base_url() . $this->uri->segment(1) ?>/one-coin-service">One-Coin Service</a>
+                                    <ul style="list-style-type: none;">
+                                        <li class="px-3">
+                                            <a class="dropdown-item" href="<?= base_url() . $this->uri->segment(1) ?>/financial-planning">Financial Planning</a>
+                                            <a class="dropdown-item" href="<?= base_url() . $this->uri->segment(1) ?>/money-coaching">Money Coaching</a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </li>
                             <li id="emt1" class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="<?= base_url() . $this->uri->segment(1) ?>/eight-money-types" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                    The Eight Money Types
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Money Types Explained
                                 </a>
                                 <div id="emt2" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="<?= base_url() . $this->uri->segment(1) ?>/eight-money-types">The Eight Money Types</a>
                                     <a class="dropdown-item" href="<?= base_url() . $this->uri->segment(1) ?>/moneytype">Take The Quiz Free!</a>
                                 </div>
                             </li>
@@ -118,23 +117,3 @@
             </div>
         </nav>
     </div>
-    <script>
-        $(document).ready(function() {
-            if ($(document).width() < 769) {
-                $('#ocs1').addClass('show');
-                $('#ocs2').addClass('show');
-            } else {
-                $('#ocs1').removeClass('show');
-                $('#ocs2').removeClass('show');
-            }
-        });
-        $(document).ready(function() {
-            if ($(document).width() < 769) {
-                $('#emt1').addClass('show');
-                $('#emt2').addClass('show');
-            } else {
-                $('#emt1').removeClass('show');
-                $('#emt2').removeClass('show');
-            }
-        });
-    </script>
