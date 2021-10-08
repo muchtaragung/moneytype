@@ -12,6 +12,7 @@ class Main extends CI_Controller
     $this->load->model('M_web', 'web');
     $this->load->model('M_about', 'about');
     $this->load->model('M_res', 'res');
+    $this->load->model('M_emt', 'emt');
     $this->load->helper('security');
     $this->load->library('form_validation');
   }
@@ -45,6 +46,7 @@ class Main extends CI_Controller
     $data['contact'] = $this->web->get_contact()->row();
     $data['galeri'] = $this->web->get_galeri_web()->result();
     $data['status'] = $this->web->get_galeri_web()->row();
+    $data['emt'] = $this->emt->get_emt_us()->row();
     $this->load->view('web/layout/header', $data);
     $this->load->view('web/layout/navbar', $data);
     if ($this->uri->segment(1) == "id") {
