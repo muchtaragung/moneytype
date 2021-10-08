@@ -148,4 +148,14 @@ class Contact extends CI_Controller
         $this->session->set_flashdata('msg', 'FAQ berhasil dihapus');
         redirect('admin/contact/faq_id');
     }
+
+    public function subs()
+    {
+        $data['logo'] = $this->web->get_logo()->row();
+        $data['subs'] = $this->contact->get_subs()->result();
+        $this->load->view('admin/layout/header');
+        $this->load->view('admin/layout/navbar', $data);
+        $this->load->view('admin/subs', $data);
+        $this->load->view('admin/layout/footer');
+    }
 }

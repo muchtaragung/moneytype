@@ -183,7 +183,7 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon far fa-newspaper"></i>
                         <p>
-                            Resource
+                            Resources
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
@@ -236,6 +236,14 @@
                             </a>
                         </li>
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="<?= base_url() ?>admin/contact/subs" <?= $this->uri->segment(2) == 'dashboard' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            Subscriber
+                        </p>
+                    </a>
                 </li>
                 <li class="nav-header">SETTING</li>
                 <li class="nav-item">

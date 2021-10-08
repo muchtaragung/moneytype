@@ -24,6 +24,15 @@ class M_contact extends CI_Model
         $query = $this->db->get('faq_id');
         return $query;
     }
+    public function get_subs()
+    {
+        $query = $this->db->get('subs');
+        return $query;
+    }
+    public function create_subs($data)
+    {
+        $this->db->insert('subs', $data);
+    }
     public function create_faq_en($data)
     {
         $this->db->insert('faq', $data);

@@ -27,6 +27,9 @@
     <link href="<?= base_url() ?>assets/home/css/styles.css" rel="stylesheet" />
     <script src="<?= base_url() ?>assets/admin/jquery/jquery.min.js" type="text/javascript"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.0/css/lightgallery.min.css" rel="stylesheet">
+    <script src="<?= base_url() ?>assets/js/jquery.validate.js"></script>
+    <link rel="stylesheet" href="<?= base_url() ?>assets/admin/package/dist/sweetalert2.min.css">
+    <script src="<?= base_url() ?>assets/admin/package/dist/sweetalert2.min.js"></script>
 </head>
 <style>
     header.masthead {
@@ -104,6 +107,7 @@
             </div>
         </div>
     </nav>
+
     <!-- Masthead-->
     <header class="masthead">
         <div class="container px-4 px-lg-5 h-100">
@@ -183,6 +187,18 @@
             </div>
         </div>
     </section>
+    <?php if ($this->session->flashdata('msg') != null) { ?>
+        <script>
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                text: "<?php echo $this->session->flashdata('msg'); ?>",
+                timer: 4000,
+                showConfirmButton: false,
+                type: 'success'
+            });
+        </script>
+    <?php } ?>
     <!-- Call to action-->
     <section class="page-section">
         <div class="container">
@@ -321,14 +337,16 @@
                     <p class="lead mb-0">
                         Subscribe to our latest news to be updated, we promise not to spam!
                     </p>
-                    <div class="row mt-3">
-                        <div class="col-md-9">
-                            <input type="text" class="form-control form-control-sm" name="sub">
+                    <form id="subs" action="<?= base_url() ?>contact/subs" method="post">
+                        <div class="row mt-3">
+                            <div class="col-md-9">
+                                <input type="email" required title="Email required" placeholder="Your Email" class="form-control form-control-sm" name="email">
+                            </div>
+                            <div class="col-md-3">
+                                <button type="submit" class="btn btn-sm btn-outline-warning">Sub</button>
+                            </div>
                         </div>
-                        <div class="col-md-3">
-                            <button type="submit" class="btn btn-sm btn-outline-warning">Sub</button>
-                        </div>
-                    </div>
+                    </form>
 
                 </div>
                 <div class="col-lg-3 mt-3">
@@ -369,6 +387,18 @@
     <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/lightgallery-all.min.js"></script>
 
     <script>
+        $(document).ready(function() {
+            $('#subs').validate({ // initialize the plugin
+                rules: {
+                    messages: {
+                        email: {
+                            required: "Email required!"
+                        }
+                    },
+                }
+            });
+
+        });
         $(document).ready(function() {
             $('.galeri').lightGallery();
         });

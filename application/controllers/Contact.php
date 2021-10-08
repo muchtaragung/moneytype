@@ -50,8 +50,8 @@ class Contact extends CI_Controller
             'charset'   => 'utf-8',
             'protocol'  => 'mail',
             'smtp_host' => 'mail.vidiracoaching.com',
-            'smtp_user' => 'demoinfo@vidiracoaching.com',  // Email gmail
-            'smtp_pass'   => 'Demoinfo',  // Password gmail
+            'smtp_user' => $email_penerima->email_web,
+            'smtp_pass'   => $email_penerima->password,
             'smtp_port'   => 465,
             'crlf'    => "\r\n",
             'newline' => "\r\n"
@@ -98,5 +98,14 @@ class Contact extends CI_Controller
             $this->session->set_flashdata('msg', 'Berhasil mengirim email');
             redirect('contact');
         }
+    }
+    public function subs()
+    {
+        $data = array(
+            'email' => $this->input->post('email', true)
+        );
+        $this->contact->create_subs($data);
+        $this->session->set_flashdata('msg', 'Thank you for Subscribe');
+        redirect('main');
     }
 }
