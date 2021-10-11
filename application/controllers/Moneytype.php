@@ -456,13 +456,15 @@ class Moneytype extends CI_Controller
                 </tr>
                 </table>
                 ' . $temp->penutup . '
-                <img width="300px" src="cid:' . base_url('assets/admin/assets/logo/' . $logo->logo_footer . '') . '" alt="Vidira">
             </body>
             </html>
             ';
       // $list = array($email, 'muchtarahehe@gmail.com');
+      $filename = './assets/admin/assets/logo/' . $logo->logo_footer . '';
       $this->email->initialize($config);
       // $this->email->attach('./assets/admin/assets/logo/' . $logo->logo_footer . ' ', 'inline');
+      $cid = $this->email->attachment_cid($filename);
+      $this->email->message('<img src="cid:' . $cid . '" alt="vidira" />');
       $this->email->set_newline("\r\n");
       $this->email->from($config['smtp_user']);
       $this->email->to($email);
