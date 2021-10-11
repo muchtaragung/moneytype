@@ -119,7 +119,7 @@
                         <input type="email" value="<?= $email->email_web ?>" title="Tidak boleh kosong" name="email_web" id="email" class="form-control" placeholder="Email Contact">
                     </div>
                     <div class="form-group mb-3">
-                        <label for="password">Alamat Email</label>
+                        <label for="password">Password Email</label>
                         <input type="password" name="password" id="password" class="form-control" placeholder="Password Email Web">
                     </div>
 
