@@ -76,8 +76,6 @@ class Moneytype extends CI_Controller
 
   public function result()
   {
-
-
     $this->form_validation->set_rules('nama', 'Nama', 'required|xss_clean');
     $this->form_validation->set_rules('email', 'Email', 'required|xss_clean');
     $this->form_validation->set_rules('phone', 'Phone', 'required|xss_clean');
@@ -88,6 +86,7 @@ class Moneytype extends CI_Controller
       $email_penerima = $this->web->get_email()->row();
       $temp = $this->user->get_template()->row();
       $logo = $this->web->get_logo()->row();
+
 
       $name = $this->input->post('nama', true);
       $email = $this->input->post('email', true);
@@ -457,12 +456,13 @@ class Moneytype extends CI_Controller
                 </tr>
                 </table>
                 ' . $temp->penutup . '
+                <img width="300px" src="' . base_url('assets/admin/assets/logo/' . $logo->logo_footer . '') . '" alt="Hotel Empark">
             </body>
             </html>
             ';
       // $list = array($email, 'muchtarahehe@gmail.com');
       $this->email->initialize($config);
-      $this->email->attach('./assets/admin/assets/logo/' . $logo->logo_footer . ' ', 'inline');
+      // $this->email->attach('./assets/admin/assets/logo/' . $logo->logo_footer . ' ', 'inline');
       $this->email->set_newline("\r\n");
       $this->email->from($config['smtp_user']);
       $this->email->to($email);

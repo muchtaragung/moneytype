@@ -238,7 +238,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= base_url() ?>admin/contact/subs" <?= $this->uri->segment(2) == 'dashboard' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
+                    <a href="<?= base_url() ?>admin/contact/subs" <?= $this->uri->segment(3) == 'subs' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
                         <i class="nav-icon fas fa-users"></i>
                         <p>
                             Subscriber
