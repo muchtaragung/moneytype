@@ -456,7 +456,7 @@ class Moneytype extends CI_Controller
                 </tr>
                 </table>
                 ' . $temp->penutup . '
-                <img width="300px" src="' . base_url('assets/admin/assets/logo/' . $logo->logo_footer . '') . '" alt="Hotel Empark">
+                <img width="300px" src="cid:' . base_url('assets/admin/assets/logo/' . $logo->logo_footer . '') . '" alt="Vidira">
             </body>
             </html>
             ';
