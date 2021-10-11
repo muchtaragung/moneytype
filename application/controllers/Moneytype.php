@@ -465,7 +465,7 @@ class Moneytype extends CI_Controller
                 </tr>
                 </table>
                 ' . $temp->penutup . '
-                <img src="cid:' . $cid . '" alt="vidira" />
+                <img width="300px" src="cid:' . $cid . '" alt="vidira" />
             </body>
             </html>
             ';
