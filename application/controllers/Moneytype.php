@@ -345,6 +345,15 @@ class Moneytype extends CI_Controller
         'crlf'    => "\r\n",
         'newline' => "\r\n"
       ];
+
+
+      // $list = array($email, 'muchtarahehe@gmail.com');
+
+      $this->email->initialize($config);
+      $filename = './assets/admin/assets/logo/' . $logo->logo_footer . '';
+      $this->email->attach($filename);
+      // $this->email->attach('./assets/admin/assets/logo/' . $logo->logo_footer . ' ', 'inline');
+      $cid = $this->email->attachment_cid($filename);
       $message =  '
             <html>
             <head>
@@ -456,15 +465,10 @@ class Moneytype extends CI_Controller
                 </tr>
                 </table>
                 ' . $temp->penutup . '
+                <img src="cid:' . $cid . '" alt="vidira" />
             </body>
             </html>
             ';
-      // $list = array($email, 'muchtarahehe@gmail.com');
-      $filename = './assets/admin/assets/logo/' . $logo->logo_footer . '';
-      $this->email->initialize($config);
-      // $this->email->attach('./assets/admin/assets/logo/' . $logo->logo_footer . ' ', 'inline');
-      $cid = $this->email->attachment_cid($filename);
-      $this->email->message('<img src="cid:' . $cid . '" alt="vidira" />');
       $this->email->set_newline("\r\n");
       $this->email->from($config['smtp_user']);
       $this->email->to($email);
