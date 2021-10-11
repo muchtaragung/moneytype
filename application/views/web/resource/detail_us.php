@@ -53,71 +53,74 @@
         </div>
         <div class="row mt-2">
             <div class="col-md-8">
-                <div class="container">
-                    <h1 class="display-5"><?= $resource_us_detail->judul ?></h1>
-                    <p class="text-right" style="font-size: x-large;"><?= date('F d, Y', strtotime($resource_us_detail->tanggal_post)); ?></p>
-                    <img src="<?= base_url() ?>assets/assets/blog/<?= $resource_us_detail->img ?>" class="img-fluid mb-4" alt="">
-                    <div align="justify" style="font-size: large;" class="konten mb-5">
-                        <?= $resource_us_detail->isi ?>
-                    </div>
-                    <div class="row mb-5">
-                        <div class="col-md-6"><button disabled class="btn btn-warning"> <?= $resource_us_detail->nama_kategori ?> </button></div>
-                        <div class="col-md-6 text-right">
-                            <?php foreach ($sosmed as $key) { ?>
-                                <a title="<?= $key->nama_sosmed ?>" target="_blank" href="<?= $key->link ?>" class="btn btn-sm btn-outline-dark btn-social mx-1"><i class="fa-fw <?= $key->icon ?>"></i></a>
-                            <?php  } ?>
+                <?php if (!empty($resource_us_detail->judul)) { ?>
+                    <div class="container">
+                        <h1 class="display-5"><?= $resource_us_detail->judul ?></h1>
+                        <p class="text-right" style="font-size: x-large;"><?= date('F d, Y', strtotime($resource_us_detail->tanggal_post)); ?></p>
+                        <img src="<?= base_url() ?>assets/assets/blog/<?= $resource_us_detail->img ?>" class="img-fluid mb-4" alt="">
+                        <div align="justify" style="font-size: large;" class="konten mb-5">
+                            <?= $resource_us_detail->isi ?>
                         </div>
-                    </div>
-                    <hr>
-                    <?php
-                    if (empty($komen)) { ?>
-                        <h3>No comment</h3>
-                    <?php }
-                    foreach ($komen as $key) { ?>
-                        <div class="row">
-                            <div class="col-md-1">
-                                <img width="80px" src="<?= base_url() ?>assets/assets/img/none.png" class="img-fluid rounded-circle mb-4" alt="">
-                            </div>
-                            <div class="col-md-10">
-                                <p style="font-size: medium;"><?= $key->nama ?></p>
-                                <p style="font-size: small;" class="mb-3"><?= date('d F Y, H:i', strtotime($key->tgl)); ?></p>
-                                <p style="font-size: large;"><?= $key->komen ?></p>
+                        <div class="row mb-5">
+                            <div class="col-md-6"><button disabled class="btn btn-warning"> <?= $resource_us_detail->nama_kategori ?> </button></div>
+                            <div class="col-md-6 text-right">
+                                <?php foreach ($sosmed as $key) { ?>
+                                    <a title="<?= $key->nama_sosmed ?>" target="_blank" href="<?= $key->link ?>" class="btn btn-sm btn-outline-dark btn-social mx-1"><i class="fa-fw <?= $key->icon ?>"></i></a>
+                                <?php  } ?>
                             </div>
                         </div>
-                    <?php  } ?>
-                    <hr>
-                    <div class="comment mb-5">
-                        <h2>Leave a Reply</h2>
-                        <p>Your email address will not be published. Required fields are marked *</p>
-                        <form id="komen_form" action="<?= base_url() ?>resource/add_komen" method="post">
-                            <div class="form-group">
-                                <h4 class="mb-2" for="komen">Comment</h4>
-                                <input type="hidden" name="id_blog" value="<?= $resource_us_detail->id_blog ?>">
-                                <input type="hidden" name="slug" value="<?= $resource_us_detail->slug ?>">
-                                <textarea rows="10" required name="komen" id="komen" class="form-control" placeholder=""></textarea>
-                                <!-- <small id="helpId" class="text-muted">Help text</small> -->
+                        <hr>
+
+                        <?php
+                        if (empty($komen)) { ?>
+                            <h3>No comment</h3>
+                        <?php }
+                        foreach ($komen as $key) { ?>
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <img width="80px" src="<?= base_url() ?>assets/assets/img/none.png" class="img-fluid rounded-circle mb-4" alt="">
+                                </div>
+                                <div class="col-md-10">
+                                    <p style="font-size: medium;"><?= $key->nama ?></p>
+                                    <p style="font-size: small;" class="mb-3"><?= date('d F Y, H:i', strtotime($key->tgl)); ?></p>
+                                    <p style="font-size: large;"><?= $key->komen ?></p>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <h4 class="mb-2" for="nama">Name</h4>
-                                <input type="text" name="nama" required id="nama" class="form-control" placeholder="">
-                                <!-- <small id="helpId" class="text-muted">Help text</small> -->
-                            </div>
-                            <div class="form-group">
-                                <h4 class="mb-2" for="email">Email</h4>
-                                <input type="email" name="email" required id="email" class="form-control" placeholder="">
-                                <!-- <small id="helpId" class="text-muted">Help text</small> -->
-                            </div>
-                            <div class="form-group">
-                                <h4 class="mb-2" for="web">Website</h4>
-                                <input type="text" name="web" id="web" required class="form-control" placeholder="">
-                                <!-- <small id="helpId" class="text-muted">Help text</small> -->
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-outline-warning">Post Comment</button>
-                            </div>
-                        </form>
+                        <?php  } ?>
+                        <hr>
+                        <div class="comment mb-5">
+                            <h2>Leave a Reply</h2>
+                            <p>Your email address will not be published. Required fields are marked *</p>
+                            <form id="komen_form" action="<?= base_url() ?>resource/add_komen" method="post">
+                                <div class="form-group">
+                                    <h4 class="mb-2" for="komen">Comment</h4>
+                                    <input type="hidden" name="id_blog" value="<?= $resource_us_detail->id_blog ?>">
+                                    <input type="hidden" name="slug" value="<?= $resource_us_detail->slug ?>">
+                                    <textarea rows="10" required name="komen" id="komen" class="form-control" placeholder=""></textarea>
+                                    <!-- <small id="helpId" class="text-muted">Help text</small> -->
+                                </div>
+                                <div class="form-group">
+                                    <h4 class="mb-2" for="nama">Name</h4>
+                                    <input type="text" name="nama" required id="nama" class="form-control" placeholder="">
+                                    <!-- <small id="helpId" class="text-muted">Help text</small> -->
+                                </div>
+                                <div class="form-group">
+                                    <h4 class="mb-2" for="email">Email</h4>
+                                    <input type="email" name="email" required id="email" class="form-control" placeholder="">
+                                    <!-- <small id="helpId" class="text-muted">Help text</small> -->
+                                </div>
+                                <div class="form-group">
+                                    <h4 class="mb-2" for="web">Website</h4>
+                                    <input type="text" name="web" id="web" required class="form-control" placeholder="">
+                                    <!-- <small id="helpId" class="text-muted">Help text</small> -->
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-outline-warning">Post Comment</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                </div>
+                <?php  } ?>
             </div>
             <div class="col-md-4 mt-3 mb-5">
                 <div class="container">

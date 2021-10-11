@@ -43,7 +43,7 @@ class Resource extends CI_Controller
             $config['last_link']        = 'Last';
             $config['next_link']        = 'Next';
             $config['prev_link']        = 'Prev';
-            $config['full_tag_open']    = '<div class="pagging text-center"><nav><ul class="pagination justify-content-center">';
+            $config['full_tag_open']    = '<div class="pagging text-center mb-5 text-warning"><nav><ul class="pagination justify-content-center">';
             $config['full_tag_close']   = '</ul></nav></div>';
             $config['num_tag_open']     = '<li class="page-item"><span class="page-link">';
             $config['num_tag_close']    = '</span></li>';
@@ -96,7 +96,7 @@ class Resource extends CI_Controller
             $config['last_link']        = 'Last';
             $config['next_link']        = 'Next';
             $config['prev_link']        = 'Prev';
-            $config['full_tag_open']    = '<div class="pagging text-center"><nav><ul class="pagination justify-content-center">';
+            $config['full_tag_open']    = '<div class="pagging text-center mb-5 text-warning"><nav><ul class="pagination justify-content-center">';
             $config['full_tag_close']   = '</ul></nav></div>';
             $config['num_tag_open']     = '<li class="page-item"><span class="page-link">';
             $config['num_tag_close']    = '</span></li>';
@@ -295,9 +295,9 @@ class Resource extends CI_Controller
         if ($this->uri->segment(1) == 'id') {
             $slug = $this->input->post('slug', true);
             $data = array(
-                'nama' => $this->input->post('nama', true),
+                'nama' => htmlspecialchars($this->input->post('nama', true)),
                 'email' => $this->input->post('email', true),
-                'website' => $this->input->post('web', true),
+                'website' => htmlspecialchars($this->input->post('web', true)),
                 'komen' => $this->input->post('komen', true),
                 'tgl' => date('Y-m-d H:i:s'),
                 'id_blog' => $this->input->post('id_blog', true),
@@ -309,9 +309,9 @@ class Resource extends CI_Controller
         } else {
             $slug = $this->input->post('slug', true);
             $data = array(
-                'nama' => $this->input->post('nama', true),
+                'nama' => htmlspecialchars($this->input->post('nama', true)),
                 'email' => $this->input->post('email', true),
-                'website' => $this->input->post('web', true),
+                'website' => htmlspecialchars($this->input->post('web', true)),
                 'komen' => $this->input->post('komen', true),
                 'tgl' => date('Y-m-d H:i:s'),
                 'id_blog' => $this->input->post('id_blog', true),

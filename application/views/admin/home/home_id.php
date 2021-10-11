@@ -78,7 +78,7 @@
                         <input type="hidden" id="id" name="id">
                         <input type="hidden" id="image_old" name="image_old">
                         <div class="custom-file">
-                            <input type="file" name="image" id="image" class="custom-file-input" id="gallery-photo-add" accept="image/x-png,image/jpg,image/jpeg" onchange="previewFile(this);">
+                            <input type="file" name="image" id="image" class="custom-file-input" id="gallery-photo-add" accept="image/x-png,image/jpg,image/jpeg, image/gif" onchange="previewFile(this);">
                             <label class="custom-file-label" for="gallery-photo-add">Pilih Gambar</label>
                         </div>
                         <div class="form-group mb-3 mt-3">

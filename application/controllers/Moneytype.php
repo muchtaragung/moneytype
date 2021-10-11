@@ -209,9 +209,9 @@ class Moneytype extends CI_Controller
       $magician =  ($no8 / 18) * 100;
 
       $user = array(
-        'nama' => $this->input->post('nama', true),
+        'nama' => htmlspecialchars($this->input->post('nama', true)),
         'email' => $this->input->post('email', true),
-        'phone' => $this->input->post('phone', true)
+        'phone' => htmlspecialchars($this->input->post('phone', true))
       );
       $this->user->tambah_user($user);
       $id_user = $this->db->insert_id();
@@ -346,13 +346,9 @@ class Moneytype extends CI_Controller
         'newline' => "\r\n"
       ];
 
-
-      // $list = array($email, 'muchtarahehe@gmail.com');
-
       $this->email->initialize($config);
       $filename = './assets/admin/assets/logo/' . $logo->logo_footer . '';
       $this->email->attach($filename);
-      // $this->email->attach('./assets/admin/assets/logo/' . $logo->logo_footer . ' ', 'inline');
       $cid = $this->email->attachment_cid($filename);
       $message =  '
             <html>
@@ -475,6 +471,7 @@ class Moneytype extends CI_Controller
       $this->email->subject('Hasil Money Quiz'); //subjek email
       $this->email->message($message);
       $email1 = $this->email->send();
+
 
       $config2 = [
         'mailtype'  => 'html',

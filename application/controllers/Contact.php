@@ -40,9 +40,9 @@ class Contact extends CI_Controller
     {
         $email_penerima = $this->web->get_email()->row();
         $email = $this->input->post('email', true);
-        $nama = $this->input->post('nama', true);
-        $phone = $this->input->post('phone', true);
-        $pesan = $this->input->post('message', true);
+        $nama = htmlspecialchars($this->input->post('nama', true));
+        $phone = htmlspecialchars($this->input->post('phone', true));
+        $pesan = htmlspecialchars($this->input->post('message', true));
 
         $this->load->library('email'); //panggil library email codeigniter
         $config = [

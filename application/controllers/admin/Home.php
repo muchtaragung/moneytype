@@ -50,7 +50,7 @@ class Home extends CI_Controller
             $file = $this->input->post('image_old', TRUE);
         } else {
             $config['upload_path'] = "./assets/assets/img";
-            $config['allowed_types'] = 'jpeg|jpg|png';
+            $config['allowed_types'] = 'jpeg|jpg|png|gif';
             $config['max_size'] = '2000';
             $this->load->library('upload', $config);
             $this->upload->initialize($config);
@@ -78,7 +78,7 @@ class Home extends CI_Controller
             $file = $this->input->post('image_old', TRUE);
         } else {
             $config['upload_path'] = "./assets/assets/img";
-            $config['allowed_types'] = 'jpeg|jpg|png';
+            $config['allowed_types'] = 'jpeg|jpg|png|gif';
             $config['max_size'] = '2000';
             $this->load->library('upload', $config);
             $this->upload->initialize($config);
