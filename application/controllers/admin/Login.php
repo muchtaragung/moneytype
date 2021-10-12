@@ -155,6 +155,7 @@ class Login extends CI_Controller
                 $hashed = password_hash($cleanPost['password'], PASSWORD_DEFAULT);
                 $cleanPost['password'] = $hashed;
                 $cleanPost['email'] = $user_info->email;
+                $cleanPost['id'] = $user_info->id;
                 unset($cleanPost['passconf']);
                 if ($this->auth->getUserInfoByEmail($cleanPost['email']) != null) {
                     if (!$this->auth->updatePassword($cleanPost)) {
