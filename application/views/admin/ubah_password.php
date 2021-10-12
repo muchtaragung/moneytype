@@ -40,7 +40,7 @@
             <div class="card-body">
                 <p class="login-box-msg">You are only one step a way from your new password, recover your password now.</p>
                 <form action="<?= base_url() ?>admin/login/reset_password" method="post">
-                    <input type="hidden" name="token" value=" <?php echo $this->uri->segment('4'); ?>">
+                    <input type="hidden" name="token" value=" <?php echo $this->uri->segment('5'); ?>">
                     <div class="input-group mb-3">
                         <input type="password" name="password" required class="form-control" placeholder="Password">
                         <div class="input-group-append">

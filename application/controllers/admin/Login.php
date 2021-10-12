@@ -77,7 +77,7 @@ class Login extends CI_Controller
 
             $token = $this->auth->insertToken($userInfo->id);
             $qstring = $this->base64url_encode($token);
-            $url = site_url() . 'admin/reset_password/token/' . $qstring;
+            $url = site_url() . 'admin/login/password_baru/token/' . $qstring;
             $link = '<a href="' . $url . '">' . $url . '</a>';
 
             //build token
