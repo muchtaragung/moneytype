@@ -30,7 +30,7 @@ class M_auth extends CI_Model
     }
     public function getUserInfo($id)
     {
-        $q = $this->db->get_where('admin', array('id_admin' => $id), 1);
+        $q = $this->db->get_where('admin', array('id' => $id), 1);
         if ($this->db->affected_rows() > 0) {
             $row = $q->row();
             return $row;
@@ -49,19 +49,19 @@ class M_auth extends CI_Model
         }
     }
 
-    public function insertToken($id_admin)
+    public function insertToken($id)
     {
         $token = substr(sha1(rand()), 0, 30);
         $date = date('Y-m-d');
 
         $string = array(
             'token' => $token,
-            'id_admin' => $id_admin,
+            'id' => $id,
             'created' => $date
         );
         $query = $this->db->insert_string('tokens', $string);
         $this->db->query($query);
-        return $token . $id_admin;
+        return $token . $id;
     }
 
     public function isTokenValid($token)
@@ -71,7 +71,7 @@ class M_auth extends CI_Model
 
         $q = $this->db->get_where('tokens', array(
             'tokens.token' => $tkn,
-            'tokens.id_admin' => $uid
+            'tokens.id' => $uid
         ), 1);
 
         if ($this->db->affected_rows() > 0) {
@@ -86,7 +86,7 @@ class M_auth extends CI_Model
                 return false;
             }
 
-            $user_info = $this->getUserInfo($row->id_admin);
+            $user_info = $this->getUserInfo($row->id);
             return $user_info;
         } else {
             return false;
