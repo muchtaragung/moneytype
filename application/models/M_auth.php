@@ -55,28 +55,28 @@ class M_auth extends CI_Model
         }
     }
 
-    public function insertToken($id)
+    public function insertToken($email, $id)
     {
-        $token = substr(sha1(rand()), 0, 30);
+        // $token = substr(sha1(rand()), 0, 30;
         $date = date('Y-m-d');
 
         $string = array(
-            'token' => $token,
+            'token' => $email,
             'id_admin' => $id,
             'created' => $date
         );
         $query = $this->db->insert_string('tokens', $string);
         $this->db->query($query);
-        return $token . $id;
+        return $email . $id;
     }
 
     public function isTokenValid($token)
     {
-        $tkn = substr($token, 0, 30);
-        $uid = substr($token, 30);
+
 
         $q = $this->db->get_where('tokens', array(
-            'tokens.token' => $tkn
+            'tokens.token' => $token,
+            // 'tokens.id_admin' => $uid
         ), 1);
 
         if ($this->db->affected_rows() > 0) {

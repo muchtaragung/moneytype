@@ -88,9 +88,9 @@ class Login extends CI_Controller
                 'crlf'    => "\r\n",
                 'newline' => "\r\n"
             ];
-            $token = $this->auth->insertToken($userInfo->id);
-            $qstring = $this->base64url_encode($token);
-            $url = site_url() . 'admin/login/password_baru/' . $qstring;
+            $token = $this->auth->insertToken($this->base64url_encode($userInfo->email), $userInfo->id);
+            // $qstring = $this->base64url_encode($token);
+            $url = site_url() . 'admin/login/password_baru/' . $token;
             $link = '<a href="' . $url . '">' . 'Reset Password' . '</a>';
             $message =  "
             <html>
@@ -137,8 +137,10 @@ class Login extends CI_Controller
             $link = "admin/login/password_baru/" . $token;
             redirect(str_replace(' ', '', $link));
         } else {
-            $token = $this->base64url_decode($this->input->post('token', true));
-            $cleanToken = $this->security->xss_clean($token);
+            $token1 = $this->base64url_decode($token);
+            // var_dump($token);
+            // die;
+            $cleanToken = $this->security->xss_clean($token1);
             $user_info = $this->auth->isTokenValid($cleanToken);
 
             if (!$user_info) {
