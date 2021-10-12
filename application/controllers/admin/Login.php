@@ -134,7 +134,7 @@ class Login extends CI_Controller
         $this->form_validation->set_error_delimiters('<span style="font-size: 10px;color:red">', '</span>');
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('error', 'Password tidak sama');
-            $link = "admin/login/password_baru" . $token;
+            $link = "admin/login/password_baru/" . $token;
             redirect(str_replace(' ', '', $link));
         } else {
             $token = $this->base64url_decode($this->input->post('token', true));
@@ -143,7 +143,8 @@ class Login extends CI_Controller
 
             if (!$user_info) {
                 $this->session->set_flashdata('error', 'Token tidak valid atau kadaluarsa');
-                redirect('admin/login/password_baru');
+                $link = "admin/login/password_baru/" . $token;
+                redirect(str_replace(' ', '', $link));
             } else {
                 $post = $this->input->post(NULL, TRUE);
                 $cleanPost = $this->security->xss_clean($post);
