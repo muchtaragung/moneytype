@@ -28,6 +28,12 @@ class M_auth extends CI_Model
         $this->db->update('admin', $data);
         return $this->db->affected_rows();
     }
+    public function updatePassword($cleanPost)
+    {
+        $this->db->where('email', $cleanPost['email']);
+        $this->db->update('admin', array('password' => $cleanPost['password']));
+        return true;
+    }
     public function getUserInfo($id)
     {
         $q = $this->db->get_where('admin', array('id' => $id), 1);
