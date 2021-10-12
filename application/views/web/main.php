@@ -70,7 +70,6 @@
                                           &nbsp;Anxious
                                       </label>
                                   </div>
-
                               </div>
                               <div class="form-group mb-2">
                                   <div class="form-check">
@@ -83,7 +82,7 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="trusting" id="Trusting">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Cenderung percaya">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Percaya orang">
                                           &nbsp;Trusting
                                       </label>
                                   </div>
@@ -99,7 +98,7 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="naive" id="Naive">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Naif">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Naif/lugu">
                                           &nbsp;Naive
                                       </label>
                                   </div>
@@ -147,7 +146,7 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="controlling" id="Controlling">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Berkuasa/Mengendalikan">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Mengendalikan">
                                           &nbsp;Controlling
                                       </label>
                                   </div>
@@ -155,15 +154,15 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="self_sacrificing" id="Self-sacrificing">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Berkorban diri">
-                                          &nbsp;Self sacrificing
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Mengorbankan diri">
+                                          &nbsp;Self-sacrificing
                                       </label>
                                   </div>
                               </div>
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="compassionate" id="Compassionate">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Penyayang">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Penuh kasih/welas asih">
                                           &nbsp;Compassionate
                                       </label>
                                   </div>
@@ -181,7 +180,7 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="impulsive" id="Impulsive">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Impulsif">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Impulsif/menurut kata hati">
                                           &nbsp;Impulsive
                                       </label>
                                   </div>
@@ -197,7 +196,7 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" name="detached" value="1" id="Detached">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Tidak terikat">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Memisahkan diri/tidak terikat">
                                           &nbsp;Detached
                                       </label>
                                   </div>
@@ -205,7 +204,7 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="internally_motivated" id="Internally Motivated">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Termotivasi secara internal">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Motivasi dari dalam/internal">
                                           &nbsp;Internally Motivated
                                       </label>
                                   </div>
@@ -229,8 +228,8 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="non_confrontational" id="non_confrontational">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Tidak senang konfrontasi">
-                                          &nbsp;Non confrontational
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Tidak konfrontasional">
+                                          &nbsp;Non-confrontational
                                       </label>
                                   </div>
                               </div>
@@ -253,7 +252,7 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="spiritual" id="Spiritual">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Rohani">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Rohaniah">
                                           &nbsp;Spiritual
                                       </label>
                                   </div>
@@ -269,7 +268,7 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="perfectionist" id="Perfectionist">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Perfesionis">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Perfeksionis/ingin semua sempurna">
                                           &nbsp;Perfectionist
                                       </label>
                                   </div>
@@ -308,8 +307,8 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="self_fulfilling_prophecy" id="Self-fulfilling prophecy">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Ramalan yang digenapi sendiri">
-                                          &nbsp;Self fulfilling prophecy
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Ramalan yang terpenuhi dengan sendirinya">
+                                          &nbsp;Self-fulfilling prophecy
                                       </label>
                                   </div>
                               </div>
@@ -340,7 +339,7 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" name="careless" value="1" id="Careless">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Ceroboh/Cuek">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Ceroboh/sembrono">
                                           &nbsp;Careless
                                       </label>
                                   </div>
@@ -348,7 +347,7 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" name="conscious" value="1" id="Conscious">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Sadar">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Sadar/menyadari">
                                           &nbsp;Conscious
                                       </label>
                                   </div>
@@ -356,8 +355,8 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" name="happy_go_lucky" value="1" id="Happy-go-lucky">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Santai & tak pedulian">
-                                          &nbsp;Happy go lucky
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Tidak kenal susah">
+                                          &nbsp;Happy-go-lucky
                                       </label>
                                   </div>
                               </div>
@@ -365,7 +364,7 @@
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" name="long_suffering" value="1" id="Long-suffering">
                                       <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Panjang sabar/rela menderita">
-                                          &nbsp;Long suffering
+                                          &nbsp;Long-suffering
                                       </label>
                                   </div>
                               </div>
@@ -373,14 +372,14 @@
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" name="passive_aggressive" value="1" id="Passive-aggressive">
                                       <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Pasif agresif">
-                                          &nbsp;Passive aggressive
+                                          &nbsp;Passive-aggressive
                                       </label>
                                   </div>
                               </div>
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" name="wise" value="1" id="Wise">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Bijaksana">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Bijak">
                                           &nbsp;Wise
                                       </label>
                                   </div>
@@ -396,7 +395,7 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" name="optimistic" value="1" id="Optimistic">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Optimis">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Optimistis">
                                           &nbsp;Optimistic
                                       </label>
                                   </div>
@@ -404,7 +403,7 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" name="love_relationship" value="1" id="love_relationship">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Antara cinta dan benci">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Hubungan antara cinta/benci">
                                           &nbsp;Love/Hate Relationship
                                       </label>
                                   </div>
@@ -422,7 +421,7 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" name="authentic" value="1" id="authentic">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Otentik">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Autentik/bersifat asli">
                                           &nbsp;Authentic
                                       </label>
                                   </div>
@@ -430,7 +429,7 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" name="unattached" value="1" id="Unattached">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Tidak terikat">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Tidak terikat/lepas">
                                           &nbsp;Unattached
                                       </label>
                                   </div>
@@ -446,8 +445,8 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="represses_feelings_beliefs" id="represses_feelings_beliefs">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Menekan perasaan dan keyakinan sendiri">
-                                          &nbsp;Represses feelings beliefs
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Mengekang perasaan dan keyakinan diri">
+                                          &nbsp;Represses feelings and beliefs
                                       </label>
                                   </div>
                               </div>
@@ -455,14 +454,14 @@
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="obsessive" id="obsessive">
                                       <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Obsesif Kompulsif">
-                                          &nbsp;Obsessive
+                                          &nbsp;Obsessive/Compulsive
                                       </label>
                                   </div>
                               </div>
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="unsupported" id="Unsupported">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Merasa tidak didukung">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Tidak didukung">
                                           &nbsp;Unsupported
                                       </label>
                                   </div>
@@ -470,7 +469,7 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="reckless" id="Reckless">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Sembrono">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Nekat/gegabah">
                                           &nbsp;Reckless
                                       </label>
                                   </div>
@@ -486,7 +485,7 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="resistant" id="Resistant">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Cenderung menentang/melawan">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Bersifat menentang">
                                           &nbsp;Resistant
                                       </label>
                                   </div>
@@ -502,7 +501,7 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="seeks_rescue" id="seeks_rescue">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Menunggu diselamatkan">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Mencari pertolongan">
                                           &nbsp;Seeks rescue
                                       </label>
                                   </div>
@@ -518,7 +517,7 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="powerful" id="Powerful">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Berdaya">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Kuat/berdaya">
                                           &nbsp;Powerful
                                       </label>
                                   </div>
@@ -534,14 +533,14 @@
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="goal_oriented" id="goal_oriented">
                                       <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Berorientasi tujuan/gol">
-                                          &nbsp;Goal oriented
+                                          &nbsp;Goal-oriented
                                       </label>
                                   </div>
                               </div>
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="calculating" id="calculating">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Berhitung">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Perhitungan">
                                           &nbsp;Calculating
                                       </label>
                                   </div>
@@ -549,7 +548,7 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="lives_for_today" id="lives_for_today">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Hidup hanya untuk hari ini">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Hidup untuk hari ini">
                                           &nbsp;Lives for today
                                       </label>
                                   </div>
@@ -557,7 +556,7 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="generous" id="generous">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Murah hati">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Murah hati/dermawan">
                                           &nbsp;Generous
                                       </label>
                                   </div>
@@ -589,7 +588,7 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="resentful" id="Resentful">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Mudah tersinggung & membenci">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Mudah tersinggung & pahit">
                                           &nbsp;Resentful
                                       </label>
                                   </div>
@@ -597,7 +596,7 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="restless" id="Restless">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Gelisah">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Gelisah/resah">
                                           &nbsp;Restless
                                       </label>
                                   </div>
@@ -605,7 +604,7 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="fearful" id="Fearful">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Penuh ketakutan">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Takut/kuatir">
                                           &nbsp;Fearful
                                       </label>
                                   </div>
@@ -631,7 +630,7 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="reclusive" id="Reclusive">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Tertutup">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Tertutup/penyendiri">
                                           &nbsp;Reclusive
                                       </label>
                                   </div>
@@ -640,14 +639,14 @@
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="non_materialistic" id="non_materialistic">
                                       <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Tidak materialistis">
-                                          &nbsp;Non materialistic
+                                          &nbsp;Non-materialistic
                                       </label>
                                   </div>
                               </div>
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="indecisive" id="Indecisive">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Bimbang">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Plin plan/bimbang">
                                           &nbsp;Indecisive
                                       </label>
                                   </div>
@@ -655,7 +654,7 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="seeks_security" id="seeks_security">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Mencari aman">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Mencari keamanan">
                                           &nbsp;Seeks security
                                       </label>
                                   </div>
@@ -663,7 +662,7 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="secretive" id="Secretive">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Suka berahasia">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Suka merahasiakan">
                                           &nbsp;Secretive
                                       </label>
                                   </div>
@@ -679,8 +678,8 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="over_indulgent" id="over_indulgent">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Terlalu manja/Konsumtif berlebihan">
-                                          &nbsp;Over indulgent
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Konsumtif berlebihan">
+                                          &nbsp;Over-indulgent
                                       </label>
                                   </div>
                               </div>
@@ -695,7 +694,7 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="conflicted" id="Conflicted">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Berkonflik diri">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Bertentangan/konflik diri">
                                           &nbsp;Conflicted
                                       </label>
                                   </div>
@@ -703,7 +702,7 @@
                               <div class="form-group mb-2">
                                   <div class="form-check">
                                       <input style="width:23px; height:23px;" class="form-check-input" type="checkbox" value="1" name="cautious" id="Cautious">
-                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Berhati-hati">
+                                      <label style="font-size: 22px;" data-toggle="tooltip" data-placement="right" class="form-check-label" title="Waspada/berhati-hati">
                                           &nbsp;Cautious
                                       </label>
                                   </div>
