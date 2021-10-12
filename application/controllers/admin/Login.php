@@ -66,7 +66,7 @@ class Login extends CI_Controller
         } else {
             $email = $this->input->post('email', true);
             $clean = $this->security->xss_clean($email);
-            $userInfo = $this->auth->cek_login_admin($clean);
+            $userInfo = $this->auth->getUserInfoByEmail($clean);
 
             if (!$userInfo) {
                 $this->session->set_flashdata('error', 'Email yang Anda masukan tidak terdaftar, silakan coba lagi.');
