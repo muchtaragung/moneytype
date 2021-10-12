@@ -64,14 +64,21 @@ class Login extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
             $this->forget();
         } else {
-            $email = $this->input->post('email', true);
+            $email = $this->input->post('email');
             $clean = $this->security->xss_clean($email);
             $userInfo = $this->auth->getUserInfoByEmail($clean);
 
             if (!$userInfo) {
-                $this->session->set_flashdata('error', 'Email yang Anda masukan tidak terdaftar, silakan coba lagi.');
-                redirect('admin/login/forget');
+                $this->session->set_flashdata('sukses', 'email address salah, silakan coba lagi.');
+                redirect(site_url('login'), 'refresh');
             }
+
+            //build token   
+
+            $token = $this->auth->insertToken($userInfo->id_user);
+            $qstring = $this->base64url_encode($token);
+            $url = site_url() . 'admin/reset_password/token/' . $qstring;
+            $link = '<a href="' . $url . '">' . $url . '</a>';
 
             //build token
             $email_penerima = $this->web->get_email()->row();
@@ -88,10 +95,7 @@ class Login extends CI_Controller
                 'crlf'    => "\r\n",
                 'newline' => "\r\n"
             ];
-            $token = $this->auth->insertToken($this->base64url_encode($userInfo->email), $userInfo->id);
-            // $qstring = $this->base64url_encode($token);
-            $url = site_url() . 'admin/login/password_baru/' . $token;
-            $link = '<a href="' . $url . '">' . 'Reset Password' . '</a>';
+
             $message =  "
             <html>
             <head>
@@ -138,8 +142,6 @@ class Login extends CI_Controller
             redirect(str_replace(' ', '', $link));
         } else {
             $token1 = $this->base64url_decode($token);
-            // var_dump($token);
-            // die;
             $cleanToken = $this->security->xss_clean($token1);
             $user_info = $this->auth->isTokenValid($cleanToken);
 
