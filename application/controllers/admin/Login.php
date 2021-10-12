@@ -88,7 +88,7 @@ class Login extends CI_Controller
                 'crlf'    => "\r\n",
                 'newline' => "\r\n"
             ];
-            $token = $this->auth_model->insertToken($userInfo->id_admin);
+            $token = $this->auth->insertToken($userInfo->id_admin);
             $qstring = $this->base64url_encode($token);
             $url = site_url() . 'admin/login/reset_password/token/' . $qstring;
             $link = '<a href="' . $url . '">' . 'Reset Password' . '</a>';
