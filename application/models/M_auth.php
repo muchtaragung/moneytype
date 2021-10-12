@@ -56,7 +56,7 @@ class M_auth extends CI_Model
 
         $string = array(
             'token' => $token,
-            'id' => $id,
+            'id_admin' => $id,
             'created' => $date
         );
         $query = $this->db->insert_string('tokens', $string);
