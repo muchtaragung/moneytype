@@ -76,8 +76,7 @@ class M_auth extends CI_Model
         $uid = substr($token, 30);
 
         $q = $this->db->get_where('tokens', array(
-            'tokens.token' => $tkn,
-            'tokens.id' => $uid
+            'tokens.token' => $tkn
         ), 1);
 
         if ($this->db->affected_rows() > 0) {
