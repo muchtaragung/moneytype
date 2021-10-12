@@ -127,7 +127,7 @@ class Login extends CI_Controller
     {
         $token = $this->input->post('token', true);
         $this->form_validation->set_rules('password', 'Password', 'required', array('required' => 'Password tidak boleh kosong!'));
-        $this->form_validation->set_rules('repassword', 'Password', 'required|matches[password]', array(
+        $this->form_validation->set_rules('passconf', 'Password', 'required|matches[password]', array(
             'required' => 'Password tidak boleh kosong!',
             'matches'     => 'Password tidak sama'
         ));
