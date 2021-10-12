@@ -110,16 +110,16 @@ class Login extends CI_Controller
             $this->email->initialize($config);
             $this->email->set_newline("\r\n");
             $this->email->from($config['smtp_user']);
-            $this->email->to($email_penerima->email);
+            $this->email->to($email);
             $this->email->subject('Reset Password'); //subjek email
             $this->email->message($message);
             $email1 = $this->email->send();
             if (!$email1) {
                 $this->session->set_flashdata('error', 'Gagal memproses, Silahkan ulangi');
-                redirect('admin/logn/forget');
+                redirect('admin/login/forget');
             } else {
                 $this->session->set_flashdata('msg', 'Silahkan cek email anda');
-                redirect('admin/logn/forget');
+                redirect('admin/login/forget');
             }
         }
     }
