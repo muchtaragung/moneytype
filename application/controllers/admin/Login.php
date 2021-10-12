@@ -154,7 +154,7 @@ class Login extends CI_Controller
                 if ($this->auth->getUserInfoByEmail($cleanPost['email']) != null) {
                     if (!$this->auth->update_password($cleanPost)) {
                         $this->session->set_flashdata('error', 'Update password gagal.');
-                        $link = "admin/login/password_baru" . $token;
+                        $link = "admin/login/password_baru/" . $token;
                         redirect(str_replace(' ', '', $link));
                     } else {
                         $this->session->set_flashdata('msg', 'Password anda sudah diperbaharui. Silakan login.');
@@ -163,7 +163,7 @@ class Login extends CI_Controller
                 } else {
                     if (!$this->auth->update_password($cleanPost)) {
                         $this->session->set_flashdata('error', 'Update password gagal.');
-                        $link = "admin/login/password_baru" . $token;
+                        $link = "admin/login/password_baru/" . $token;
                         redirect(str_replace(' ', '', $link));
                     } else {
                         $this->session->set_flashdata('msg', 'Password anda sudah diperbaharui. Silakan login.');
