@@ -34,6 +34,11 @@
                         <?php echo $this->session->flashdata('error'); ?>
                     </div>
                 <?php } ?>
+                <?php if ($this->session->flashdata('msg') != null) { ?>
+                    <div class="alert alert-success" role="alert">
+                        <?php echo $this->session->flashdata('msg'); ?>
+                    </div>
+                <?php } ?>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
@@ -79,7 +84,7 @@
 
 
                 <p class="mb-1">
-                    <a href="forgot-password.html">I forgot my password</a>
+                    <a href="<?= base_url() ?>admin/login/forget">I forgot my password</a>
                 </p>
 
             </div>
