@@ -57,7 +57,8 @@
                       </div>
                   </div>
                   <div id="top"></div>
-                  <h6 style="font-size: 18px;" class="pt-5 mt-5 mb-5 text-center">Pilihlah kata yang mana saja yang sesuai dengan diri Anda mengenai kecenderungan Anda saat ini seputar uang</h6>
+                  <h6 style="font-size: 18px;" class="pt-5 mt-5 text-center">Pilihlah kata yang mana saja yang sesuai dengan diri Anda mengenai kecenderungan Anda saat ini seputar uang</h6>
+                  <h6 style="font-size: 18px;" class="mb-5 text-center">(Klik tiap kata untuk terjemahan bahasa indonesia dan klik kotak untuk memilih)</h6>
 
                   <div id="target1">
                       <div class="row justify-content-center mt-5">
@@ -725,6 +726,7 @@
                       </div>
                   </div>
 
+                  <h6 class="mt-5 px-5">The Eight Money Types and the Money Type Quiz are excerpted from the book Money Magic by Deborah L. Price © Copyright 2001 All rights reserved. Used with Permission.</h6>
                   </form>
       </div>
   </section>

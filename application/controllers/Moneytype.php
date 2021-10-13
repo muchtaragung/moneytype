@@ -348,8 +348,11 @@ class Moneytype extends CI_Controller
 
       $this->email->initialize($config);
       $filename = './assets/admin/assets/logo/' . $logo->logo_footer . '';
+      $cmc = './assets/admin/assets/logo/cmc.png';
       $this->email->attach($filename);
+      $this->email->attach($cmc);
       $cid = $this->email->attachment_cid($filename);
+      $cid_cmc = $this->email->attachment_cid($cmc);
       $message =  '
             <html>
             <head>
@@ -462,6 +465,7 @@ class Moneytype extends CI_Controller
                 </table>
                 ' . $temp->penutup . '
                 <img width="300px" src="cid:' . $cid . '" alt="vidira" />
+                <img width="300px" src="cid:' . $cid_cmc . '" alt="vidira" />
             </body>
             </html>
             ';

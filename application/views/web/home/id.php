@@ -76,10 +76,10 @@
                     </li>
                     <li id="emt1" class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Money Types Explained
+                            The Eight Money Types
                         </a>
                         <div id="emt2" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="<?= base_url() . $this->uri->segment(1) ?>/eight-money-types">The Eight Money Types</a>
+                            <a class="dropdown-item" href="<?= base_url() . $this->uri->segment(1) ?>/eight-money-types">Money Types Explained</a>
                             <a class="dropdown-item" href="<?= base_url() . $this->uri->segment(1) ?>/moneytype">Take The Quiz Free!</a>
                         </div>
                     </li>
