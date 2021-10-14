@@ -69,6 +69,10 @@ class M_user extends CI_Model
     {
         $this->db->insert('users', $data);
     }
+    public function tambah_user_polling($data)
+    {
+        $this->db->insert('user_polling', $data);
+    }
     public function hapus_users($id)
     {
         $this->db->where('id_user', $id);

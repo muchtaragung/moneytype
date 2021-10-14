@@ -10,9 +10,17 @@
 <footer class="footer">
     <div class="container">
         <div class="row">
-            <!-- Footer Social Icons-->
             <div class="col-lg-3 mb-5 mb-lg-0">
-                <h4 class="text-uppercase text-left mb-4"><img class="img-fluid" width="270px" src="<?= base_url() ?>assets/admin/assets/logo/<?= $logo->logo_footer ?>" alt=""></h4>
+                <h4 class="text-uppercase text-left mb-2"><img class="img-fluid" width="270px" src="<?= base_url() ?>assets/admin/assets/logo/<?= $logo->logo_footer ?>" alt=""></h4>
+                <h4 class="text-uppercase text-left px-0 mb-4"><img class="img-fluid" width="280px" src="<?= base_url() ?>assets/admin/assets/logo/cmc.png" alt=""></h4>
+                <?php foreach ($sosmed as $key) { ?>
+                    <a title="<?= $key->nama_sosmed ?>" target="_blank" href="<?= $key->link ?>" class="btn btn-sm btn-outline-light btn-social mx-1"><i class="fa-fw <?= $key->icon ?>"></i></a>
+                <?php  } ?>
+            </div>
+            <!-- Footer Social Icons-->
+            <!-- Footer Location-->
+            <div class="col-lg-3 mb-5 mb-lg-0">
+                <h3 class="text-uppercase mb-4 px-4">CONTACT</h3>
                 <div class="row">
                     <div class="col-2 text-right">
                         <i class="fas fa-map-marker-alt mt-3"></i>
@@ -47,33 +55,6 @@
                         </p>
                     </div>
                 </div>
-                <?php foreach ($sosmed as $key) { ?>
-                    <a title="<?= $key->nama_sosmed ?>" target="_blank" href="<?= $key->link ?>" class="btn btn-sm btn-outline-light btn-social mx-1"><i class="fa-fw <?= $key->icon ?>"></i></a>
-                <?php  } ?>
-            </div>
-            <!-- Footer Location-->
-            <div class="col-lg-3 mb-5 mb-lg-0">
-                <h3 class="text-uppercase mb-4">RESOURCES</h3>
-                <?php
-                if ($this->uri->segment(1) == 'id') { ?>
-                    <?php foreach ($recent_footer as $key) { ?>
-                        <a style="background-color:transparent" href="<?= base_url() ?>id/artikel/<?= $key->slug ?>">
-                            <p class="lead mb-0">
-                                <?= $key->judul ?>
-                            </p>
-                        </a>
-                        <p style="color:orange"><?= date('d F Y', strtotime($key->tanggal_post)); ?></p>
-                    <?php  } ?>
-                <?php } else { ?>
-                    <?php foreach ($recent_footer as $key) { ?>
-                        <a style="background-color:transparent" href="<?= base_url() ?>artikel/<?= $key->slug ?>">
-                            <p class="lead mb-0">
-                                <?= $key->judul ?>
-                            </p>
-                        </a>
-                        <p style="color:orange"><?= date('d F Y', strtotime($key->tanggal_post)); ?></p>
-                    <?php  } ?>
-                <?php  } ?>
             </div>
 
             <!-- Footer About Text-->

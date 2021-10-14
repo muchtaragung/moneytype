@@ -39,12 +39,6 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item active">
-                            <a href="<?= base_url() ?>admin/home/galeri" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Gallery</p>
-                            </a>
-                        </li>
-                        <li class="nav-item active">
                             <a href="<?= base_url() ?>admin/home/id" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Indonesia</p>
@@ -54,6 +48,12 @@
                             <a href="<?= base_url() ?>admin/home" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>English</p>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="<?= base_url() ?>admin/home/galeri" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Gallery</p>
                             </a>
                         </li>
                     </ul>
@@ -242,6 +242,14 @@
                         <i class="nav-icon fas fa-users"></i>
                         <p>
                             Subscriber
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?= base_url() ?>admin/polling" <?= $this->uri->segment(2) == 'polling' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
+                        <i class="nav-icon fas fa-user-lock"></i>
+                        <p>
+                            Polling Money Blocks
                         </p>
                     </a>
                 </li>

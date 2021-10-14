@@ -41,11 +41,11 @@
                 </div>
                 <div class="col-md-3 col-sm-6 col-12">
                     <div class="info-box">
-                        <span class="info-box-icon bg-info"> <a href="<?= base_url() ?>admin/resource"><i class="fas fa-comments"></i></a></span>
+                        <span class="info-box-icon bg-primary"> <a href="<?= base_url() ?>admin/resource"><i class="fas fa-users"></i></a></span>
 
                         <div class="info-box-content">
-                            <a style="color: black" href="<?= base_url() ?>admin/resource"><span class="info-box-text">Comment Resource EN</span></a>
-                            <span class="info-box-number"><?php echo $komen_us ?></span>
+                            <a style="color: black" href="<?= base_url() ?>admin/contact/subs"><span class="info-box-text">Subscriber</span></a>
+                            <span class="info-box-number"><?php echo $this->db->count_all_results('subs'); ?></span>
                         </div>
                         <!-- /.info-box-content -->
                     </div>
@@ -53,9 +53,9 @@
                 </div>
                 <div class="col-md-3 col-sm-6 col-12">
                     <div class="info-box">
-                        <span class="info-box-icon bg-danger"> <a href="<?= base_url() ?>admin/resource/id"><i class="fas fa-comments"></i></a></span>
+                        <span class="info-box-icon bg-warning"> <a href="<?= base_url() ?>admin/resource/id"><i class="fas fa-user-lock"></i></a></span>
                         <div class="info-box-content">
-                            <a style="color: black" href="<?= base_url() ?>admin/resource"><span class="info-box-text">Comment Resource ID</span></a>
+                            <a style="color: black" href="<?= base_url() ?>admin/polling"><span class="info-box-text">User Polling Money Blocks</span></a>
                             <span class="info-box-number"><?php echo $komen_id ?></span>
                         </div>
                         <!-- /.info-box-content -->

@@ -35,8 +35,6 @@
             <div class="col-md-12">
                 <div class="card card-outline card-info">
                     <!-- /.card-header -->
-
-
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6 mt-5">
@@ -171,8 +169,8 @@
                 text: "Galeri akan ditampilkan",
                 type: "warning",
                 showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Ya, hapus!",
+                confirmButtonColor: "#5DADE2",
+                confirmButtonText: "Ya, Tampilkan!",
                 cancelButtonText: "Tidak, kembali!",
                 closeOnConfirm: false,
                 closeOnCancel: true
@@ -190,8 +188,8 @@
                 text: "Galeri tidak akan ditampilkan",
                 type: "warning",
                 showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Ya, hapus!",
+                confirmButtonColor: "#5DADE2",
+                confirmButtonText: "Ya, jangan tampilkan!",
                 cancelButtonText: "Tidak, kembali!",
                 closeOnConfirm: false,
                 closeOnCancel: true
