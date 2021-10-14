@@ -330,10 +330,10 @@
                                 <div class="text-center mb-4">
                                     <input type="hidden" id="id" name="id" value="<?= $feature5->id_feature ?>">
                                     <input type="hidden" name="gambar_lama" value="<?= $feature5->img ?>">
-                                    <img width="300px" src="<?= base_url() ?>assets/assets/img/<?= $feature5->img ?>" class="image-fluid" id="image-preview6" alt="image preview">
+                                    <img width="300px" src="<?= base_url() ?>assets/assets/img/<?= $feature5->img ?>" class="image-fluid" id="image-preview9" alt="image preview">
                                 </div>
                                 <div class="custom-file">
-                                    <input type="file" name="gambar" id="image-source6" class="custom-file-input" accept="image/x-png,image/jpg,image/jpeg" onchange="previewImage6();">
+                                    <input type="file" name="gambar" id="image-source9" class="custom-file-input" accept="image/x-png,image/jpg,image/jpeg" onchange="previewImage9();">
                                     <label class="custom-file-label" for="gallery-photo-add">Pilih Gambar</label>
                                     <small id="helpId" class="text-muted">*Maksimal 1 mb</small>
                                 </div>
@@ -656,6 +656,15 @@
         oFReader.readAsDataURL(document.getElementById("image-source8").files[0]);
         oFReader.onload = function(oFREvent) {
             document.getElementById("image-preview8").src = oFREvent.target.result;
+        };
+    };
+
+    function previewImage9() {
+        document.getElementById("image-preview9").style.display = "block";
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("image-source9").files[0]);
+        oFReader.onload = function(oFREvent) {
+            document.getElementById("image-preview9").src = oFREvent.target.result;
         };
     };
     $(document).ready(function() {

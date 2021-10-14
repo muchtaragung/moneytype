@@ -202,12 +202,12 @@
         </script>
     <?php } ?>
     <!-- Services-->
-    <section class="page-section pt-5 mt-5 mb-5">
+    <section class="page-section pt-5 mt-5 mb-5 pb-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="display-6 text"><?= $feature->header ?></span></h1>
-                    <p class="lead text-muted mb-0"><?= $feature->konten ?></p>
+                    <p style="font-size: 16px;" class="lead text-muted mb-0"><?= $feature->konten ?></p>
                 </div>
             </div>
         </div>

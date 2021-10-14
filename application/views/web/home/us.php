@@ -202,12 +202,12 @@
         </script>
     <?php } ?>
     <!-- Services-->
-    <section class="page-section pt-5 mt-5 mb-5">
+    <section class="page-section pt-5 mt-5 mb-5 pb-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="display-6 text"><?= $feature->header ?></span></h1>
-                    <p class="lead text-muted mb-0"><?= $feature->konten ?></p>
+                    <p style="font-size: 16px;" class="lead text-muted mb-0"><?= $feature->konten ?></p>
                 </div>
             </div>
         </div>
@@ -215,7 +215,7 @@
     <section class="page-section mt-5 pt-5" id="services">
         <div class="container px-4 px-lg-5">
             <h2 class="text-center mt-0"><?= $header_feature2->header ?></h2>
-            <p class="lead text-muted mb-3"><?= $header_feature2->konten ?></p>
+            <p style="font-size: 16px;" class="lead text-muted mb-3"><?= $header_feature2->konten ?></p>
             <div class="row gx-4 gx-lg-5">
                 <div class="col-lg-4 col-md-6 text-center ">
                     <div class="card shadow-lg h-100">
