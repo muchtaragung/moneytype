@@ -101,6 +101,7 @@
                         <div class="custom-file">
                             <input type="file" name="image" class="custom-file-input" id="image" accept="image/x-png,image/jpg,image/jpeg" onchange="previewFile(this);">
                             <label class="custom-file-label" for="image">Pilih Gambar</label>
+                            <small id="helpId" class="text-muted">*Maksimal 1 mb</small>
                         </div>
                     </div>
                 </div>

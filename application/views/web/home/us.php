@@ -348,11 +348,8 @@
         <section class="page-section" id="contact">
             <!-- Page Content -->
             <div class="container">
-
                 <h1 class="fw-light text-center text-lg-start mt-4 mb-0">Gallery</h1>
-
                 <hr class="mt-2 mb-5">
-
                 <div class="row justify-content-center text-lg-start">
                     <div class="galeri">
                         <!-- <div class="col-md-12"> -->
