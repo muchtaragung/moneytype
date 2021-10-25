@@ -145,11 +145,11 @@
             </div>
         </nav>
 
-        <div id="carouselExampleIndicators" class="carousel slide my-carousel my-carousel" data-ride="carousel">
+        <div id="Vidira" class="carousel slide carousel-fade" data-ride="carousel">
             <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#Vidira" data-slide-to="0" class="active"></li>
+                <li data-target="#Vidira" data-slide-to="1"></li>
+                <li data-target="#Vidira" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner" role="listbox">
                 <?php
@@ -157,20 +157,20 @@
                 foreach ($home as $data) { ?>
                     <?php if ($i == 1) { ?>
                         <div class="carousel-item active" style="background-image: url('<?= base_url() ?>assets/assets/img/<?= $data->image ?>')">
-                            <div class="container py-5 px-lg-5 h-100">
-                                <div class="row py-5 gx-0 gx-lg-0 h-100">
+                            <div class="container py-5 px-lg-5">
+                                <div class="row py-5 gx-0 gx-lg-0">
                                     <div class="col-lg-8 align-self-end">
-                                        <h1 class="text-white font-weight-bold"><?= $data->masthead_us ?></h1>
+                                        <h1 style="color:<?= $data->color ?>; font-size: <?= $data->font_size ?>px"><?= $data->masthead_us ?></h1>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     <?php } else { ?>
                         <div class="carousel-item " style="background-image: url('<?= base_url() ?>assets/assets/img/<?= $data->image ?>')">
-                            <div class="container py-5 px-lg-5 h-100">
-                                <div class="row py-5 gx-0 gx-lg-0 h-100">
+                            <div class="container py-5 px-lg-5">
+                                <div class="row py-5 gx-0 gx-lg-0">
                                     <div class="col-lg-8 align-self-end">
-                                        <h1 class="text-white font-weight-bold"><?= $data->masthead_us ?></h1>
+                                        <h1 style="color:<?= $data->color ?>; font-size: <?= $data->font_size ?>px"><?= $data->masthead_us ?></h1>
                                     </div>
                                 </div>
                             </div>
@@ -179,11 +179,11 @@
                     <?php $i++ ?>
                 <?php   } ?>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <a class="carousel-control-prev" href="#Vidira" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <a class="carousel-control-next" href="#Vidira" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>

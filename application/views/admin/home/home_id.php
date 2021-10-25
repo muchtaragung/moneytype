@@ -44,6 +44,8 @@
                                         <th>Image</th>
                                         <th>Header EN</th>
                                         <th>Header ID</th>
+                                        <th>Ukuran Font</th>
+                                        <th>Warna Teks</th>
                                         <th>AKSI</th>
                                     </tr>
                                 </thead>
@@ -56,6 +58,8 @@
                                             <td><img width="150px" src="<?= base_url() ?>assets/assets/img/<?= $data->image ?>"></td>
                                             <td><?php echo $data->masthead_us ?></td>
                                             <td><?php echo $data->masthead_id ?></td>
+                                            <td><?php echo $data->font_size ?></td>
+                                            <td><input disabled class="form-control" type="color" value="<?php echo $data->color ?>"></td>
                                             <td class="text-center">
                                                 <a class="btn btn-outline-primary" href="javascript:void(0)" title="Edit" onclick="edit_header('<?php echo $data->id_home ?>')"><i class="fas fa-pen"></i></a>
                                                 <a title="Hapus" class="btn btn-outline-danger alert_notif" href="<?php echo base_url() ?>admin/home/delete_header_id/<?php echo $data->id_home ?>"><i class="fas fa-trash"></i></a>
@@ -387,6 +391,8 @@
                 $('[name="masthead_us"]').val(data.masthead_us);
                 $('[name="masthead_id"]').val(data.masthead_id);
                 $('[name="gambar_lama"]').val(data.image);
+                $('[name="color"]').val(data.color);
+                $('[name="font_size"]').val(data.font_size);
                 $('#edit-data').modal('show'); // show bootstrap modal when complete loaded
                 $('.modal-title').text('Edit Header'); // Set title to Bootstrap modal title
 
@@ -449,6 +455,14 @@
                         <label for="email">Header Label ID</label>
                         <textarea required title="Tidak boleh kosong" name="masthead_id" id="masthead_id" class="form-control" placeholder="Header ID"></textarea>
                     </div>
+                    <div class="form-group mb-3 mt-3">
+                        <label for="email">Warna Teks</label>
+                        <input type="color" name="color" id="color" class="form-control">
+                    </div>
+                    <div class="form-group mb-3 mt-3">
+                        <label for="email">Size Teks</label>
+                        <input type="number" name="font_size" id="font_size" class="form-control">
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -492,6 +506,14 @@
                         <div class="form-group mb-3 mt-3">
                             <label for="email">Header Label ID</label>
                             <textarea required title="Tidak boleh kosong" name="masthead_id" id="masthead_id" class="form-control" placeholder="Masthead"></textarea>
+                        </div>
+                        <div class="form-group mb-3 mt-3">
+                            <label for="email">Warna Teks</label>
+                            <input type="color" name="color" id="color" class="form-control">
+                        </div>
+                        <div class="form-group mb-3 mt-3">
+                            <label for="email">Size Teks</label>
+                            <input type="number" name="font_size" id="font_size" class="form-control">
                         </div>
                     </div>
                 </div>

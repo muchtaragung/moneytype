@@ -200,6 +200,8 @@ class Home extends CI_Controller
             'masthead_id' => $this->input->post('masthead_id'),
             'masthead_us' => $this->input->post('masthead_us'),
             'image' => $file,
+            'font_size' => $this->input->post('font_size'),
+            'color' => $this->input->post('color'),
         );
         $this->home->create_home($data);
         $this->session->set_flashdata('msg', 'Header berhasil ditambah');
@@ -224,6 +226,8 @@ class Home extends CI_Controller
             'masthead_id' => $this->input->post('masthead_id'),
             'masthead_us' => $this->input->post('masthead_us'),
             'image' => $file,
+            'font_size' => $this->input->post('font_size'),
+            'color' => $this->input->post('color'),
         );
         $this->home->create_home($data);
         $this->session->set_flashdata('msg', 'Header berhasil ditambah');
@@ -265,6 +269,8 @@ class Home extends CI_Controller
             'masthead_id' => $this->input->post('masthead_id'),
             'masthead_us' => $this->input->post('masthead_us'),
             'image' => $file,
+            'font_size' => $this->input->post('font_size'),
+            'color' => $this->input->post('color'),
         );
         $this->home->update_header($id, $data);
         $this->session->set_flashdata('msg', 'Header berhasil diupdate');
@@ -294,6 +300,8 @@ class Home extends CI_Controller
             'masthead_id' => $this->input->post('masthead_id'),
             'masthead_us' => $this->input->post('masthead_us'),
             'image' => $file,
+            'font_size' => $this->input->post('font_size'),
+            'color' => $this->input->post('color'),
         );
         $this->home->update_header($id, $data);
         $this->session->set_flashdata('msg', 'Header berhasil diupdate');
