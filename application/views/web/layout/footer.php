@@ -13,9 +13,7 @@
             <div class="col-lg-3 mb-5 mb-lg-0">
                 <h4 class="text-uppercase text-left mb-2"><img class="img-fluid" width="270px" src="<?= base_url() ?>assets/admin/assets/logo/<?= $logo->logo_footer ?>" alt=""></h4>
                 <h4 class="text-uppercase text-left px-0 mb-4"><img class="img-fluid" width="280px" src="<?= base_url() ?>assets/admin/assets/logo/cmc.png" alt=""></h4>
-                <?php foreach ($sosmed as $key) { ?>
-                    <a title="<?= $key->nama_sosmed ?>" target="_blank" href="<?= $key->link ?>" class="btn btn-sm btn-outline-light btn-social mx-1"><i class="fa-fw <?= $key->icon ?>"></i></a>
-                <?php  } ?>
+
             </div>
             <!-- Footer Social Icons-->
             <!-- Footer Location-->
@@ -55,6 +53,9 @@
                         </p>
                     </div>
                 </div>
+                <?php foreach ($sosmed as $key) { ?>
+                    <a title="<?= $key->nama_sosmed ?>" target="_blank" href="<?= $key->link ?>" class="btn btn-sm btn-outline-light btn-social mx-1"><i class="fa-fw <?= $key->icon ?>"></i></a>
+                <?php  } ?>
             </div>
 
             <!-- Footer About Text-->
