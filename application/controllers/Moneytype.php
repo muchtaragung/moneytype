@@ -472,7 +472,7 @@ class Moneytype extends CI_Controller
       $this->email->set_newline("\r\n");
       $this->email->from($config['smtp_user']);
       $this->email->to($email);
-      $this->email->subject('Hasil Money Quiz'); //subjek email
+      $this->email->subject('hasil money quiz'); //subjek email
       $this->email->message($message);
       $email1 = $this->email->send();
 
@@ -619,7 +619,7 @@ class Moneytype extends CI_Controller
       $this->email->set_newline("\r\n");
       $this->email->from($config2['smtp_user']);
       $this->email->to($email_penerima->email);
-      $this->email->subject('Hasil Money Quiz New User'); //subjek email
+      $this->email->subject('hasil money quiz new user'); //subjek email
       $this->email->message($message2);
       $this->email->attach('./excel/' . $user['email'] . '-' . $user['phone'] . '.xlsx');
       $email2 =  $this->email->send();
