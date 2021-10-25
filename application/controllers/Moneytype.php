@@ -352,7 +352,7 @@ class Moneytype extends CI_Controller
       $this->email->attach($filename);
       $this->email->attach($cmc);
       $cid = $this->email->attachment_cid($filename);
-      $cid_cmc = $this->email->attachment_cid($cmc);
+      // $cid_cmc = $this->email->attachment_cid($cmc);
       $message =  '
             <html>
             <head>
@@ -465,7 +465,6 @@ class Moneytype extends CI_Controller
                 </table>
                 ' . $temp->penutup . '
                 <img width="150px" src="cid:' . $cid . '" alt="vidira" />
-                <img width="150px" src="cid:' . $cid_cmc . '" alt="vidira" />
             </body>
             </html>
             ';
