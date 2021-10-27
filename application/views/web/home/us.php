@@ -19,6 +19,8 @@
     <!-- Google fonts-->
     <!-- <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" /> -->
     <!-- <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" /> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
     <!-- SimpleLightbox plugin CSS-->
@@ -69,7 +71,10 @@
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
+
     }
+
+
 
     .pic {
         display: block;
@@ -87,8 +92,9 @@
 
 <body id="page-top">
     <!-- Navigation-->
+
     <header class="mb-5">
-        <nav class="navbar navbar-expand-lg navbar-light text-uppercase fixed-top py-3" id="mainNav">
+        <nav class="my-nav navbar navbar-expand-lg navbar-light text-uppercase fixed-top py-3" id="mainNav">
             <div class="container-fluid">
                 <a class="navbar-brand px-4" href="#">
                     <img src="<?= base_url() ?>assets/admin/assets/logo/<?= $logo->logo_footer ?>" width="180px" alt="">
@@ -151,11 +157,12 @@
                 $i = 1;
                 foreach ($home as $data) { ?>
                     <?php if ($i == 1) { ?>
+
                         <div class="carousel-item active" style="background-image: url('<?= base_url() ?>assets/assets/img/<?= $data->image ?>')">
                             <div class="container py-5 px-lg-5">
                                 <div class="row py-5 gx-0 gx-lg-0">
                                     <div class="col-lg-8 align-self-end">
-                                        <h1 style="color:<?= $data->color ?>; font-size: <?= $data->font_size ?>px"><?= $data->masthead_us ?></h1>
+                                        <h1 style="color:<?= $data->color ?>; font-size: <?= $data->font_size ?>px; text-shadow: black 0.1em 0.1em 0.2em;"><?= $data->masthead_us ?></h1>
                                     </div>
                                 </div>
                             </div>
@@ -165,7 +172,7 @@
                             <div class="container py-5 px-lg-5">
                                 <div class="row py-5 gx-0 gx-lg-0">
                                     <div class="col-lg-8 align-self-end">
-                                        <h1 style="color:<?= $data->color ?>; font-size: <?= $data->font_size ?>px"><?= $data->masthead_us ?></h1>
+                                        <h1 style="color:<?= $data->color ?>; font-size: <?= $data->font_size ?>px;text-shadow: black 0.1em 0.1em 0.2em;"><?= $data->masthead_us ?></h1>
                                     </div>
                                 </div>
                             </div>
@@ -599,8 +606,6 @@
             </div>
         </div>
     </div>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <!-- Bootstrap core JS-->

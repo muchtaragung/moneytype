@@ -19,6 +19,8 @@
     <!-- Google fonts-->
     <!-- <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" /> -->
     <!-- <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" /> -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
     <!-- SimpleLightbox plugin CSS-->
@@ -146,11 +148,6 @@
         </nav>
 
         <div id="Vidira" class="carousel slide carousel-fade" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#Vidira" data-slide-to="0" class="active"></li>
-                <li data-target="#Vidira" data-slide-to="1"></li>
-                <li data-target="#Vidira" data-slide-to="2"></li>
-            </ol>
             <div class="carousel-inner" role="listbox">
                 <?php
                 $i = 1;
@@ -160,7 +157,7 @@
                             <div class="container py-5 px-lg-5">
                                 <div class="row py-5 gx-0 gx-lg-0">
                                     <div class="col-lg-8 align-self-end">
-                                        <h1 style="color:<?= $data->color ?>; font-size: <?= $data->font_size ?>px"><?= $data->masthead_us ?></h1>
+                                        <h1 style="color:<?= $data->color ?>; font-size: <?= $data->font_size ?>px; text-shadow: black 0.1em 0.1em 0.2em;"><?= $data->masthead_id ?></h1>
                                     </div>
                                 </div>
                             </div>
@@ -170,7 +167,7 @@
                             <div class="container py-5 px-lg-5">
                                 <div class="row py-5 gx-0 gx-lg-0">
                                     <div class="col-lg-8 align-self-end">
-                                        <h1 style="color:<?= $data->color ?>; font-size: <?= $data->font_size ?>px"><?= $data->masthead_us ?></h1>
+                                        <h1 style="color:<?= $data->color ?>; font-size: <?= $data->font_size ?>px;text-shadow: black 0.1em 0.1em 0.2em;"><?= $data->masthead_id ?></h1>
                                     </div>
                                 </div>
                             </div>
