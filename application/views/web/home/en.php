@@ -355,7 +355,7 @@
                     <!-- Footer Social Icons-->
                     <div class="col-lg-3 mb-5 mb-lg-0">
                         <h4 class="text-uppercase text-left"><img class="img-fluid" width="270px" src="<?= base_url() ?>assets/admin/assets/logo/<?= $logo->logo_footer ?>" alt=""></h4>
-                        <h4 class="text-uppercase text-left px-0 mb-4"><img class="img-fluid" width="240px" src="<?= base_url() ?>assets/admin/assets/logo/cmc.png" alt=""></h4>
+                        <h4 class="text-uppercase text-center px-0 mb-4"><img class="img-fluid" width="200px" src="<?= base_url() ?>assets/admin/assets/logo/cmc.png" alt=""></h4>
                     </div>
                     <!-- Footer Location-->
                     <div class="col-lg-3 mb-5 mt-3 mb-lg-0">
