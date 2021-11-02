@@ -453,17 +453,17 @@
                     <div class="container">
                         <form id="polling" action="<?= base_url() ?>main/polling" method="post">
                             <div class="form-group mb-1">
-                                <input class="form-control form-control" name="nama" required type="text" title="Kami membutuhkan nama anda" placeholder="What is yor name?">
+                                <input class="form-control form-control" name="nama" required type="text" title="Name required" placeholder="Fill in your full name">
                                 <label for="name"></label>
                             </div>
                             <!-- Email address input-->
                             <div class="form-group mb-1">
-                                <input class="form-control form-control" name="email" type="email" placeholder="Your email">
+                                <input class="form-control form-control" name="email" type="email" placeholder="Email address">
                                 <label for="email"></label>
                             </div>
                             <!-- Phone number input-->
                             <div class="form-group mb-1">
-                                <input class="form-control form-control" name="phone" minlength="10" min="0" type="number" placeholder="Your Phone/Whatsapp">
+                                <input class="form-control form-control" name="phone" minlength="10" min="0" type="number" placeholder="Mobile/Whatsapp number">
                                 <label for="phone"></label>
                             </div>
                             <div class="row justify-content-center">
