@@ -17,8 +17,17 @@ class Main extends CI_Controller
     $this->load->helper('security');
     $this->load->library('form_validation');
   }
+  public function redirect($uri = null)
+  {
+    if ($uri == null) {
+      redirect('id');
+    } else {
+      $this->index();
+    }
+  }
   public function index()
   {
+
     $data['title'] = 'Home';
     $data['home'] = $this->web->get_home()->row();
     $data['title'] = 'About';
@@ -52,7 +61,7 @@ class Main extends CI_Controller
       $data['feature3'] = $this->home->get_feature3_home()->row();
       $data['feature4'] = $this->home->get_feature4_home()->result();
       $data['feature5'] = $this->home->get_feature5_home()->row();
-      $this->load->view('web/home/us', $data);
+      $this->load->view('web/home/en', $data);
     }
   }
   public function finish()

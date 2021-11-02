@@ -49,7 +49,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'main';
+$route['default_controller'] = 'main/redirect';
+$route['default_controller/(:any)'] = 'main/redirect/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 //moneytype
@@ -60,6 +61,7 @@ $route['finish'] = 'main/finish';
 
 //home
 $route['id'] = 'main';
+$route['en'] = 'main';
 
 //about
 $route['id/about'] = 'about';

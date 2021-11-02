@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-lg-3 mb-5 mb-lg-0">
                 <h4 class="text-uppercase text-left mb-2"><img class="img-fluid" width="270px" src="<?= base_url() ?>assets/admin/assets/logo/<?= $logo->logo_footer ?>" alt=""></h4>
-                <h4 class="text-uppercase text-left px-0 mb-4"><img class="img-fluid" width="280px" src="<?= base_url() ?>assets/admin/assets/logo/cmc.png" alt=""></h4>
+                <h4 class="text-uppercase text-left px-0 mb-4"><img class="img-fluid" width="240px" src="<?= base_url() ?>assets/admin/assets/logo/cmc.png" alt=""></h4>
 
             </div>
             <!-- Footer Social Icons-->
