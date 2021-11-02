@@ -53,6 +53,12 @@
             background-color: orange !important;
             transition: background-color 200ms linear;
         }
+
+        @media all and (max-width: 768px) {
+            #navi {
+                background-color: orange;
+            }
+        }
     </style>
     <header class="navigation fixed-top">
         <div class="container-fluid">

@@ -422,6 +422,7 @@ a:focus, a:hover {
 ==================================================================*/
 .navigation {
   transition: .3s all;
+  
 }
 
 .navigation .logo-default {
