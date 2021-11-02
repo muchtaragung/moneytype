@@ -27,10 +27,17 @@ class Moneytype extends CI_Controller
     $data['recent_footer'] = $this->res->get_resource_id_footer()->result();
     $data['galeri'] = $this->web->get_galeri_web()->result();
     $data['status'] = $this->web->get_galeri_web()->row();
-    $this->load->view('web/layout/header', $data);
-    $this->load->view('web/layout/navbar', $data);
-    $this->load->view('web/main');
-    $this->load->view('web/layout/footer', $data);
+    if ($this->uri->segment(1) == "id") {
+      $this->load->view('web/layout/header', $data);
+      $this->load->view('web/layout/navbar', $data);
+      $this->load->view('web/mt/main');
+      $this->load->view('web/layout/footer', $data);
+    } else {
+      $this->load->view('web/layout/header', $data);
+      $this->load->view('web/layout/navbar', $data);
+      $this->load->view('web/mt/main_en');
+      $this->load->view('web/layout/footer', $data);
+    }
   }
   public function excel($kata, $user, $type)
   {
