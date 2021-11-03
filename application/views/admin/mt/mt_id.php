@@ -16,6 +16,16 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
+                    <?php if ($this->session->flashdata('error') != null) { ?>
+                        <div class="alert alert-danger" role="alert">
+                            <?php echo $this->session->flashdata('error'); ?>
+                        </div>
+                    <?php } ?>
+                    <?php if ($this->session->flashdata('msg') != null) { ?>
+                        <div class="alert alert-success" role="alert">
+                            <?php echo $this->session->flashdata('msg'); ?>
+                        </div>
+                    <?php } ?>
                     <div class="card">
                         <!-- /.card-header -->
                         <div class="card-body">
