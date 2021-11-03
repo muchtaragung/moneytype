@@ -23,7 +23,7 @@
               </script>
           <?php } ?>
           <?php if ($this->uri->segment(1) != "id") { ?>
-              <form method="post" id="money" action="<?= base_url() ?>result_en">
+              <form method="post" id="money" action="<?= base_url() ?>result">
               <?php } else { ?>
                   <form method="post" id="money" action="<?= base_url() . $this->uri->segment(1) ?>/result">
                   <?php } ?>
