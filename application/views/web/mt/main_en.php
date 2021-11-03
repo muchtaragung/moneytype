@@ -7,6 +7,8 @@
           visibility: visible;
       }
   </style>
+
+
   <section class="page-section bg-white text-black mb-0">
       <div class="container">
           <h3 class="pt-5 mt-5 mb-5 text-center">Money Type Quiz</h3>
@@ -27,7 +29,6 @@
               <?php } else { ?>
                   <form method="post" id="money" action="<?= base_url() . $this->uri->segment(1) ?>/result">
                   <?php } ?>
-
                   <div class="row justify-content-center">
                       <div class="col-lg-8 col-xl-7">
                           <input type="hidden" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash(); ?>">
