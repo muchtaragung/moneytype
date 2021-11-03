@@ -162,7 +162,7 @@
                         <li class="nav-item active">
                             <a href="<?= base_url() ?>admin/user" <?= $this->uri->segment(2) == 'user' ? 'class="nav-link active"' : 'class="nav-link"' ?>>
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Users</p>
+                                <p>Users Money types</p>
                             </a>
                         </li>
                         <li class="nav-item active">
@@ -256,6 +256,29 @@
                 <li class="nav-header">SETTING</li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-envelope-open-text"></i>
+                        <p>
+                            Template Email Money Types
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item active">
+                            <a href="<?= base_url() ?>admin/user/email_id" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Indonesia</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url() ?>admin/user/email_en" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>English</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-window-restore"></i>
                         <p>
                             WEB
@@ -283,6 +306,7 @@
                         </li>
                     </ul>
                 </li>
+
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

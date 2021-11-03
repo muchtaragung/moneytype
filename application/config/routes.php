@@ -55,7 +55,8 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 //moneytype
 $route['id/result'] = 'moneytype/result';
-$route['result'] = 'moneytype/result';
+$route['result'] = 'moneytype/result_en';
+
 $route['id/finish'] = 'main/finish';
 $route['finish'] = 'main/finish';
 

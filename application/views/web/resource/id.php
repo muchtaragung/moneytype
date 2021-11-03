@@ -2,7 +2,7 @@
     <div class="mask h-100 w-100" style="background-color: rgba(0, 0, 0, 0.6);">
         <div class="d-flex justify-content-center align-items-center h-100">
             <div class="text-white">
-                <h1 class="text-center display-4">Resource</h1>
+                <h1 class="text-center display-4">Resources</h1>
                 <!-- <a class="btn btn-warning btn-lg" href="<?= base_url() ?>moneytype" role="button">Money Type Quiz</a> -->
             </div>
         </div>

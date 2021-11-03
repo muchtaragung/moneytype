@@ -29,6 +29,24 @@ class User extends CI_Controller
         $this->load->view('admin/user');
         $this->load->view('admin/layout/footer');
     }
+    public function email_id()
+    {
+        $data['logo'] = $this->web->get_logo()->row();
+        $data['email'] = $this->user->get_template()->row();
+        $this->load->view('admin/layout/header');
+        $this->load->view('admin/layout/navbar', $data);
+        $this->load->view('admin/mt/mt_id');
+        $this->load->view('admin/layout/footer');
+    }
+    public function email_en()
+    {
+        $data['logo'] = $this->web->get_logo()->row();
+        $data['email'] = $this->user->get_template_en()->row();
+        $this->load->view('admin/layout/header');
+        $this->load->view('admin/layout/navbar', $data);
+        $this->load->view('admin/mt/mt_en');
+        $this->load->view('admin/layout/footer');
+    }
     public function detail($id)
     {
         $data['logo'] = $this->web->get_logo()->row();
@@ -142,6 +160,17 @@ class User extends CI_Controller
         );
         $this->user->update_template($id, $data);
         $this->session->set_flashdata('msg', 'Template berhasil diupdate');
-        redirect('admin/user');
+        redirect('admin/user/email_id');
+    }
+    public function update_template_en()
+    {
+        $id = $this->input->post('id', true);
+        $data = array(
+            'isi' =>  $this->input->post('isi', true),
+            'penutup' =>  $this->input->post('penutup', true),
+        );
+        $this->user->update_template_en($id, $data);
+        $this->session->set_flashdata('msg', 'Template berhasil diupdate');
+        redirect('admin/user/email_en');
     }
 }
