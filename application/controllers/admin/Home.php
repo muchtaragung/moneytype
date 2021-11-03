@@ -138,6 +138,7 @@ class Home extends CI_Controller
         }
 
         $data = array(
+            'nama' => $this->input->post('nama', true),
             'img' => $file,
             'id_admin' => 1,
             'akses' => 1,
@@ -166,6 +167,11 @@ class Home extends CI_Controller
         $this->session->set_flashdata('msg', 'Galeri tidak ditampilkan');
         redirect('admin/home/galeri');
     }
+    public function ajax_galeri($id)
+    {
+        $data = $this->home->get_by_id_galeri($id);
+        echo json_encode($data);
+    }
     public function ajax_header($id)
     {
         $data = $this->home->get_by_id_header($id);
@@ -192,7 +198,7 @@ class Home extends CI_Controller
             $data = array('upload_data' => $this->upload->data());
             $file = $data['upload_data']['file_name'];
         } else {
-            $this->session->set_flashdata('error', 'Gambar gagal di update');
+            $this->session->set_flashdata('error', 'Gambar gagal ditambah');
             redirect('admin/home');
         }
 
@@ -218,7 +224,7 @@ class Home extends CI_Controller
             $data = array('upload_data' => $this->upload->data());
             $file = $data['upload_data']['file_name'];
         } else {
-            $this->session->set_flashdata('error', 'Gambar gagal di update');
+            $this->session->set_flashdata('error', 'Gambar gagal ditambah');
             redirect('admin/home/id');
         }
 
@@ -804,5 +810,35 @@ class Home extends CI_Controller
         $this->home->update_feature5_id($id, $data);
         $this->session->set_flashdata('msg', 'Feature 5 berhasil diupdate');
         redirect('admin/home/id');
+    }
+    public function update_galeri()
+    {
+        if (empty($_FILES['gambar']['name'])) {
+            $file = $this->input->post('gambar_lama', TRUE);
+        } else {
+            $config['upload_path'] = "./assets/assets/galeri";
+            $config['allowed_types'] = 'jpeg|jpg|png';
+            $config['max_size'] = '1024';
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+            if ($this->upload->do_upload("gambar")) {
+                $data = array('upload_data' => $this->upload->data());
+                $file = $data['upload_data']['file_name'];
+            } else {
+                $this->session->set_flashdata('error', 'Galeri gagal di update');
+                redirect('admin/home/galeri');
+            }
+        }
+
+        $id = $this->input->post('id', true);
+        $data = array(
+            'nama' => $this->input->post('nama', true),
+            'img' => $file,
+            'id_admin' => $this->input->post('id_admin', true),
+            'akses' => $this->input->post('akses', true),
+        );
+        $this->home->update_galeri($id, $data);
+        $this->session->set_flashdata('msg', 'Galeri berhasil diupdate');
+        redirect('admin/home/galeri');
     }
 }

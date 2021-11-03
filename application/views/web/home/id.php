@@ -336,7 +336,7 @@
                                             <a class="search-icon" href="<?= base_url() ?>assets/assets/galeri/<?= $data->img ?>" data-lightbox="image-1">
                                                 <i class="tf-ion-ios-search-strong"></i>
                                             </a>
-                                            <!-- <h4><a href="">AirBnB Postcard</a></h4> -->
+                                            <h4><a href=""><?= $data->nama ?></a></h4>
                                         </div>
                                     </div>
                                 </div>

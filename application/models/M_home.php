@@ -20,6 +20,12 @@ class M_home extends CI_Model
         $this->db->update('about', $data);
         return true;
     }
+    public function update_galeri($id, $data)
+    {
+        $this->db->where('id_galeri', $id);
+        $this->db->update('galeri', $data);
+        return true;
+    }
     public function update_header($id, $data)
     {
         $this->db->where('id_home', $id);
@@ -208,6 +214,14 @@ class M_home extends CI_Model
     {
         $this->db->where('id_feature', $id);
         $this->db->delete('feature_about_id');
+    }
+    public function get_by_id_galeri($id)
+    {
+        $this->db->from('galeri');
+        $this->db->where('id_galeri', $id);
+        $query = $this->db->get();
+
+        return $query->row();
     }
     public function get_by_id_header($id)
     {

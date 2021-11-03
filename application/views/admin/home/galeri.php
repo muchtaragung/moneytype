@@ -60,8 +60,9 @@
                         <div class="table-responsive">
                             <table id="table" class="table table1 table-hover">
                                 <thead>
-                                    <tr>
+                                    <tr class="text-center">
                                         <th>No</th>
+                                        <th>Nama Foto</th>
                                         <th>Foto</th>
                                         <th>AKSI</th>
                                     </tr>
@@ -72,11 +73,13 @@
                                     foreach ($galeri as $data) { ?>
                                         <tr class="text-center">
                                             <td><?php echo $no++ ?></td>
+                                            <td><?php echo $data->nama ?></td>
                                             <td> <a href="<?= base_url() ?>assets/assets/galeri/<?= $data->img ?>" data-toggle="lightbox" data-title="Gallery" data-gallery="gallery">
                                                     <img width="200px" class="img-fluid" src="<?= base_url() ?>assets/assets/galeri/<?= $data->img ?>" alt="">
                                                 </a></td>
                                             <td class="text-center">
-                                                <a title="Hapus" class="btn btn-outline-danger alert_notif" href="<?php echo base_url() ?>admin/home/delete_foto/<?php echo $data->id_galeri ?>"><i class="fas fa-trash"></i></a>
+                                                <a class="btn btn-outline-primary" href="javascript:void(0)" title="Edit" onclick="edit_galeri('<?php echo $data->id_galeri ?>')"><i class="fas fa-pen"></i></a>
+                                                <a title="Hapus" class="btn btn-outline-danger alert_notif" href="<?php echo base_url() ?>admin/home/delete_galeri/<?php echo $data->id_galeri ?>"><i class="fas fa-trash"></i></a>
                                             </td>
                                         </tr>
                                     <?php }
@@ -108,6 +111,31 @@
         $('#default2').modal('show'); // show bootstrap modal
         $('.modal-title').text('Tambah Foto'); // Set Title to Bootstrap modal title
     }
+
+    function edit_galeri(id) {
+        save_method = 'update';
+        // $('#form1')[0].reset(); // reset form on modals
+
+        //Ajax Load data from ajax
+        $.ajax({
+            url: "<?php echo site_url('admin/home/ajax_galeri') ?>/" + id,
+            type: "GET",
+            dataType: "JSON",
+            success: function(data) {
+                $('[name="id"]').val(data.id_galeri);
+                $('[name="nama"]').val(data.nama);
+                $('[name="gambar_lama"]').val(data.img);
+                $('[name="id_admin"]').val(data.id_admin);
+                $('[name="akses"]').val(data.akses);
+                $('#edit-data').modal('show'); // show bootstrap modal when complete loaded
+                $('.modal-title').text('Edit Galeri'); // Set title to Bootstrap modal title
+
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert('Error get data from ajax');
+            }
+        });
+    }
 </script>
 <div class="modal fade text-left" id="default2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
     <div class="modal-dialog modal-dialog" role="document">
@@ -120,6 +148,10 @@
             </div>
             <form id="form2" enctype="multipart/form-data" action="<?php echo base_url() ?>admin/home/add_galeri" method="post">
                 <div class="modal-body">
+                    <div class="form-group">
+                        <label for="">Nama Foto</label>
+                        <input type="text" name="nama" required id="nama" class="form-control" placeholder="" aria-describedby="nama">
+                    </div>
                     <label class="mt-4" for="img">Foto</label><br>
                     <div class="text-center mb-4">
                         <img width="300px" style="display: none;" class="image-fluid" id="image-preview" alt="image preview">
@@ -136,6 +168,46 @@
                         <i class="bx bx-check d-block d-sm-none"></i>
                         <span class="d-none d-sm-block">Accept</span>
                     </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="edit-data" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit galeri</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="edit_header" action="<?= base_url() ?>admin/home/update_galeri" method="post" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <div class="form-group pt-5">
+                        <!-- <label for="customFile">Custom File</label> -->
+                        <input type="hidden" id="id" name="id">
+                        <input type="hidden" id="gambar_lama" name="gambar_lama">
+                        <input type="hidden" id="id_admin" name="id_admin">
+                        <input type="hidden" id="akses" name="akses">
+                        <div class="form-group">
+                            <label for="">Nama Foto</label>
+                            <input type="text" name="nama" required id="nama" class="form-control" placeholder="" aria-describedby="nama">
+                        </div>
+                        <label class="mt-4" for="img">Foto</label><br>
+                        <div class="text-center mb-4">
+                            <img width="300px" style="display: none;" class="image-fluid" id="image-preview2" alt="image preview">
+                        </div>
+                        <div class="custom-file">
+                            <input type="file" name="gambar" id="image-source2" class="custom-file-input" accept="image/x-png,image/jpg,image/jpeg, image/gif" onchange="previewImage2();">
+                            <label class="custom-file-label" for="gallery-photo-add">Pilih Gambar</label>
+                            <small id="helpId" class="text-muted">*Maksimal 1 mb</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </form>
         </div>
@@ -199,4 +271,13 @@
             return false;
         });
     });
+
+    function previewImage2() {
+        document.getElementById("image-preview2").style.display = "block";
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("image-source2").files[0]);
+        oFReader.onload = function(oFREvent) {
+            document.getElementById("image-preview2").src = oFREvent.target.result;
+        };
+    };
 </script>
